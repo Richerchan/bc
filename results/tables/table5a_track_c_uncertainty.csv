@@ -1,0 +1,4 @@
+mode,sequence_count,cross_session_correction_retention_rate,cross_session_correction_retention_rate_ci_low,cross_session_correction_retention_rate_ci_high,error_recurrence_rate,error_recurrence_rate_ci_low,error_recurrence_rate_ci_high,memory_scope_isolation_rate,memory_scope_isolation_rate_ci_low,memory_scope_isolation_rate_ci_high
+direct_answer,10,0.0,0.0,0.0,0.2,0.0,0.5,0.0,0.0,0.0
+mindstate_mirror_local_memory,10,0.4,0.1,0.7,0.2,0.0,0.5,0.2,0.0,0.5
+mindstate_mirror_dual_memory,10,0.6,0.3,0.9,0.2,0.0,0.5,0.2,0.0,0.5

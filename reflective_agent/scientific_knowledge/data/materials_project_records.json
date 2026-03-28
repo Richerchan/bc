@@ -1,0 +1,43 @@
+{
+  "records": [
+    {
+      "entity": "silicon",
+      "property": "band_gap",
+      "value": 0.61,
+      "unit": "eV",
+      "condition": {
+        "calculation": "GGA/PBE",
+        "material_id": "mp-149"
+      },
+      "source": "Materials Project API (local cache)",
+      "timestamp": "2025-01-10T00:00:00Z",
+      "confidence": 0.84
+    },
+    {
+      "entity": "silicon",
+      "property": "formation_energy_per_atom",
+      "value": 0.0,
+      "unit": "eV/atom",
+      "condition": {
+        "calculation": "GGA/PBE",
+        "material_id": "mp-149"
+      },
+      "source": "Materials Project API (local cache)",
+      "timestamp": "2025-01-10T00:00:00Z",
+      "confidence": 0.84
+    },
+    {
+      "entity": "graphite",
+      "property": "band_gap",
+      "value": 0.0,
+      "unit": "eV",
+      "condition": {
+        "calculation": "GGA/PBE",
+        "material_id": "mp-48"
+      },
+      "source": "Materials Project API (local cache)",
+      "timestamp": "2025-01-10T00:00:00Z",
+      "confidence": 0.8
+    }
+  ]
+}

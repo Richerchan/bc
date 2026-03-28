@@ -1,0 +1,4 @@
+track,name,case_count,modes,total_runs,primary_metrics,scientific_purpose
+A,Five-way ablation,30,5 modes,150,pass rate; condition preservation; correction retention,Isolate control-structure gains
+B,Science-facing benchmark,36,3 modes,108,pass rate; condition preservation; abstention precision,Test evidence-bounded scientific behavior
+C,Longitudinal correction retention,20,3 modes,60,retention; recurrence; scope isolation,Test cross-session correction carryover

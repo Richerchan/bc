@@ -1,0 +1,88 @@
+{
+  "entities": [
+    {
+      "canonical_name": "water",
+      "entity_type": "compound",
+      "aliases": ["water", "h2o", "oxidane", "水"],
+      "identifiers": {
+        "pubchem_cid": "962",
+        "chebi_id": "CHEBI:15377",
+        "formula": "H2O"
+      },
+      "properties": {
+        "molar_mass": {
+          "value": 18.01528,
+          "unit": "g/mol",
+          "source": "PubChem / ChEBI (local cache)",
+          "timestamp": "2025-01-10T00:00:00Z",
+          "confidence": 0.97
+        },
+        "formula": {
+          "value": "H2O",
+          "unit": "",
+          "source": "PubChem / ChEBI (local cache)",
+          "timestamp": "2025-01-10T00:00:00Z",
+          "confidence": 0.99
+        },
+        "canonical_smiles": {
+          "value": "O",
+          "unit": "",
+          "source": "PubChem / ChEBI (local cache)",
+          "timestamp": "2025-01-10T00:00:00Z",
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "canonical_name": "ethanol",
+      "entity_type": "compound",
+      "aliases": ["ethanol", "ethyl alcohol", "c2h6o", "乙醇"],
+      "identifiers": {
+        "pubchem_cid": "702",
+        "chebi_id": "CHEBI:16236",
+        "formula": "C2H6O"
+      },
+      "properties": {
+        "molar_mass": {
+          "value": 46.06844,
+          "unit": "g/mol",
+          "source": "PubChem / ChEBI (local cache)",
+          "timestamp": "2025-01-10T00:00:00Z",
+          "confidence": 0.97
+        },
+        "formula": {
+          "value": "C2H6O",
+          "unit": "",
+          "source": "PubChem / ChEBI (local cache)",
+          "timestamp": "2025-01-10T00:00:00Z",
+          "confidence": 0.99
+        },
+        "canonical_smiles": {
+          "value": "CCO",
+          "unit": "",
+          "source": "PubChem / ChEBI (local cache)",
+          "timestamp": "2025-01-10T00:00:00Z",
+          "confidence": 0.97
+        }
+      }
+    },
+    {
+      "canonical_name": "silicon",
+      "entity_type": "material",
+      "aliases": ["silicon", "si", "硅"],
+      "identifiers": {
+        "formula": "Si",
+        "materials_project": "mp-149"
+      },
+      "properties": {
+        "formula": {
+          "value": "Si",
+          "unit": "",
+          "source": "PubChem / ChEBI (local cache)",
+          "timestamp": "2025-01-10T00:00:00Z",
+          "confidence": 0.9
+        }
+      }
+    }
+  ]
+}

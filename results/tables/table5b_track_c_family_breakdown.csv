@@ -1,0 +1,16 @@
+family,mode,sequence_count,retention_rate,retention_spread_std
+abstention_correction,direct_answer,2,0.0,0.0
+abstention_correction,mindstate_mirror_local_memory,2,0.0,0.0
+abstention_correction,mindstate_mirror_dual_memory,2,0.0,0.0
+concept_correction_carryover,direct_answer,2,0.0,0.0
+concept_correction_carryover,mindstate_mirror_local_memory,2,0.0,0.0
+concept_correction_carryover,mindstate_mirror_dual_memory,2,1.0,0.0
+condition_boundary_correction,direct_answer,2,0.0,0.0
+condition_boundary_correction,mindstate_mirror_local_memory,2,1.0,0.0
+condition_boundary_correction,mindstate_mirror_dual_memory,2,1.0,0.0
+project_vs_shared_conflict,direct_answer,2,0.0,0.0
+project_vs_shared_conflict,mindstate_mirror_local_memory,2,1.0,0.0
+project_vs_shared_conflict,mindstate_mirror_dual_memory,2,1.0,0.0
+unit_correction,direct_answer,2,0.0,0.0
+unit_correction,mindstate_mirror_local_memory,2,0.0,0.0
+unit_correction,mindstate_mirror_dual_memory,2,0.0,0.0

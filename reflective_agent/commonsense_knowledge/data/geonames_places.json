@@ -1,0 +1,36 @@
+{
+  "paris": {
+    "canonical_name": "Paris",
+    "entity_type": "city",
+    "geonames_id": 2988507,
+    "aliases": ["City of Paris"],
+    "timestamp": "2026-03-27T00:00:00Z",
+    "facts": {
+      "country": "France",
+      "located_in": "Ile-de-France",
+      "population": 2102650
+    }
+  },
+  "france": {
+    "canonical_name": "France",
+    "entity_type": "country",
+    "geonames_id": 3017382,
+    "aliases": ["French Republic"],
+    "timestamp": "2026-03-27T00:00:00Z",
+    "facts": {
+      "capital_of": "Paris",
+      "continent": "Europe"
+    }
+  },
+  "ulm": {
+    "canonical_name": "Ulm",
+    "entity_type": "city",
+    "geonames_id": 2820256,
+    "aliases": [],
+    "timestamp": "2026-03-27T00:00:00Z",
+    "facts": {
+      "country": "Germany",
+      "located_in": "Baden-Wuerttemberg"
+    }
+  }
+}

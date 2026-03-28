@@ -1,0 +1,58 @@
+Pilot Eval Raw Data
+===================
+
+[single_run]
+  local_only:
+    case_count: 4.0
+    concept_mixing_rate: 0.0
+    premature_convergence_rate: 1.0
+    revision_success_rate: 0.5
+    correction_retention_rate: 0.0
+    shared_memory_pollution_risk: 0.0
+    average_confidence: 0.6075
+    cases:
+      - concept_blending_shared_recovery: verdict=pass, revisions=1, matched=0, project=0, shared=0, correction_retained=False, premature=False, confidence=0.72
+      - premature_convergence_shared_bias_alert: verdict=wait, revisions=4, matched=0, project=0, shared=0, correction_retained=False, premature=True, confidence=0.25
+      - project_local_precedence: verdict=pass, revisions=0, matched=1, project=1, shared=0, correction_retained=True, premature=False, confidence=0.68
+      - bounded_control_case: verdict=pass, revisions=0, matched=0, project=0, shared=0, correction_retained=True, premature=False, confidence=0.78
+  dual_layer:
+    case_count: 4.0
+    concept_mixing_rate: 0.0
+    premature_convergence_rate: 0.0
+    revision_success_rate: 1.0
+    correction_retention_rate: 1.0
+    shared_memory_pollution_risk: 0.0
+    average_confidence: 0.5625
+    cases:
+      - concept_blending_shared_recovery: verdict=pass, revisions=2, matched=2, project=0, shared=2, correction_retained=True, premature=False, confidence=0.54
+      - premature_convergence_shared_bias_alert: verdict=wait, revisions=4, matched=3, project=0, shared=3, correction_retained=True, premature=False, confidence=0.25
+      - project_local_precedence: verdict=pass, revisions=0, matched=2, project=1, shared=1, correction_retained=True, premature=False, confidence=0.68
+      - bounded_control_case: verdict=pass, revisions=0, matched=0, project=0, shared=0, correction_retained=True, premature=False, confidence=0.78
+
+[repeat_5]
+  local_only:
+    case_count: 4.0
+    concept_mixing_rate: 0.0
+    premature_convergence_rate: 1.0
+    revision_success_rate: 0.5
+    correction_retention_rate: 0.0
+    shared_memory_pollution_risk: 0.0
+    average_confidence: 0.6075
+    cases:
+      - concept_blending_shared_recovery: verdict=pass, revisions=1, matched=0, project=0, shared=0, correction_retained=False, premature=False, confidence=0.72
+      - premature_convergence_shared_bias_alert: verdict=wait, revisions=4, matched=0, project=0, shared=0, correction_retained=False, premature=True, confidence=0.25
+      - project_local_precedence: verdict=pass, revisions=0, matched=1, project=1, shared=0, correction_retained=True, premature=False, confidence=0.68
+      - bounded_control_case: verdict=pass, revisions=0, matched=0, project=0, shared=0, correction_retained=True, premature=False, confidence=0.78
+  dual_layer:
+    case_count: 4.0
+    concept_mixing_rate: 0.0
+    premature_convergence_rate: 0.0
+    revision_success_rate: 1.0
+    correction_retention_rate: 1.0
+    shared_memory_pollution_risk: 0.0
+    average_confidence: 0.5625
+    cases:
+      - concept_blending_shared_recovery: verdict=pass, revisions=2, matched=2, project=0, shared=2, correction_retained=True, premature=False, confidence=0.54
+      - premature_convergence_shared_bias_alert: verdict=wait, revisions=4, matched=3, project=0, shared=3, correction_retained=True, premature=False, confidence=0.25
+      - project_local_precedence: verdict=pass, revisions=0, matched=2, project=1, shared=1, correction_retained=True, premature=False, confidence=0.68
+      - bounded_control_case: verdict=pass, revisions=0, matched=0, project=0, shared=0, correction_retained=True, premature=False, confidence=0.78

@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reflective-growth-agent"
+version = "0.1.0"
+description = "A local MVP for a reflective metacognitive agent."
+requires-python = ">=3.10"
+
+[project.scripts]
+reflective-agent = "reflective_agent.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["reflective_agent*"]
+
+[tool.setuptools.package-data]
+"reflective_agent.scientific_knowledge" = ["data/*.json"]

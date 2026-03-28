@@ -1,0 +1,44 @@
+{
+  "constants": [
+    {
+      "name": "Avogadro constant",
+      "aliases": ["avogadro constant", "avogadro number", "na", "阿伏伽德罗常数"],
+      "property": "constant_value",
+      "value": 6.02214076e23,
+      "unit": "mol^-1",
+      "source": "NIST CODATA 2022 (local cache)",
+      "timestamp": "2022-05-20T00:00:00Z",
+      "confidence": 0.99
+    },
+    {
+      "name": "Boltzmann constant",
+      "aliases": ["boltzmann constant", "k_b", "kb", "玻尔兹曼常数"],
+      "property": "constant_value",
+      "value": 1.380649e-23,
+      "unit": "J/K",
+      "source": "NIST CODATA 2022 (local cache)",
+      "timestamp": "2022-05-20T00:00:00Z",
+      "confidence": 0.99
+    },
+    {
+      "name": "Planck constant",
+      "aliases": ["planck constant", "h", "普朗克常数"],
+      "property": "constant_value",
+      "value": 6.62607015e-34,
+      "unit": "J*s",
+      "source": "NIST CODATA 2022 (local cache)",
+      "timestamp": "2022-05-20T00:00:00Z",
+      "confidence": 0.99
+    },
+    {
+      "name": "Gas constant",
+      "aliases": ["gas constant", "ideal gas constant", "r", "气体常数"],
+      "property": "constant_value",
+      "value": 8.314462618,
+      "unit": "J/(mol*K)",
+      "source": "NIST CODATA 2022 (local cache)",
+      "timestamp": "2022-05-20T00:00:00Z",
+      "confidence": 0.99
+    }
+  ]
+}

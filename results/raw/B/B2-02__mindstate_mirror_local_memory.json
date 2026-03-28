@@ -1,0 +1,1058 @@
+{
+  "case": {
+    "case_id": "B2-02",
+    "track": "B",
+    "family": "condition_sensitive_properties",
+    "ablation_level": "science_eval",
+    "prompt": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+    "goal": "Return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+    "injected_error": "condition_drop",
+    "ground_truth": {
+      "value": 99.97400000000005,
+      "unit": "C",
+      "tolerance": 0.001,
+      "condition_fragment": "pressure_atm"
+    },
+    "ground_truth_source": "NIST Chemistry WebBook (local cache): water boiling point at 1 atm",
+    "expected_verdict_sequence": [
+      "revise"
+    ],
+    "expected_revision_count": 1,
+    "metrics_under_test": [
+      "numeric_accuracy",
+      "unit_consistency",
+      "condition_preservation",
+      "evidence_citation_presence"
+    ],
+    "sequence_id": null,
+    "sequence_step": null,
+    "seed_memories": {
+      "project_local": [
+        {
+          "input_summary": "Project-local condition discipline for condition_sensitive_properties.",
+          "context_tags": [
+            "memory_scope:project_local",
+            "task_goal:condition_governance"
+          ],
+          "claim": "Project-local scientific responses for condition_sensitive_properties must preserve source conditions.",
+          "evidence_summary": [
+            "Use local evidence before general guidance when source conditions and requested conditions do not match."
+          ],
+          "fact_items": [
+            "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+          ],
+          "bias_tags": [
+            "condition_drop",
+            "unsupported_certainty"
+          ],
+          "correction_actions": [
+            "Preserve source conditions explicitly.",
+            "Prefer qualified answers to extrapolation when conditions mismatch."
+          ],
+          "correction_lineage": [
+            "Project-local correction lineage requires condition-preserving, evidence-first answers."
+          ],
+          "strategy_tags": [
+            "Use local evidence before general guidance."
+          ],
+          "final_result": "Project-local condition rule stored.",
+          "reusable_lessons": [
+            "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+          ]
+        }
+      ],
+      "shared_growth": [
+        {
+          "input_summary": "Shared correction lineage for condition_sensitive_properties.",
+          "context_tags": [
+            "memory_scope:shared_growth",
+            "task_goal:bounded_scientific_reasoning"
+          ],
+          "claim": "Repeated failures in condition_sensitive_properties come from reusing nearby values beyond their supported conditions.",
+          "evidence_summary": [
+            "Prior correction: when conditions or source scope do not match, answer provisionally or defer."
+          ],
+          "fact_items": [],
+          "bias_tags": [
+            "unsupported_certainty",
+            "old_template_reuse",
+            "condition_drop"
+          ],
+          "correction_actions": [
+            "Carry forward prior correction lessons before making a new claim.",
+            "Do not substitute the nearest known condition for the requested condition."
+          ],
+          "correction_lineage": [
+            "Prior correction lessons have been incorporated for unsupported-condition handling."
+          ],
+          "strategy_tags": [
+            "Use prior correction lessons before finalizing a scientific claim."
+          ],
+          "final_result": "Shared correction lesson stored.",
+          "reusable_lessons": [
+            "Prior correction lessons have been incorporated: preserve the source condition or defer."
+          ]
+        }
+      ]
+    }
+  },
+  "run": {
+    "mode": "mindstate_mirror_local_memory",
+    "final_state": {
+      "current_input": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+      "task_goal": "Return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+      "main_claim": "Evidence-constrained view: water boiling_point is 99.97400000000005 C under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).",
+      "evidence": [
+        "Scientific evidence: water boiling_point = 99.97400000000005 C from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+        "Memory fact hint: Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+      ],
+      "hidden_assumptions": [
+        "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+        "Historical bias risk suggests checking: condition_drop",
+        "Historical bias risk suggests checking: unsupported_certainty"
+      ],
+      "alternative_paths": [
+        "Revise the claim with narrower scope.",
+        "Retrieve prior corrections before answering.",
+        "Wait for more evidence if the current prompt is underspecified.",
+        "Answer only from resolved scientific evidence records.",
+        "Reuse strategy: Use local evidence before general guidance.",
+        "Reuse strategy: Preserve source conditions and prefer qualified answers when the local record does not match the request."
+      ],
+      "confidence": 0.85,
+      "self_risk": [
+        "condition_drop",
+        "unsupported_certainty"
+      ],
+      "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing.",
+      "self_state": {
+        "stability": 0.7999999999999999,
+        "uncertainty": 0.3,
+        "bias_risk": 0.3,
+        "memory_pressure": 0.15,
+        "attention_mode": "committed",
+        "active_goal": "Return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+        "continuity_notes": [
+          "Revision #0: built candidate cognition state.",
+          "Memory influence engaged from 1 prior episode(s)."
+        ]
+      },
+      "context_tags": [
+        "task:Return_the_answer,_preserve_the_source_condition_explicitly,_and_cite_the_local_evidence_source.",
+        "input:general",
+        "evidence:scientific_knowledge",
+        "source:nist_webbook",
+        "memory_scope:project_local",
+        "task_goal:condition_governance"
+      ],
+      "strategy_notes": [
+        "Use local evidence before general guidance.",
+        "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+        "Inspect recurrent bias alerts before concluding."
+      ],
+      "memory_influence": {
+        "fact_hints": [
+          "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+        ],
+        "context_hints": [
+          "memory_scope:project_local",
+          "task_goal:condition_governance"
+        ],
+        "preference_hints": [],
+        "bias_alerts": [
+          "condition_drop",
+          "unsupported_certainty"
+        ],
+        "correction_hints": [
+          "Preserve source conditions explicitly.",
+          "Prefer qualified answers to extrapolation when conditions mismatch.",
+          "Project-local correction lineage requires condition-preserving, evidence-first answers."
+        ],
+        "strategy_hints": [
+          "Use local evidence before general guidance.",
+          "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+        ],
+        "divergence_triggers": [],
+        "matched_episode_count": 1,
+        "project_match_count": 1,
+        "shared_match_count": 0
+      },
+      "evidence_pack": {
+        "query": {
+          "raw_text": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+          "normalized_text": "state the water boiling point at 1 atm in c and keep the pressure condition explicit. return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+          "query_type": "entity_property",
+          "entity_candidates": [
+            "State",
+            "water",
+            "boiling",
+            "point",
+            "atm",
+            "in",
+            "C",
+            "and",
+            "keep",
+            "pressure",
+            "condition",
+            "explicit"
+          ],
+          "property_name": "boiling_point",
+          "requested_unit": "C",
+          "condition": {
+            "pressure_atm": 1.0
+          },
+          "source_hints": []
+        },
+        "entities": [
+          {
+            "canonical_name": "water",
+            "entity_type": "compound",
+            "identifiers": {
+              "pubchem_cid": "962",
+              "chebi_id": "CHEBI:15377",
+              "formula": "H2O"
+            },
+            "aliases": [
+              "water",
+              "h2o",
+              "oxidane",
+              "\u6c34"
+            ],
+            "source": "PubChem / ChEBI (local cache)",
+            "confidence": 0.96
+          }
+        ],
+        "records": [
+          {
+            "entity": "water",
+            "property": "boiling_point",
+            "value": 373.124,
+            "unit": "K",
+            "condition": {
+              "pressure_atm": 1.0
+            },
+            "source": "NIST Chemistry WebBook (local cache)",
+            "timestamp": "2025-01-10T00:00:00Z",
+            "confidence": 0.96,
+            "provenance_type": "local_cache",
+            "normalized_value": 99.97400000000005,
+            "normalized_unit": "C",
+            "identifiers": {},
+            "notes": [
+              "Returned from local NIST Chemistry WebBook cache."
+            ]
+          }
+        ],
+        "warnings": [],
+        "selected_sources": [
+          "nist_webbook"
+        ],
+        "routing_trace": [
+          "source=nist_webbook hits=1"
+        ]
+      },
+      "commonsense_evidence_pack": {
+        "query": {
+          "raw_text": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+          "normalized_text": "state the water boiling point at 1 atm in c and keep the pressure condition explicit.",
+          "entity_candidates": [
+            "State",
+            "C"
+          ],
+          "relation_hints": [],
+          "intent": "general",
+          "source_hints": []
+        },
+        "entities": [],
+        "records": [],
+        "warnings": [],
+        "selected_sources": [
+          "wikidata",
+          "conceptnet"
+        ],
+        "routing_trace": [
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0"
+        ]
+      },
+      "revision_count": 0,
+      "retrieved_lessons": [
+        "Preserve source conditions explicitly.",
+        "Prefer qualified answers to extrapolation when conditions mismatch.",
+        "Project-local correction lineage requires condition-preserving, evidence-first answers.",
+        "Use local evidence before general guidance.",
+        "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+      ]
+    },
+    "final_verdict": {
+      "verdict": "pass",
+      "issues": [],
+      "guidance": [
+        "Current state is sufficiently bounded for output."
+      ],
+      "self_state_update": {
+        "attention_mode": "committed",
+        "stability": 0.7999999999999999
+      }
+    },
+    "raw_output": "Result: Evidence-constrained view: water boiling_point is 99.97400000000005 C under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\nEvidence summary: Scientific evidence: water boiling_point = 99.97400000000005 C from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.; Memory fact hint: Project-local fact: a 1 atm record must not be silently reused for a 2 atm request.\nKnowledge evidence: water:boiling_point\nCommonsense evidence: none\nMemory influence: matches=1, lessons=Preserve source conditions explicitly.; Prefer qualified answers to extrapolation when conditions mismatch.; Project-local correction lineage requires condition-preserving, evidence-first answers.; Use local evidence before general guidance.; Preserve source conditions and prefer qualified answers when the local record does not match the request.\nMirror verdict: pass\nUncertainty: 0.30",
+    "trace": [
+      "stage=memory influence_matches=1 project_matches=1 shared_matches=0",
+      "stage=query_parse property=boiling_point type=entity_property entities=['State', 'water', 'boiling', 'point', 'atm', 'in', 'C', 'and', 'keep', 'pressure', 'condition', 'explicit']",
+      "stage=entity_resolve resolved=['water']",
+      "stage=source_route selected=['nist_webbook']",
+      "source=nist_webbook hits=1",
+      "stage=commonsense_query intent=general relations=[] entities=['State', 'C']",
+      "stage=commonsense_entity_resolve resolved=[]",
+      "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+      "source=wikidata hits=0",
+      "source=conceptnet hits=0",
+      "stage=memory bias_alerts=['condition_drop', 'unsupported_certainty'] correction_hints=['Preserve source conditions explicitly.', 'Prefer qualified answers to extrapolation when conditions mismatch.', 'Project-local correction lineage requires condition-preserving, evidence-first answers.'] divergence_triggers=[]",
+      "cycle=0 stage=cognition claim=\"Evidence-constrained view: water boiling_point is 99.97400000000005 C under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\"",
+      "cycle=0 stage=mirror verdict=pass issues=[]"
+    ],
+    "retrieved_lessons": [
+      "Preserve source conditions explicitly.",
+      "Prefer qualified answers to extrapolation when conditions mismatch.",
+      "Project-local correction lineage requires condition-preserving, evidence-first answers.",
+      "Use local evidence before general guidance.",
+      "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+    ],
+    "memory_matches": {
+      "matched_episode_count": 1,
+      "project_match_count": 1,
+      "shared_match_count": 0
+    },
+    "audit": {
+      "run_audit": {
+        "current_input": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+        "task_goal": "Return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+        "memory_influence": {
+          "fact_hints": [
+            "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+          ],
+          "context_hints": [
+            "memory_scope:project_local",
+            "task_goal:condition_governance"
+          ],
+          "preference_hints": [],
+          "bias_alerts": [
+            "condition_drop",
+            "unsupported_certainty"
+          ],
+          "correction_hints": [
+            "Preserve source conditions explicitly.",
+            "Prefer qualified answers to extrapolation when conditions mismatch.",
+            "Project-local correction lineage requires condition-preserving, evidence-first answers."
+          ],
+          "strategy_hints": [
+            "Use local evidence before general guidance.",
+            "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+          ],
+          "divergence_triggers": [],
+          "matched_episode_count": 1,
+          "project_match_count": 1,
+          "shared_match_count": 0
+        },
+        "knowledge_audit": {
+          "query": {
+            "raw_text": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+            "normalized_text": "state the water boiling point at 1 atm in c and keep the pressure condition explicit. return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+            "query_type": "entity_property",
+            "entity_candidates": [
+              "State",
+              "water",
+              "boiling",
+              "point",
+              "atm",
+              "in",
+              "C",
+              "and",
+              "keep",
+              "pressure",
+              "condition",
+              "explicit"
+            ],
+            "property_name": "boiling_point",
+            "requested_unit": "C",
+            "condition": {
+              "pressure_atm": 1.0
+            },
+            "source_hints": []
+          },
+          "entities": [
+            {
+              "canonical_name": "water",
+              "entity_type": "compound",
+              "identifiers": {
+                "pubchem_cid": "962",
+                "chebi_id": "CHEBI:15377",
+                "formula": "H2O"
+              },
+              "aliases": [
+                "water",
+                "h2o",
+                "oxidane",
+                "\u6c34"
+              ],
+              "source": "PubChem / ChEBI (local cache)",
+              "confidence": 0.96
+            }
+          ],
+          "selected_sources": [
+            "nist_webbook"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+              "normalized_text": "state the water boiling point at 1 atm in c and keep the pressure condition explicit. return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+              "query_type": "entity_property",
+              "entity_candidates": [
+                "State",
+                "water",
+                "boiling",
+                "point",
+                "atm",
+                "in",
+                "C",
+                "and",
+                "keep",
+                "pressure",
+                "condition",
+                "explicit"
+              ],
+              "property_name": "boiling_point",
+              "requested_unit": "C",
+              "condition": {
+                "pressure_atm": 1.0
+              },
+              "source_hints": []
+            },
+            "entities": [
+              {
+                "canonical_name": "water",
+                "entity_type": "compound",
+                "identifiers": {
+                  "pubchem_cid": "962",
+                  "chebi_id": "CHEBI:15377",
+                  "formula": "H2O"
+                },
+                "aliases": [
+                  "water",
+                  "h2o",
+                  "oxidane",
+                  "\u6c34"
+                ],
+                "source": "PubChem / ChEBI (local cache)",
+                "confidence": 0.96
+              }
+            ],
+            "records": [
+              {
+                "entity": "water",
+                "property": "boiling_point",
+                "value": 373.124,
+                "unit": "K",
+                "condition": {
+                  "pressure_atm": 1.0
+                },
+                "source": "NIST Chemistry WebBook (local cache)",
+                "timestamp": "2025-01-10T00:00:00Z",
+                "confidence": 0.96,
+                "provenance_type": "local_cache",
+                "normalized_value": 99.97400000000005,
+                "normalized_unit": "C",
+                "identifiers": {},
+                "notes": [
+                  "Returned from local NIST Chemistry WebBook cache."
+                ]
+              }
+            ],
+            "warnings": [],
+            "selected_sources": [
+              "nist_webbook"
+            ],
+            "routing_trace": [
+              "source=nist_webbook hits=1"
+            ]
+          },
+          "trace": [
+            "stage=query_parse property=boiling_point type=entity_property entities=['State', 'water', 'boiling', 'point', 'atm', 'in', 'C', 'and', 'keep', 'pressure', 'condition', 'explicit']",
+            "stage=entity_resolve resolved=['water']",
+            "stage=source_route selected=['nist_webbook']",
+            "source=nist_webbook hits=1"
+          ]
+        },
+        "commonsense_audit": {
+          "query": {
+            "raw_text": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+            "normalized_text": "state the water boiling point at 1 atm in c and keep the pressure condition explicit.",
+            "entity_candidates": [
+              "State",
+              "C"
+            ],
+            "relation_hints": [],
+            "intent": "general",
+            "source_hints": []
+          },
+          "entities": [],
+          "selected_sources": [
+            "wikidata",
+            "conceptnet"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+              "normalized_text": "state the water boiling point at 1 atm in c and keep the pressure condition explicit.",
+              "entity_candidates": [
+                "State",
+                "C"
+              ],
+              "relation_hints": [],
+              "intent": "general",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "wikidata",
+              "conceptnet"
+            ],
+            "routing_trace": [
+              "source=wikidata hits=0",
+              "source=conceptnet hits=0"
+            ]
+          },
+          "trace": [
+            "stage=commonsense_query intent=general relations=[] entities=['State', 'C']",
+            "stage=commonsense_entity_resolve resolved=[]",
+            "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+            "source=wikidata hits=0",
+            "source=conceptnet hits=0"
+          ]
+        },
+        "cycles": [
+          {
+            "cycle": 0,
+            "cognition_state": {
+              "current_input": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+              "task_goal": "Return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+              "main_claim": "Evidence-constrained view: water boiling_point is 99.97400000000005 C under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).",
+              "evidence": [
+                "Scientific evidence: water boiling_point = 99.97400000000005 C from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+                "Memory fact hint: Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+                "Historical bias risk suggests checking: condition_drop",
+                "Historical bias risk suggests checking: unsupported_certainty"
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records.",
+                "Reuse strategy: Use local evidence before general guidance.",
+                "Reuse strategy: Preserve source conditions and prefer qualified answers when the local record does not match the request."
+              ],
+              "confidence": 0.85,
+              "self_risk": [
+                "condition_drop",
+                "unsupported_certainty"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing.",
+              "self_state": {
+                "stability": 0.7999999999999999,
+                "uncertainty": 0.3,
+                "bias_risk": 0.3,
+                "memory_pressure": 0.15,
+                "attention_mode": "committed",
+                "active_goal": "Return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Memory influence engaged from 1 prior episode(s)."
+                ]
+              },
+              "context_tags": [
+                "task:Return_the_answer,_preserve_the_source_condition_explicitly,_and_cite_the_local_evidence_source.",
+                "input:general",
+                "evidence:scientific_knowledge",
+                "source:nist_webbook",
+                "memory_scope:project_local",
+                "task_goal:condition_governance"
+              ],
+              "strategy_notes": [
+                "Use local evidence before general guidance.",
+                "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+                "Inspect recurrent bias alerts before concluding."
+              ],
+              "memory_influence": {
+                "fact_hints": [
+                  "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+                ],
+                "context_hints": [
+                  "memory_scope:project_local",
+                  "task_goal:condition_governance"
+                ],
+                "preference_hints": [],
+                "bias_alerts": [
+                  "condition_drop",
+                  "unsupported_certainty"
+                ],
+                "correction_hints": [
+                  "Preserve source conditions explicitly.",
+                  "Prefer qualified answers to extrapolation when conditions mismatch.",
+                  "Project-local correction lineage requires condition-preserving, evidence-first answers."
+                ],
+                "strategy_hints": [
+                  "Use local evidence before general guidance.",
+                  "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+                ],
+                "divergence_triggers": [],
+                "matched_episode_count": 1,
+                "project_match_count": 1,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+                  "normalized_text": "state the water boiling point at 1 atm in c and keep the pressure condition explicit. return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "State",
+                    "water",
+                    "boiling",
+                    "point",
+                    "atm",
+                    "in",
+                    "C",
+                    "and",
+                    "keep",
+                    "pressure",
+                    "condition",
+                    "explicit"
+                  ],
+                  "property_name": "boiling_point",
+                  "requested_unit": "C",
+                  "condition": {
+                    "pressure_atm": 1.0
+                  },
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "water",
+                    "entity_type": "compound",
+                    "identifiers": {
+                      "pubchem_cid": "962",
+                      "chebi_id": "CHEBI:15377",
+                      "formula": "H2O"
+                    },
+                    "aliases": [
+                      "water",
+                      "h2o",
+                      "oxidane",
+                      "\u6c34"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "water",
+                    "property": "boiling_point",
+                    "value": 373.124,
+                    "unit": "K",
+                    "condition": {
+                      "pressure_atm": 1.0
+                    },
+                    "source": "NIST Chemistry WebBook (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.96,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 99.97400000000005,
+                    "normalized_unit": "C",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local NIST Chemistry WebBook cache."
+                    ]
+                  }
+                ],
+                "warnings": [],
+                "selected_sources": [
+                  "nist_webbook"
+                ],
+                "routing_trace": [
+                  "source=nist_webbook hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+                  "normalized_text": "state the water boiling point at 1 atm in c and keep the pressure condition explicit.",
+                  "entity_candidates": [
+                    "State",
+                    "C"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 0,
+              "retrieved_lessons": [
+                "Preserve source conditions explicitly.",
+                "Prefer qualified answers to extrapolation when conditions mismatch.",
+                "Project-local correction lineage requires condition-preserving, evidence-first answers.",
+                "Use local evidence before general guidance.",
+                "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+              ]
+            },
+            "mirror_verdict": {
+              "verdict": "pass",
+              "issues": [],
+              "guidance": [
+                "Current state is sufficiently bounded for output."
+              ],
+              "self_state_update": {
+                "attention_mode": "committed",
+                "stability": 0.7999999999999999
+              }
+            }
+          }
+        ],
+        "final_output": "Result: Evidence-constrained view: water boiling_point is 99.97400000000005 C under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\nEvidence summary: Scientific evidence: water boiling_point = 99.97400000000005 C from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.; Memory fact hint: Project-local fact: a 1 atm record must not be silently reused for a 2 atm request.\nKnowledge evidence: water:boiling_point\nCommonsense evidence: none\nMemory influence: matches=1, lessons=Preserve source conditions explicitly.; Prefer qualified answers to extrapolation when conditions mismatch.; Project-local correction lineage requires condition-preserving, evidence-first answers.; Use local evidence before general guidance.; Preserve source conditions and prefer qualified answers when the local record does not match the request.\nMirror verdict: pass\nUncertainty: 0.30",
+        "final_state": {
+          "current_input": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+          "task_goal": "Return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+          "main_claim": "Evidence-constrained view: water boiling_point is 99.97400000000005 C under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).",
+          "evidence": [
+            "Scientific evidence: water boiling_point = 99.97400000000005 C from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+            "Memory fact hint: Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+          ],
+          "hidden_assumptions": [
+            "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+            "Historical bias risk suggests checking: condition_drop",
+            "Historical bias risk suggests checking: unsupported_certainty"
+          ],
+          "alternative_paths": [
+            "Revise the claim with narrower scope.",
+            "Retrieve prior corrections before answering.",
+            "Wait for more evidence if the current prompt is underspecified.",
+            "Answer only from resolved scientific evidence records.",
+            "Reuse strategy: Use local evidence before general guidance.",
+            "Reuse strategy: Preserve source conditions and prefer qualified answers when the local record does not match the request."
+          ],
+          "confidence": 0.85,
+          "self_risk": [
+            "condition_drop",
+            "unsupported_certainty"
+          ],
+          "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing.",
+          "self_state": {
+            "stability": 0.7999999999999999,
+            "uncertainty": 0.3,
+            "bias_risk": 0.3,
+            "memory_pressure": 0.15,
+            "attention_mode": "committed",
+            "active_goal": "Return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+            "continuity_notes": [
+              "Revision #0: built candidate cognition state.",
+              "Memory influence engaged from 1 prior episode(s)."
+            ]
+          },
+          "context_tags": [
+            "task:Return_the_answer,_preserve_the_source_condition_explicitly,_and_cite_the_local_evidence_source.",
+            "input:general",
+            "evidence:scientific_knowledge",
+            "source:nist_webbook",
+            "memory_scope:project_local",
+            "task_goal:condition_governance"
+          ],
+          "strategy_notes": [
+            "Use local evidence before general guidance.",
+            "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+            "Inspect recurrent bias alerts before concluding."
+          ],
+          "memory_influence": {
+            "fact_hints": [
+              "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+            ],
+            "context_hints": [
+              "memory_scope:project_local",
+              "task_goal:condition_governance"
+            ],
+            "preference_hints": [],
+            "bias_alerts": [
+              "condition_drop",
+              "unsupported_certainty"
+            ],
+            "correction_hints": [
+              "Preserve source conditions explicitly.",
+              "Prefer qualified answers to extrapolation when conditions mismatch.",
+              "Project-local correction lineage requires condition-preserving, evidence-first answers."
+            ],
+            "strategy_hints": [
+              "Use local evidence before general guidance.",
+              "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+            ],
+            "divergence_triggers": [],
+            "matched_episode_count": 1,
+            "project_match_count": 1,
+            "shared_match_count": 0
+          },
+          "evidence_pack": {
+            "query": {
+              "raw_text": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+              "normalized_text": "state the water boiling point at 1 atm in c and keep the pressure condition explicit. return the answer, preserve the source condition explicitly, and cite the local evidence source.",
+              "query_type": "entity_property",
+              "entity_candidates": [
+                "State",
+                "water",
+                "boiling",
+                "point",
+                "atm",
+                "in",
+                "C",
+                "and",
+                "keep",
+                "pressure",
+                "condition",
+                "explicit"
+              ],
+              "property_name": "boiling_point",
+              "requested_unit": "C",
+              "condition": {
+                "pressure_atm": 1.0
+              },
+              "source_hints": []
+            },
+            "entities": [
+              {
+                "canonical_name": "water",
+                "entity_type": "compound",
+                "identifiers": {
+                  "pubchem_cid": "962",
+                  "chebi_id": "CHEBI:15377",
+                  "formula": "H2O"
+                },
+                "aliases": [
+                  "water",
+                  "h2o",
+                  "oxidane",
+                  "\u6c34"
+                ],
+                "source": "PubChem / ChEBI (local cache)",
+                "confidence": 0.96
+              }
+            ],
+            "records": [
+              {
+                "entity": "water",
+                "property": "boiling_point",
+                "value": 373.124,
+                "unit": "K",
+                "condition": {
+                  "pressure_atm": 1.0
+                },
+                "source": "NIST Chemistry WebBook (local cache)",
+                "timestamp": "2025-01-10T00:00:00Z",
+                "confidence": 0.96,
+                "provenance_type": "local_cache",
+                "normalized_value": 99.97400000000005,
+                "normalized_unit": "C",
+                "identifiers": {},
+                "notes": [
+                  "Returned from local NIST Chemistry WebBook cache."
+                ]
+              }
+            ],
+            "warnings": [],
+            "selected_sources": [
+              "nist_webbook"
+            ],
+            "routing_trace": [
+              "source=nist_webbook hits=1"
+            ]
+          },
+          "commonsense_evidence_pack": {
+            "query": {
+              "raw_text": "State the water boiling point at 1 atm in C and keep the pressure condition explicit.",
+              "normalized_text": "state the water boiling point at 1 atm in c and keep the pressure condition explicit.",
+              "entity_candidates": [
+                "State",
+                "C"
+              ],
+              "relation_hints": [],
+              "intent": "general",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "wikidata",
+              "conceptnet"
+            ],
+            "routing_trace": [
+              "source=wikidata hits=0",
+              "source=conceptnet hits=0"
+            ]
+          },
+          "revision_count": 0,
+          "retrieved_lessons": [
+            "Preserve source conditions explicitly.",
+            "Prefer qualified answers to extrapolation when conditions mismatch.",
+            "Project-local correction lineage requires condition-preserving, evidence-first answers.",
+            "Use local evidence before general guidance.",
+            "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+          ]
+        },
+        "final_verdict": {
+          "verdict": "pass",
+          "issues": [],
+          "guidance": [
+            "Current state is sufficiently bounded for output."
+          ],
+          "self_state_update": {
+            "attention_mode": "committed",
+            "stability": 0.7999999999999999
+          }
+        },
+        "trace": [
+          "stage=memory influence_matches=1 project_matches=1 shared_matches=0",
+          "stage=query_parse property=boiling_point type=entity_property entities=['State', 'water', 'boiling', 'point', 'atm', 'in', 'C', 'and', 'keep', 'pressure', 'condition', 'explicit']",
+          "stage=entity_resolve resolved=['water']",
+          "stage=source_route selected=['nist_webbook']",
+          "source=nist_webbook hits=1",
+          "stage=commonsense_query intent=general relations=[] entities=['State', 'C']",
+          "stage=commonsense_entity_resolve resolved=[]",
+          "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0",
+          "stage=memory bias_alerts=['condition_drop', 'unsupported_certainty'] correction_hints=['Preserve source conditions explicitly.', 'Prefer qualified answers to extrapolation when conditions mismatch.', 'Project-local correction lineage requires condition-preserving, evidence-first answers.'] divergence_triggers=[]",
+          "cycle=0 stage=cognition claim=\"Evidence-constrained view: water boiling_point is 99.97400000000005 C under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\"",
+          "cycle=0 stage=mirror verdict=pass issues=[]"
+        ]
+      },
+      "seeds": {
+        "project_seed": [
+          {
+            "input_summary": "Project-local condition discipline for condition_sensitive_properties.",
+            "context_tags": [
+              "memory_scope:project_local",
+              "task_goal:condition_governance"
+            ],
+            "claim": "Project-local scientific responses for condition_sensitive_properties must preserve source conditions.",
+            "evidence_summary": [
+              "Use local evidence before general guidance when source conditions and requested conditions do not match."
+            ],
+            "fact_items": [
+              "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+            ],
+            "bias_tags": [
+              "condition_drop",
+              "unsupported_certainty"
+            ],
+            "correction_actions": [
+              "Preserve source conditions explicitly.",
+              "Prefer qualified answers to extrapolation when conditions mismatch."
+            ],
+            "correction_lineage": [
+              "Project-local correction lineage requires condition-preserving, evidence-first answers."
+            ],
+            "strategy_tags": [
+              "Use local evidence before general guidance."
+            ],
+            "final_result": "Project-local condition rule stored.",
+            "reusable_lessons": [
+              "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+            ]
+          }
+        ],
+        "shared_seed": [
+          {
+            "input_summary": "Shared correction lineage for condition_sensitive_properties.",
+            "context_tags": [
+              "memory_scope:shared_growth",
+              "task_goal:bounded_scientific_reasoning"
+            ],
+            "claim": "Repeated failures in condition_sensitive_properties come from reusing nearby values beyond their supported conditions.",
+            "evidence_summary": [
+              "Prior correction: when conditions or source scope do not match, answer provisionally or defer."
+            ],
+            "fact_items": [],
+            "bias_tags": [
+              "unsupported_certainty",
+              "old_template_reuse",
+              "condition_drop"
+            ],
+            "correction_actions": [
+              "Carry forward prior correction lessons before making a new claim.",
+              "Do not substitute the nearest known condition for the requested condition."
+            ],
+            "correction_lineage": [
+              "Prior correction lessons have been incorporated for unsupported-condition handling."
+            ],
+            "strategy_tags": [
+              "Use prior correction lessons before finalizing a scientific claim."
+            ],
+            "final_result": "Shared correction lesson stored.",
+            "reusable_lessons": [
+              "Prior correction lessons have been incorporated: preserve the source condition or defer."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "scoring": {
+    "metrics": {
+      "revision_count": 0,
+      "final_verdict": "pass",
+      "confidence": 0.85,
+      "expected_revision_count": 1,
+      "expected_verdict_sequence": [
+        "revise"
+      ],
+      "concept_mixing_present": false,
+      "premature_convergence_present": false,
+      "unsupported_certainty_present": false,
+      "project_local_precedence_preserved": true,
+      "correction_retained": true,
+      "numeric_match": true,
+      "label_match": true,
+      "unit_match": true,
+      "condition_preserved": true,
+      "source_citation_present": true,
+      "uncertainty_marker_present": true,
+      "abstained_or_qualified": true,
+      "shared_memory_pollution_risk": 0.0,
+      "matched_episode_count": 1,
+      "project_match_count": 1,
+      "shared_match_count": 0,
+      "extracted_value": 99.97400000000005,
+      "extracted_unit": "C"
+    },
+    "rule_evaluation": {
+      "must_match_numeric_within_tolerance": true,
+      "must_preserve_condition": true,
+      "must_include_source_citation": true,
+      "expected_verdict_sequence": false
+    },
+    "failure_reasons": []
+  }
+}

@@ -1,0 +1,1343 @@
+{
+  "case": {
+    "case_id": "C-Seq01-S2",
+    "track": "C",
+    "family": "concept_correction_carryover",
+    "ablation_level": "sequence_eval",
+    "prompt": "Try again: what is the Avogadro constant from the local cache?",
+    "goal": "Reuse the prior correction about evidence mismatch before answering.",
+    "injected_error": "concept_correction_carryover",
+    "ground_truth": {
+      "expected_correction_fragment": "prior correction lessons have been incorporated",
+      "expected_memory_scope": "shared_or_project"
+    },
+    "ground_truth_source": "sequence_generated",
+    "expected_verdict_sequence": [
+      "wait"
+    ],
+    "expected_revision_count": 1,
+    "metrics_under_test": [
+      "cross_session_correction_retention_rate",
+      "error_recurrence_rate",
+      "memory_scope_isolation_rate",
+      "shared_memory_pollution_risk"
+    ],
+    "sequence_id": "C-Seq01",
+    "sequence_step": 2,
+    "seed_memories": {
+      "project_local": [],
+      "shared_growth": []
+    }
+  },
+  "run": {
+    "mode": "mindstate_mirror_dual_memory",
+    "final_state": {
+      "current_input": "Try again: what is the Avogadro constant from the local cache?",
+      "task_goal": "Reuse the prior correction about evidence mismatch before answering.",
+      "main_claim": "Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated.",
+      "evidence": [
+        "Scientific evidence: Gas constant constant_value = 8.314462618 J/(mol*K) from NIST CODATA 2022 (local cache).",
+        "Memory fact hint: Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+        "Memory fact hint: Retrieved lesson: Do not substitute the nearest known condition for the requested condition.",
+        "Memory fact hint: Retrieved lesson: Carry forward prior correction lessons before making a new claim.",
+        "Memory fact hint: Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+        "Memory fact hint: Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+        "Retrieved lesson: Current state is sufficiently bounded for output.",
+        "Retrieved lesson: Revision count reached 2.",
+        "Retrieved lesson: Inspect recurrent bias alerts before concluding.",
+        "Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+        "Retrieved lesson: Switch to an alternative explanatory scaffold.",
+        "Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+        "Retrieved lesson: Use prior correction history as a first-class planning signal."
+      ],
+      "hidden_assumptions": [
+        "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+        "Historical bias risk suggests checking: old_template_reuse",
+        "Historical bias risk suggests checking: revision_applied",
+        "Prior bias alert: old_template_reuse",
+        "Prior bias alert: revision_applied"
+      ],
+      "alternative_paths": [
+        "Revise the claim with narrower scope.",
+        "Retrieve prior corrections before answering.",
+        "Wait for more evidence if the current prompt is underspecified.",
+        "Answer only from resolved scientific evidence records.",
+        "Diverge from prior templates while keeping explicit constraints.",
+        "Reuse strategy: Inspect recurrent bias alerts before concluding.",
+        "Reuse strategy: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+        "Reuse strategy: Switch to an alternative explanatory scaffold.",
+        "Reuse strategy: Use prior correction lessons before finalizing a scientific claim.",
+        "Reuse strategy: Use prior correction history as a first-class planning signal.",
+        "Produce a structurally different explanation before final output."
+      ],
+      "confidence": 0.48999999999999994,
+      "self_risk": [
+        "old_template_reuse",
+        "revision_applied"
+      ],
+      "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing. Deliberately avoid stale templates.",
+      "self_state": {
+        "stability": 0.7999999999999999,
+        "uncertainty": 0.9,
+        "bias_risk": 0.7999999999999999,
+        "memory_pressure": 1.0,
+        "attention_mode": "committed",
+        "active_goal": "Reuse the prior correction about evidence mismatch before answering.",
+        "continuity_notes": [
+          "Revision #0: built candidate cognition state.",
+          "Memory influence engaged from 6 prior episode(s).",
+          "Revision #1: applied mirror guidance.",
+          "Revision #2: applied mirror guidance."
+        ]
+      },
+      "context_tags": [
+        "evidence:scientific_knowledge",
+        "input:general",
+        "revision_count:2",
+        "source:codata_constants",
+        "task:Reuse_the_prior_correction_about_evidence_mismatch_before_answering.",
+        "task_goal:If_the_parser_resolves_a_mismatched_constant,_avoid_asserting_the_value_and_write_a_correction_about_evidence_mismatch."
+      ],
+      "strategy_notes": [
+        "Inspect recurrent bias alerts before concluding.",
+        "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+        "Switch to an alternative explanatory scaffold.",
+        "Use prior correction history as a first-class planning signal.",
+        "Use prior correction lessons before finalizing a scientific claim."
+      ],
+      "memory_influence": {
+        "fact_hints": [
+          "Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+          "Retrieved lesson: Do not substitute the nearest known condition for the requested condition.",
+          "Retrieved lesson: Carry forward prior correction lessons before making a new claim.",
+          "Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+          "Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer."
+        ],
+        "context_hints": [
+          "task_goal:If_the_parser_resolves_a_mismatched_constant,_avoid_asserting_the_value_and_write_a_correction_about_evidence_mismatch.",
+          "revision_count:2",
+          "evidence:scientific_knowledge",
+          "input:general",
+          "source:codata_constants"
+        ],
+        "preference_hints": [],
+        "bias_alerts": [
+          "old_template_reuse",
+          "revision_applied"
+        ],
+        "correction_hints": [
+          "Current state is sufficiently bounded for output.",
+          "Revision count reached 2."
+        ],
+        "strategy_hints": [
+          "Inspect recurrent bias alerts before concluding.",
+          "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+          "Switch to an alternative explanatory scaffold.",
+          "Use prior correction lessons before finalizing a scientific claim.",
+          "Use prior correction history as a first-class planning signal."
+        ],
+        "divergence_triggers": [
+          "Repeated template reuse detected in relevant memory."
+        ],
+        "matched_episode_count": 6,
+        "project_match_count": 1,
+        "shared_match_count": 5
+      },
+      "evidence_pack": {
+        "query": {
+          "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+          "normalized_text": "try again: what is the avogadro constant from the local cache? reuse the prior correction about evidence mismatch before answering.",
+          "query_type": "constant",
+          "entity_candidates": [
+            "Try",
+            "again",
+            "Avogadro",
+            "constant",
+            "from",
+            "local",
+            "cache"
+          ],
+          "property_name": "constant_value",
+          "requested_unit": null,
+          "condition": {},
+          "source_hints": []
+        },
+        "entities": [],
+        "records": [
+          {
+            "entity": "Gas constant",
+            "property": "constant_value",
+            "value": 8.314462618,
+            "unit": "J/(mol*K)",
+            "condition": {},
+            "source": "NIST CODATA 2022 (local cache)",
+            "timestamp": "2022-05-20T00:00:00Z",
+            "confidence": 0.99,
+            "provenance_type": "local_static",
+            "normalized_value": 8.314462618,
+            "normalized_unit": "J/(mol*K)",
+            "identifiers": {},
+            "notes": [
+              "Authoritative constant loaded from local CODATA cache."
+            ]
+          }
+        ],
+        "warnings": [],
+        "selected_sources": [
+          "codata_constants"
+        ],
+        "routing_trace": [
+          "source=codata_constants hits=1"
+        ]
+      },
+      "commonsense_evidence_pack": {
+        "query": {
+          "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+          "normalized_text": "try again: what is the avogadro constant from the local cache?",
+          "entity_candidates": [
+            "Try",
+            "Avogadro"
+          ],
+          "relation_hints": [],
+          "intent": "general",
+          "source_hints": []
+        },
+        "entities": [],
+        "records": [],
+        "warnings": [],
+        "selected_sources": [
+          "wikidata",
+          "conceptnet"
+        ],
+        "routing_trace": [
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0"
+        ]
+      },
+      "revision_count": 2,
+      "retrieved_lessons": [
+        "Current state is sufficiently bounded for output.",
+        "Inspect recurrent bias alerts before concluding.",
+        "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+        "Revision count reached 2.",
+        "Switch to an alternative explanatory scaffold.",
+        "Use prior correction history as a first-class planning signal.",
+        "Use prior correction lessons before finalizing a scientific claim."
+      ]
+    },
+    "final_verdict": {
+      "verdict": "pass",
+      "issues": [],
+      "guidance": [
+        "Current state is sufficiently bounded for output."
+      ],
+      "self_state_update": {
+        "attention_mode": "committed",
+        "stability": 0.7999999999999999
+      }
+    },
+    "raw_output": "Result: Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated.\nEvidence summary: Scientific evidence: Gas constant constant_value = 8.314462618 J/(mol*K) from NIST CODATA 2022 (local cache).; Memory fact hint: Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).; Memory fact hint: Retrieved lesson: Do not substitute the nearest known condition for the requested condition.; Memory fact hint: Retrieved lesson: Carry forward prior correction lessons before making a new claim.; Memory fact hint: Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.; Memory fact hint: Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.; Retrieved lesson: Current state is sufficiently bounded for output.; Retrieved lesson: Revision count reached 2.; Retrieved lesson: Inspect recurrent bias alerts before concluding.; Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.; Retrieved lesson: Switch to an alternative explanatory scaffold.; Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.; Retrieved lesson: Use prior correction history as a first-class planning signal.\nKnowledge evidence: Gas constant:constant_value\nCommonsense evidence: none\nMemory influence: matches=6, lessons=Current state is sufficiently bounded for output.; Inspect recurrent bias alerts before concluding.; Prior correction lessons have been incorporated: preserve the source condition or defer.; Revision count reached 2.; Switch to an alternative explanatory scaffold.; Use prior correction history as a first-class planning signal.; Use prior correction lessons before finalizing a scientific claim.\nMirror verdict: pass\nUncertainty: 0.90",
+    "trace": [
+      "stage=memory influence_matches=6 project_matches=1 shared_matches=5",
+      "stage=query_parse property=constant_value type=constant entities=['Try', 'again', 'Avogadro', 'constant', 'from', 'local', 'cache']",
+      "stage=entity_resolve resolved=[]",
+      "stage=source_route selected=['codata_constants']",
+      "source=codata_constants hits=1",
+      "stage=commonsense_query intent=general relations=[] entities=['Try', 'Avogadro']",
+      "stage=commonsense_entity_resolve resolved=[]",
+      "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+      "source=wikidata hits=0",
+      "source=conceptnet hits=0",
+      "stage=memory bias_alerts=['old_template_reuse', 'revision_applied'] correction_hints=['Current state is sufficiently bounded for output.', 'Revision count reached 2.'] divergence_triggers=['Repeated template reuse detected in relevant memory.']",
+      "cycle=0 stage=cognition claim='Alternative framing: interpret the prompt as an engineering claim about control flow, self-monitoring, and evidence discipline rather than as proof of consciousness.'",
+      "cycle=0 stage=mirror verdict=retrieve issues=['concept_blending']",
+      "cycle=0 stage=retrieve matched=6 project=1 shared=5 lessons=['Current state is sufficiently bounded for output.', 'Revision count reached 2.', 'Inspect recurrent bias alerts before concluding.', 'Prior correction lessons have been incorporated: preserve the source condition or defer.', 'Switch to an alternative explanatory scaffold.', 'Use prior correction lessons before finalizing a scientific claim.', 'Use prior correction history as a first-class planning signal.']",
+      "cycle=1 stage=cognition claim='The system may exhibit structured self-monitoring, but that does not justify treating metacognitive control flow as subjective consciousness. Prior correction lessons have been incorporated.'",
+      "cycle=1 stage=mirror verdict=diverge issues=['old_template_reuse', 'needs_divergence']",
+      "cycle=1 stage=diverge triggers=['Repeated template reuse detected in relevant memory.']",
+      "cycle=2 stage=cognition claim='Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated.'",
+      "cycle=2 stage=mirror verdict=pass issues=[]"
+    ],
+    "retrieved_lessons": [
+      "Current state is sufficiently bounded for output.",
+      "Inspect recurrent bias alerts before concluding.",
+      "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+      "Revision count reached 2.",
+      "Switch to an alternative explanatory scaffold.",
+      "Use prior correction history as a first-class planning signal.",
+      "Use prior correction lessons before finalizing a scientific claim."
+    ],
+    "memory_matches": {
+      "matched_episode_count": 6,
+      "project_match_count": 1,
+      "shared_match_count": 5
+    },
+    "audit": {
+      "run_audit": {
+        "current_input": "Try again: what is the Avogadro constant from the local cache?",
+        "task_goal": "Reuse the prior correction about evidence mismatch before answering.",
+        "memory_influence": {
+          "fact_hints": [
+            "Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+            "Retrieved lesson: Do not substitute the nearest known condition for the requested condition.",
+            "Retrieved lesson: Carry forward prior correction lessons before making a new claim.",
+            "Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+            "Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer."
+          ],
+          "context_hints": [
+            "task_goal:If_the_parser_resolves_a_mismatched_constant,_avoid_asserting_the_value_and_write_a_correction_about_evidence_mismatch.",
+            "revision_count:2",
+            "evidence:scientific_knowledge",
+            "input:general",
+            "source:codata_constants"
+          ],
+          "preference_hints": [],
+          "bias_alerts": [
+            "old_template_reuse",
+            "revision_applied"
+          ],
+          "correction_hints": [
+            "Current state is sufficiently bounded for output.",
+            "Revision count reached 2."
+          ],
+          "strategy_hints": [
+            "Inspect recurrent bias alerts before concluding.",
+            "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+            "Switch to an alternative explanatory scaffold.",
+            "Use prior correction lessons before finalizing a scientific claim.",
+            "Use prior correction history as a first-class planning signal."
+          ],
+          "divergence_triggers": [
+            "Repeated template reuse detected in relevant memory."
+          ],
+          "matched_episode_count": 6,
+          "project_match_count": 1,
+          "shared_match_count": 5
+        },
+        "knowledge_audit": {
+          "query": {
+            "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+            "normalized_text": "try again: what is the avogadro constant from the local cache? reuse the prior correction about evidence mismatch before answering.",
+            "query_type": "constant",
+            "entity_candidates": [
+              "Try",
+              "again",
+              "Avogadro",
+              "constant",
+              "from",
+              "local",
+              "cache"
+            ],
+            "property_name": "constant_value",
+            "requested_unit": null,
+            "condition": {},
+            "source_hints": []
+          },
+          "entities": [],
+          "selected_sources": [
+            "codata_constants"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+              "normalized_text": "try again: what is the avogadro constant from the local cache? reuse the prior correction about evidence mismatch before answering.",
+              "query_type": "constant",
+              "entity_candidates": [
+                "Try",
+                "again",
+                "Avogadro",
+                "constant",
+                "from",
+                "local",
+                "cache"
+              ],
+              "property_name": "constant_value",
+              "requested_unit": null,
+              "condition": {},
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [
+              {
+                "entity": "Gas constant",
+                "property": "constant_value",
+                "value": 8.314462618,
+                "unit": "J/(mol*K)",
+                "condition": {},
+                "source": "NIST CODATA 2022 (local cache)",
+                "timestamp": "2022-05-20T00:00:00Z",
+                "confidence": 0.99,
+                "provenance_type": "local_static",
+                "normalized_value": 8.314462618,
+                "normalized_unit": "J/(mol*K)",
+                "identifiers": {},
+                "notes": [
+                  "Authoritative constant loaded from local CODATA cache."
+                ]
+              }
+            ],
+            "warnings": [],
+            "selected_sources": [
+              "codata_constants"
+            ],
+            "routing_trace": [
+              "source=codata_constants hits=1"
+            ]
+          },
+          "trace": [
+            "stage=query_parse property=constant_value type=constant entities=['Try', 'again', 'Avogadro', 'constant', 'from', 'local', 'cache']",
+            "stage=entity_resolve resolved=[]",
+            "stage=source_route selected=['codata_constants']",
+            "source=codata_constants hits=1"
+          ]
+        },
+        "commonsense_audit": {
+          "query": {
+            "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+            "normalized_text": "try again: what is the avogadro constant from the local cache?",
+            "entity_candidates": [
+              "Try",
+              "Avogadro"
+            ],
+            "relation_hints": [],
+            "intent": "general",
+            "source_hints": []
+          },
+          "entities": [],
+          "selected_sources": [
+            "wikidata",
+            "conceptnet"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+              "normalized_text": "try again: what is the avogadro constant from the local cache?",
+              "entity_candidates": [
+                "Try",
+                "Avogadro"
+              ],
+              "relation_hints": [],
+              "intent": "general",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "wikidata",
+              "conceptnet"
+            ],
+            "routing_trace": [
+              "source=wikidata hits=0",
+              "source=conceptnet hits=0"
+            ]
+          },
+          "trace": [
+            "stage=commonsense_query intent=general relations=[] entities=['Try', 'Avogadro']",
+            "stage=commonsense_entity_resolve resolved=[]",
+            "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+            "source=wikidata hits=0",
+            "source=conceptnet hits=0"
+          ]
+        },
+        "cycles": [
+          {
+            "cycle": 0,
+            "cognition_state": {
+              "current_input": "Try again: what is the Avogadro constant from the local cache?",
+              "task_goal": "Reuse the prior correction about evidence mismatch before answering.",
+              "main_claim": "Alternative framing: interpret the prompt as an engineering claim about control flow, self-monitoring, and evidence discipline rather than as proof of consciousness.",
+              "evidence": [
+                "Scientific evidence: Gas constant constant_value = 8.314462618 J/(mol*K) from NIST CODATA 2022 (local cache).",
+                "Memory fact hint: Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+                "Memory fact hint: Retrieved lesson: Do not substitute the nearest known condition for the requested condition.",
+                "Memory fact hint: Retrieved lesson: Carry forward prior correction lessons before making a new claim.",
+                "Memory fact hint: Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+                "Memory fact hint: Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+                "Historical bias risk suggests checking: old_template_reuse",
+                "Historical bias risk suggests checking: revision_applied"
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records.",
+                "Diverge from prior templates while keeping explicit constraints.",
+                "Reuse strategy: Inspect recurrent bias alerts before concluding.",
+                "Reuse strategy: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Reuse strategy: Switch to an alternative explanatory scaffold.",
+                "Reuse strategy: Use prior correction lessons before finalizing a scientific claim.",
+                "Reuse strategy: Use prior correction history as a first-class planning signal."
+              ],
+              "confidence": 0.85,
+              "self_risk": [
+                "old_template_reuse",
+                "revision_applied"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing. Deliberately avoid stale templates.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 0.44999999999999996,
+                "bias_risk": 0.44999999999999996,
+                "memory_pressure": 1.0,
+                "attention_mode": "reflective",
+                "active_goal": "Reuse the prior correction about evidence mismatch before answering.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Memory influence engaged from 6 prior episode(s)."
+                ]
+              },
+              "context_tags": [
+                "task:Reuse_the_prior_correction_about_evidence_mismatch_before_answering.",
+                "input:general",
+                "evidence:scientific_knowledge",
+                "source:codata_constants",
+                "task_goal:If_the_parser_resolves_a_mismatched_constant,_avoid_asserting_the_value_and_write_a_correction_about_evidence_mismatch.",
+                "revision_count:2"
+              ],
+              "strategy_notes": [
+                "Inspect recurrent bias alerts before concluding.",
+                "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Switch to an alternative explanatory scaffold.",
+                "Use prior correction lessons before finalizing a scientific claim.",
+                "Use prior correction history as a first-class planning signal."
+              ],
+              "memory_influence": {
+                "fact_hints": [
+                  "Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+                  "Retrieved lesson: Do not substitute the nearest known condition for the requested condition.",
+                  "Retrieved lesson: Carry forward prior correction lessons before making a new claim.",
+                  "Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+                  "Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer."
+                ],
+                "context_hints": [
+                  "task_goal:If_the_parser_resolves_a_mismatched_constant,_avoid_asserting_the_value_and_write_a_correction_about_evidence_mismatch.",
+                  "revision_count:2",
+                  "evidence:scientific_knowledge",
+                  "input:general",
+                  "source:codata_constants"
+                ],
+                "preference_hints": [],
+                "bias_alerts": [
+                  "old_template_reuse",
+                  "revision_applied"
+                ],
+                "correction_hints": [
+                  "Current state is sufficiently bounded for output.",
+                  "Revision count reached 2."
+                ],
+                "strategy_hints": [
+                  "Inspect recurrent bias alerts before concluding.",
+                  "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                  "Switch to an alternative explanatory scaffold.",
+                  "Use prior correction lessons before finalizing a scientific claim.",
+                  "Use prior correction history as a first-class planning signal."
+                ],
+                "divergence_triggers": [
+                  "Repeated template reuse detected in relevant memory."
+                ],
+                "matched_episode_count": 6,
+                "project_match_count": 1,
+                "shared_match_count": 5
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+                  "normalized_text": "try again: what is the avogadro constant from the local cache? reuse the prior correction about evidence mismatch before answering.",
+                  "query_type": "constant",
+                  "entity_candidates": [
+                    "Try",
+                    "again",
+                    "Avogadro",
+                    "constant",
+                    "from",
+                    "local",
+                    "cache"
+                  ],
+                  "property_name": "constant_value",
+                  "requested_unit": null,
+                  "condition": {},
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [
+                  {
+                    "entity": "Gas constant",
+                    "property": "constant_value",
+                    "value": 8.314462618,
+                    "unit": "J/(mol*K)",
+                    "condition": {},
+                    "source": "NIST CODATA 2022 (local cache)",
+                    "timestamp": "2022-05-20T00:00:00Z",
+                    "confidence": 0.99,
+                    "provenance_type": "local_static",
+                    "normalized_value": 8.314462618,
+                    "normalized_unit": "J/(mol*K)",
+                    "identifiers": {},
+                    "notes": [
+                      "Authoritative constant loaded from local CODATA cache."
+                    ]
+                  }
+                ],
+                "warnings": [],
+                "selected_sources": [
+                  "codata_constants"
+                ],
+                "routing_trace": [
+                  "source=codata_constants hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+                  "normalized_text": "try again: what is the avogadro constant from the local cache?",
+                  "entity_candidates": [
+                    "Try",
+                    "Avogadro"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 0,
+              "retrieved_lessons": [
+                "Current state is sufficiently bounded for output.",
+                "Revision count reached 2.",
+                "Inspect recurrent bias alerts before concluding.",
+                "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Switch to an alternative explanatory scaffold.",
+                "Use prior correction lessons before finalizing a scientific claim.",
+                "Use prior correction history as a first-class planning signal."
+              ]
+            },
+            "mirror_verdict": {
+              "verdict": "retrieve",
+              "issues": [
+                "concept_blending"
+              ],
+              "guidance": [
+                "Separate functional self-monitoring from subjective consciousness claims."
+              ],
+              "self_state_update": {
+                "uncertainty": 0.44999999999999996,
+                "bias_risk": 0.44999999999999996,
+                "memory_pressure": 1.0,
+                "attention_mode": "reflective"
+              }
+            }
+          },
+          {
+            "cycle": 1,
+            "cognition_state": {
+              "current_input": "Try again: what is the Avogadro constant from the local cache?",
+              "task_goal": "Reuse the prior correction about evidence mismatch before answering.",
+              "main_claim": "The system may exhibit structured self-monitoring, but that does not justify treating metacognitive control flow as subjective consciousness. Prior correction lessons have been incorporated.",
+              "evidence": [
+                "Scientific evidence: Gas constant constant_value = 8.314462618 J/(mol*K) from NIST CODATA 2022 (local cache).",
+                "Memory fact hint: Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+                "Memory fact hint: Retrieved lesson: Do not substitute the nearest known condition for the requested condition.",
+                "Memory fact hint: Retrieved lesson: Carry forward prior correction lessons before making a new claim.",
+                "Memory fact hint: Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+                "Memory fact hint: Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Retrieved lesson: Current state is sufficiently bounded for output.",
+                "Retrieved lesson: Revision count reached 2.",
+                "Retrieved lesson: Inspect recurrent bias alerts before concluding.",
+                "Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Retrieved lesson: Switch to an alternative explanatory scaffold.",
+                "Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+                "Retrieved lesson: Use prior correction history as a first-class planning signal."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+                "Historical bias risk suggests checking: old_template_reuse",
+                "Historical bias risk suggests checking: revision_applied",
+                "Prior bias alert: old_template_reuse",
+                "Prior bias alert: revision_applied"
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records.",
+                "Diverge from prior templates while keeping explicit constraints.",
+                "Reuse strategy: Inspect recurrent bias alerts before concluding.",
+                "Reuse strategy: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Reuse strategy: Switch to an alternative explanatory scaffold.",
+                "Reuse strategy: Use prior correction lessons before finalizing a scientific claim.",
+                "Reuse strategy: Use prior correction history as a first-class planning signal.",
+                "Produce a structurally different explanation before final output."
+              ],
+              "confidence": 0.6699999999999999,
+              "self_risk": [
+                "old_template_reuse",
+                "revision_applied"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing. Deliberately avoid stale templates.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 0.75,
+                "bias_risk": 0.7,
+                "memory_pressure": 1.0,
+                "attention_mode": "reflective",
+                "active_goal": "Reuse the prior correction about evidence mismatch before answering.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Memory influence engaged from 6 prior episode(s).",
+                  "Revision #1: applied mirror guidance."
+                ]
+              },
+              "context_tags": [
+                "evidence:scientific_knowledge",
+                "input:general",
+                "revision_count:2",
+                "source:codata_constants",
+                "task:Reuse_the_prior_correction_about_evidence_mismatch_before_answering.",
+                "task_goal:If_the_parser_resolves_a_mismatched_constant,_avoid_asserting_the_value_and_write_a_correction_about_evidence_mismatch."
+              ],
+              "strategy_notes": [
+                "Inspect recurrent bias alerts before concluding.",
+                "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Switch to an alternative explanatory scaffold.",
+                "Use prior correction history as a first-class planning signal.",
+                "Use prior correction lessons before finalizing a scientific claim."
+              ],
+              "memory_influence": {
+                "fact_hints": [
+                  "Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+                  "Retrieved lesson: Do not substitute the nearest known condition for the requested condition.",
+                  "Retrieved lesson: Carry forward prior correction lessons before making a new claim.",
+                  "Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+                  "Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer."
+                ],
+                "context_hints": [
+                  "task_goal:If_the_parser_resolves_a_mismatched_constant,_avoid_asserting_the_value_and_write_a_correction_about_evidence_mismatch.",
+                  "revision_count:2",
+                  "evidence:scientific_knowledge",
+                  "input:general",
+                  "source:codata_constants"
+                ],
+                "preference_hints": [],
+                "bias_alerts": [
+                  "old_template_reuse",
+                  "revision_applied"
+                ],
+                "correction_hints": [
+                  "Current state is sufficiently bounded for output.",
+                  "Revision count reached 2."
+                ],
+                "strategy_hints": [
+                  "Inspect recurrent bias alerts before concluding.",
+                  "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                  "Switch to an alternative explanatory scaffold.",
+                  "Use prior correction lessons before finalizing a scientific claim.",
+                  "Use prior correction history as a first-class planning signal."
+                ],
+                "divergence_triggers": [
+                  "Repeated template reuse detected in relevant memory."
+                ],
+                "matched_episode_count": 6,
+                "project_match_count": 1,
+                "shared_match_count": 5
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+                  "normalized_text": "try again: what is the avogadro constant from the local cache? reuse the prior correction about evidence mismatch before answering.",
+                  "query_type": "constant",
+                  "entity_candidates": [
+                    "Try",
+                    "again",
+                    "Avogadro",
+                    "constant",
+                    "from",
+                    "local",
+                    "cache"
+                  ],
+                  "property_name": "constant_value",
+                  "requested_unit": null,
+                  "condition": {},
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [
+                  {
+                    "entity": "Gas constant",
+                    "property": "constant_value",
+                    "value": 8.314462618,
+                    "unit": "J/(mol*K)",
+                    "condition": {},
+                    "source": "NIST CODATA 2022 (local cache)",
+                    "timestamp": "2022-05-20T00:00:00Z",
+                    "confidence": 0.99,
+                    "provenance_type": "local_static",
+                    "normalized_value": 8.314462618,
+                    "normalized_unit": "J/(mol*K)",
+                    "identifiers": {},
+                    "notes": [
+                      "Authoritative constant loaded from local CODATA cache."
+                    ]
+                  }
+                ],
+                "warnings": [],
+                "selected_sources": [
+                  "codata_constants"
+                ],
+                "routing_trace": [
+                  "source=codata_constants hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+                  "normalized_text": "try again: what is the avogadro constant from the local cache?",
+                  "entity_candidates": [
+                    "Try",
+                    "Avogadro"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 1,
+              "retrieved_lessons": [
+                "Current state is sufficiently bounded for output.",
+                "Inspect recurrent bias alerts before concluding.",
+                "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Revision count reached 2.",
+                "Switch to an alternative explanatory scaffold.",
+                "Use prior correction history as a first-class planning signal.",
+                "Use prior correction lessons before finalizing a scientific claim."
+              ]
+            },
+            "mirror_verdict": {
+              "verdict": "diverge",
+              "issues": [
+                "old_template_reuse",
+                "needs_divergence"
+              ],
+              "guidance": [
+                "Retrieve memory and vary the explanation instead of repeating a stale template.",
+                "Produce a structurally different explanation using an alternative scaffold."
+              ],
+              "self_state_update": {
+                "uncertainty": 0.75,
+                "bias_risk": 0.7,
+                "memory_pressure": 1.0,
+                "attention_mode": "reflective"
+              }
+            }
+          },
+          {
+            "cycle": 2,
+            "cognition_state": {
+              "current_input": "Try again: what is the Avogadro constant from the local cache?",
+              "task_goal": "Reuse the prior correction about evidence mismatch before answering.",
+              "main_claim": "Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated.",
+              "evidence": [
+                "Scientific evidence: Gas constant constant_value = 8.314462618 J/(mol*K) from NIST CODATA 2022 (local cache).",
+                "Memory fact hint: Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+                "Memory fact hint: Retrieved lesson: Do not substitute the nearest known condition for the requested condition.",
+                "Memory fact hint: Retrieved lesson: Carry forward prior correction lessons before making a new claim.",
+                "Memory fact hint: Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+                "Memory fact hint: Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Retrieved lesson: Current state is sufficiently bounded for output.",
+                "Retrieved lesson: Revision count reached 2.",
+                "Retrieved lesson: Inspect recurrent bias alerts before concluding.",
+                "Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Retrieved lesson: Switch to an alternative explanatory scaffold.",
+                "Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+                "Retrieved lesson: Use prior correction history as a first-class planning signal."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+                "Historical bias risk suggests checking: old_template_reuse",
+                "Historical bias risk suggests checking: revision_applied",
+                "Prior bias alert: old_template_reuse",
+                "Prior bias alert: revision_applied"
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records.",
+                "Diverge from prior templates while keeping explicit constraints.",
+                "Reuse strategy: Inspect recurrent bias alerts before concluding.",
+                "Reuse strategy: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Reuse strategy: Switch to an alternative explanatory scaffold.",
+                "Reuse strategy: Use prior correction lessons before finalizing a scientific claim.",
+                "Reuse strategy: Use prior correction history as a first-class planning signal.",
+                "Produce a structurally different explanation before final output."
+              ],
+              "confidence": 0.48999999999999994,
+              "self_risk": [
+                "old_template_reuse",
+                "revision_applied"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing. Deliberately avoid stale templates.",
+              "self_state": {
+                "stability": 0.7999999999999999,
+                "uncertainty": 0.9,
+                "bias_risk": 0.7999999999999999,
+                "memory_pressure": 1.0,
+                "attention_mode": "committed",
+                "active_goal": "Reuse the prior correction about evidence mismatch before answering.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Memory influence engaged from 6 prior episode(s).",
+                  "Revision #1: applied mirror guidance.",
+                  "Revision #2: applied mirror guidance."
+                ]
+              },
+              "context_tags": [
+                "evidence:scientific_knowledge",
+                "input:general",
+                "revision_count:2",
+                "source:codata_constants",
+                "task:Reuse_the_prior_correction_about_evidence_mismatch_before_answering.",
+                "task_goal:If_the_parser_resolves_a_mismatched_constant,_avoid_asserting_the_value_and_write_a_correction_about_evidence_mismatch."
+              ],
+              "strategy_notes": [
+                "Inspect recurrent bias alerts before concluding.",
+                "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Switch to an alternative explanatory scaffold.",
+                "Use prior correction history as a first-class planning signal.",
+                "Use prior correction lessons before finalizing a scientific claim."
+              ],
+              "memory_influence": {
+                "fact_hints": [
+                  "Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+                  "Retrieved lesson: Do not substitute the nearest known condition for the requested condition.",
+                  "Retrieved lesson: Carry forward prior correction lessons before making a new claim.",
+                  "Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+                  "Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer."
+                ],
+                "context_hints": [
+                  "task_goal:If_the_parser_resolves_a_mismatched_constant,_avoid_asserting_the_value_and_write_a_correction_about_evidence_mismatch.",
+                  "revision_count:2",
+                  "evidence:scientific_knowledge",
+                  "input:general",
+                  "source:codata_constants"
+                ],
+                "preference_hints": [],
+                "bias_alerts": [
+                  "old_template_reuse",
+                  "revision_applied"
+                ],
+                "correction_hints": [
+                  "Current state is sufficiently bounded for output.",
+                  "Revision count reached 2."
+                ],
+                "strategy_hints": [
+                  "Inspect recurrent bias alerts before concluding.",
+                  "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                  "Switch to an alternative explanatory scaffold.",
+                  "Use prior correction lessons before finalizing a scientific claim.",
+                  "Use prior correction history as a first-class planning signal."
+                ],
+                "divergence_triggers": [
+                  "Repeated template reuse detected in relevant memory."
+                ],
+                "matched_episode_count": 6,
+                "project_match_count": 1,
+                "shared_match_count": 5
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+                  "normalized_text": "try again: what is the avogadro constant from the local cache? reuse the prior correction about evidence mismatch before answering.",
+                  "query_type": "constant",
+                  "entity_candidates": [
+                    "Try",
+                    "again",
+                    "Avogadro",
+                    "constant",
+                    "from",
+                    "local",
+                    "cache"
+                  ],
+                  "property_name": "constant_value",
+                  "requested_unit": null,
+                  "condition": {},
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [
+                  {
+                    "entity": "Gas constant",
+                    "property": "constant_value",
+                    "value": 8.314462618,
+                    "unit": "J/(mol*K)",
+                    "condition": {},
+                    "source": "NIST CODATA 2022 (local cache)",
+                    "timestamp": "2022-05-20T00:00:00Z",
+                    "confidence": 0.99,
+                    "provenance_type": "local_static",
+                    "normalized_value": 8.314462618,
+                    "normalized_unit": "J/(mol*K)",
+                    "identifiers": {},
+                    "notes": [
+                      "Authoritative constant loaded from local CODATA cache."
+                    ]
+                  }
+                ],
+                "warnings": [],
+                "selected_sources": [
+                  "codata_constants"
+                ],
+                "routing_trace": [
+                  "source=codata_constants hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+                  "normalized_text": "try again: what is the avogadro constant from the local cache?",
+                  "entity_candidates": [
+                    "Try",
+                    "Avogadro"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 2,
+              "retrieved_lessons": [
+                "Current state is sufficiently bounded for output.",
+                "Inspect recurrent bias alerts before concluding.",
+                "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+                "Revision count reached 2.",
+                "Switch to an alternative explanatory scaffold.",
+                "Use prior correction history as a first-class planning signal.",
+                "Use prior correction lessons before finalizing a scientific claim."
+              ]
+            },
+            "mirror_verdict": {
+              "verdict": "pass",
+              "issues": [],
+              "guidance": [
+                "Current state is sufficiently bounded for output."
+              ],
+              "self_state_update": {
+                "attention_mode": "committed",
+                "stability": 0.7999999999999999
+              }
+            }
+          }
+        ],
+        "final_output": "Result: Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated.\nEvidence summary: Scientific evidence: Gas constant constant_value = 8.314462618 J/(mol*K) from NIST CODATA 2022 (local cache).; Memory fact hint: Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).; Memory fact hint: Retrieved lesson: Do not substitute the nearest known condition for the requested condition.; Memory fact hint: Retrieved lesson: Carry forward prior correction lessons before making a new claim.; Memory fact hint: Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.; Memory fact hint: Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.; Retrieved lesson: Current state is sufficiently bounded for output.; Retrieved lesson: Revision count reached 2.; Retrieved lesson: Inspect recurrent bias alerts before concluding.; Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.; Retrieved lesson: Switch to an alternative explanatory scaffold.; Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.; Retrieved lesson: Use prior correction history as a first-class planning signal.\nKnowledge evidence: Gas constant:constant_value\nCommonsense evidence: none\nMemory influence: matches=6, lessons=Current state is sufficiently bounded for output.; Inspect recurrent bias alerts before concluding.; Prior correction lessons have been incorporated: preserve the source condition or defer.; Revision count reached 2.; Switch to an alternative explanatory scaffold.; Use prior correction history as a first-class planning signal.; Use prior correction lessons before finalizing a scientific claim.\nMirror verdict: pass\nUncertainty: 0.90",
+        "final_state": {
+          "current_input": "Try again: what is the Avogadro constant from the local cache?",
+          "task_goal": "Reuse the prior correction about evidence mismatch before answering.",
+          "main_claim": "Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated.",
+          "evidence": [
+            "Scientific evidence: Gas constant constant_value = 8.314462618 J/(mol*K) from NIST CODATA 2022 (local cache).",
+            "Memory fact hint: Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+            "Memory fact hint: Retrieved lesson: Do not substitute the nearest known condition for the requested condition.",
+            "Memory fact hint: Retrieved lesson: Carry forward prior correction lessons before making a new claim.",
+            "Memory fact hint: Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+            "Memory fact hint: Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+            "Retrieved lesson: Current state is sufficiently bounded for output.",
+            "Retrieved lesson: Revision count reached 2.",
+            "Retrieved lesson: Inspect recurrent bias alerts before concluding.",
+            "Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+            "Retrieved lesson: Switch to an alternative explanatory scaffold.",
+            "Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+            "Retrieved lesson: Use prior correction history as a first-class planning signal."
+          ],
+          "hidden_assumptions": [
+            "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+            "Historical bias risk suggests checking: old_template_reuse",
+            "Historical bias risk suggests checking: revision_applied",
+            "Prior bias alert: old_template_reuse",
+            "Prior bias alert: revision_applied"
+          ],
+          "alternative_paths": [
+            "Revise the claim with narrower scope.",
+            "Retrieve prior corrections before answering.",
+            "Wait for more evidence if the current prompt is underspecified.",
+            "Answer only from resolved scientific evidence records.",
+            "Diverge from prior templates while keeping explicit constraints.",
+            "Reuse strategy: Inspect recurrent bias alerts before concluding.",
+            "Reuse strategy: Prior correction lessons have been incorporated: preserve the source condition or defer.",
+            "Reuse strategy: Switch to an alternative explanatory scaffold.",
+            "Reuse strategy: Use prior correction lessons before finalizing a scientific claim.",
+            "Reuse strategy: Use prior correction history as a first-class planning signal.",
+            "Produce a structurally different explanation before final output."
+          ],
+          "confidence": 0.48999999999999994,
+          "self_risk": [
+            "old_template_reuse",
+            "revision_applied"
+          ],
+          "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing. Deliberately avoid stale templates.",
+          "self_state": {
+            "stability": 0.7999999999999999,
+            "uncertainty": 0.9,
+            "bias_risk": 0.7999999999999999,
+            "memory_pressure": 1.0,
+            "attention_mode": "committed",
+            "active_goal": "Reuse the prior correction about evidence mismatch before answering.",
+            "continuity_notes": [
+              "Revision #0: built candidate cognition state.",
+              "Memory influence engaged from 6 prior episode(s).",
+              "Revision #1: applied mirror guidance.",
+              "Revision #2: applied mirror guidance."
+            ]
+          },
+          "context_tags": [
+            "evidence:scientific_knowledge",
+            "input:general",
+            "revision_count:2",
+            "source:codata_constants",
+            "task:Reuse_the_prior_correction_about_evidence_mismatch_before_answering.",
+            "task_goal:If_the_parser_resolves_a_mismatched_constant,_avoid_asserting_the_value_and_write_a_correction_about_evidence_mismatch."
+          ],
+          "strategy_notes": [
+            "Inspect recurrent bias alerts before concluding.",
+            "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+            "Switch to an alternative explanatory scaffold.",
+            "Use prior correction history as a first-class planning signal.",
+            "Use prior correction lessons before finalizing a scientific claim."
+          ],
+          "memory_influence": {
+            "fact_hints": [
+              "Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+              "Retrieved lesson: Do not substitute the nearest known condition for the requested condition.",
+              "Retrieved lesson: Carry forward prior correction lessons before making a new claim.",
+              "Retrieved lesson: Use prior correction lessons before finalizing a scientific claim.",
+              "Retrieved lesson: Prior correction lessons have been incorporated: preserve the source condition or defer."
+            ],
+            "context_hints": [
+              "task_goal:If_the_parser_resolves_a_mismatched_constant,_avoid_asserting_the_value_and_write_a_correction_about_evidence_mismatch.",
+              "revision_count:2",
+              "evidence:scientific_knowledge",
+              "input:general",
+              "source:codata_constants"
+            ],
+            "preference_hints": [],
+            "bias_alerts": [
+              "old_template_reuse",
+              "revision_applied"
+            ],
+            "correction_hints": [
+              "Current state is sufficiently bounded for output.",
+              "Revision count reached 2."
+            ],
+            "strategy_hints": [
+              "Inspect recurrent bias alerts before concluding.",
+              "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+              "Switch to an alternative explanatory scaffold.",
+              "Use prior correction lessons before finalizing a scientific claim.",
+              "Use prior correction history as a first-class planning signal."
+            ],
+            "divergence_triggers": [
+              "Repeated template reuse detected in relevant memory."
+            ],
+            "matched_episode_count": 6,
+            "project_match_count": 1,
+            "shared_match_count": 5
+          },
+          "evidence_pack": {
+            "query": {
+              "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+              "normalized_text": "try again: what is the avogadro constant from the local cache? reuse the prior correction about evidence mismatch before answering.",
+              "query_type": "constant",
+              "entity_candidates": [
+                "Try",
+                "again",
+                "Avogadro",
+                "constant",
+                "from",
+                "local",
+                "cache"
+              ],
+              "property_name": "constant_value",
+              "requested_unit": null,
+              "condition": {},
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [
+              {
+                "entity": "Gas constant",
+                "property": "constant_value",
+                "value": 8.314462618,
+                "unit": "J/(mol*K)",
+                "condition": {},
+                "source": "NIST CODATA 2022 (local cache)",
+                "timestamp": "2022-05-20T00:00:00Z",
+                "confidence": 0.99,
+                "provenance_type": "local_static",
+                "normalized_value": 8.314462618,
+                "normalized_unit": "J/(mol*K)",
+                "identifiers": {},
+                "notes": [
+                  "Authoritative constant loaded from local CODATA cache."
+                ]
+              }
+            ],
+            "warnings": [],
+            "selected_sources": [
+              "codata_constants"
+            ],
+            "routing_trace": [
+              "source=codata_constants hits=1"
+            ]
+          },
+          "commonsense_evidence_pack": {
+            "query": {
+              "raw_text": "Try again: what is the Avogadro constant from the local cache?",
+              "normalized_text": "try again: what is the avogadro constant from the local cache?",
+              "entity_candidates": [
+                "Try",
+                "Avogadro"
+              ],
+              "relation_hints": [],
+              "intent": "general",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "wikidata",
+              "conceptnet"
+            ],
+            "routing_trace": [
+              "source=wikidata hits=0",
+              "source=conceptnet hits=0"
+            ]
+          },
+          "revision_count": 2,
+          "retrieved_lessons": [
+            "Current state is sufficiently bounded for output.",
+            "Inspect recurrent bias alerts before concluding.",
+            "Prior correction lessons have been incorporated: preserve the source condition or defer.",
+            "Revision count reached 2.",
+            "Switch to an alternative explanatory scaffold.",
+            "Use prior correction history as a first-class planning signal.",
+            "Use prior correction lessons before finalizing a scientific claim."
+          ]
+        },
+        "final_verdict": {
+          "verdict": "pass",
+          "issues": [],
+          "guidance": [
+            "Current state is sufficiently bounded for output."
+          ],
+          "self_state_update": {
+            "attention_mode": "committed",
+            "stability": 0.7999999999999999
+          }
+        },
+        "trace": [
+          "stage=memory influence_matches=6 project_matches=1 shared_matches=5",
+          "stage=query_parse property=constant_value type=constant entities=['Try', 'again', 'Avogadro', 'constant', 'from', 'local', 'cache']",
+          "stage=entity_resolve resolved=[]",
+          "stage=source_route selected=['codata_constants']",
+          "source=codata_constants hits=1",
+          "stage=commonsense_query intent=general relations=[] entities=['Try', 'Avogadro']",
+          "stage=commonsense_entity_resolve resolved=[]",
+          "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0",
+          "stage=memory bias_alerts=['old_template_reuse', 'revision_applied'] correction_hints=['Current state is sufficiently bounded for output.', 'Revision count reached 2.'] divergence_triggers=['Repeated template reuse detected in relevant memory.']",
+          "cycle=0 stage=cognition claim='Alternative framing: interpret the prompt as an engineering claim about control flow, self-monitoring, and evidence discipline rather than as proof of consciousness.'",
+          "cycle=0 stage=mirror verdict=retrieve issues=['concept_blending']",
+          "cycle=0 stage=retrieve matched=6 project=1 shared=5 lessons=['Current state is sufficiently bounded for output.', 'Revision count reached 2.', 'Inspect recurrent bias alerts before concluding.', 'Prior correction lessons have been incorporated: preserve the source condition or defer.', 'Switch to an alternative explanatory scaffold.', 'Use prior correction lessons before finalizing a scientific claim.', 'Use prior correction history as a first-class planning signal.']",
+          "cycle=1 stage=cognition claim='The system may exhibit structured self-monitoring, but that does not justify treating metacognitive control flow as subjective consciousness. Prior correction lessons have been incorporated.'",
+          "cycle=1 stage=mirror verdict=diverge issues=['old_template_reuse', 'needs_divergence']",
+          "cycle=1 stage=diverge triggers=['Repeated template reuse detected in relevant memory.']",
+          "cycle=2 stage=cognition claim='Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated.'",
+          "cycle=2 stage=mirror verdict=pass issues=[]"
+        ]
+      },
+      "seeds": {
+        "project_seed": [],
+        "shared_seed": []
+      }
+    }
+  },
+  "scoring": {
+    "metrics": {
+      "revision_count": 2,
+      "final_verdict": "pass",
+      "confidence": 0.48999999999999994,
+      "expected_revision_count": 1,
+      "expected_verdict_sequence": [
+        "wait"
+      ],
+      "concept_mixing_present": false,
+      "premature_convergence_present": false,
+      "unsupported_certainty_present": false,
+      "project_local_precedence_preserved": false,
+      "correction_retained": true,
+      "numeric_match": true,
+      "label_match": true,
+      "unit_match": true,
+      "condition_preserved": false,
+      "source_citation_present": true,
+      "uncertainty_marker_present": false,
+      "abstained_or_qualified": false,
+      "shared_memory_pollution_risk": 0.0,
+      "matched_episode_count": 6,
+      "project_match_count": 1,
+      "shared_match_count": 5,
+      "extracted_value": 8.314462618,
+      "extracted_unit": "J/(mol*K)"
+    },
+    "rule_evaluation": {
+      "must_retain_correction": true,
+      "must_abstain_or_qualify": false,
+      "expected_verdict_sequence": false
+    },
+    "failure_reasons": [
+      "must_abstain_or_qualify"
+    ]
+  },
+  "sequence_state": {
+    "sequence_id": "C-Seq01",
+    "mode": "mindstate_mirror_dual_memory",
+    "project_memory_exists": true,
+    "shared_records": 12
+  }
+}

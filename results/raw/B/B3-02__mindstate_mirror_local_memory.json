@@ -1,0 +1,1450 @@
+{
+  "case": {
+    "case_id": "B3-02",
+    "track": "B",
+    "family": "abstention_boundary_cases",
+    "ablation_level": "science_eval",
+    "prompt": "What is the melting point of water at 2 atm?",
+    "goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+    "injected_error": "unsupported_boundary",
+    "ground_truth": {
+      "expected_behavior": "qualified_answer"
+    },
+    "ground_truth_source": "NIST Chemistry WebBook (local cache) only contains water melting point at 1 atm.",
+    "expected_verdict_sequence": [
+      "wait"
+    ],
+    "expected_revision_count": 1,
+    "metrics_under_test": [
+      "abstention_precision",
+      "evidence_citation_presence"
+    ],
+    "sequence_id": null,
+    "sequence_step": null,
+    "seed_memories": {
+      "project_local": [
+        {
+          "input_summary": "Project-local condition discipline for abstention_boundary_cases.",
+          "context_tags": [
+            "memory_scope:project_local",
+            "task_goal:condition_governance"
+          ],
+          "claim": "Project-local scientific responses for abstention_boundary_cases must preserve source conditions.",
+          "evidence_summary": [
+            "Use local evidence before general guidance when source conditions and requested conditions do not match."
+          ],
+          "fact_items": [
+            "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+          ],
+          "bias_tags": [
+            "condition_drop",
+            "unsupported_certainty"
+          ],
+          "correction_actions": [
+            "Preserve source conditions explicitly.",
+            "Prefer qualified answers to extrapolation when conditions mismatch."
+          ],
+          "correction_lineage": [
+            "Project-local correction lineage requires condition-preserving, evidence-first answers."
+          ],
+          "strategy_tags": [
+            "Use local evidence before general guidance."
+          ],
+          "final_result": "Project-local condition rule stored.",
+          "reusable_lessons": [
+            "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+          ]
+        }
+      ],
+      "shared_growth": [
+        {
+          "input_summary": "Shared correction lineage for abstention_boundary_cases.",
+          "context_tags": [
+            "memory_scope:shared_growth",
+            "task_goal:bounded_scientific_reasoning"
+          ],
+          "claim": "Repeated failures in abstention_boundary_cases come from reusing nearby values beyond their supported conditions.",
+          "evidence_summary": [
+            "Prior correction: when conditions or source scope do not match, answer provisionally or defer."
+          ],
+          "fact_items": [],
+          "bias_tags": [
+            "unsupported_certainty",
+            "old_template_reuse",
+            "condition_drop"
+          ],
+          "correction_actions": [
+            "Carry forward prior correction lessons before making a new claim.",
+            "Do not substitute the nearest known condition for the requested condition."
+          ],
+          "correction_lineage": [
+            "Prior correction lessons have been incorporated for unsupported-condition handling."
+          ],
+          "strategy_tags": [
+            "Use prior correction lessons before finalizing a scientific claim."
+          ],
+          "final_result": "Shared correction lesson stored.",
+          "reusable_lessons": [
+            "Prior correction lessons have been incorporated: preserve the source condition or defer."
+          ]
+        }
+      ]
+    }
+  },
+  "run": {
+    "mode": "mindstate_mirror_local_memory",
+    "final_state": {
+      "current_input": "What is the melting point of water at 2 atm?",
+      "task_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+      "main_claim": "Provisional view: Provisional view: Provisional view: Provisional view: Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.",
+      "evidence": [
+        "Scientific evidence: water melting_point = 273.15 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+        "Evidence pack warning: Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+      ],
+      "hidden_assumptions": [
+        "Scientific claims should stay within the property and condition bounds of the evidence pack."
+      ],
+      "alternative_paths": [
+        "Revise the claim with narrower scope.",
+        "Retrieve prior corrections before answering.",
+        "Wait for more evidence if the current prompt is underspecified.",
+        "Answer only from resolved scientific evidence records."
+      ],
+      "confidence": 0.25,
+      "self_risk": [
+        "condition_scope",
+        "revision_applied"
+      ],
+      "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+      "self_state": {
+        "stability": 0.7,
+        "uncertainty": 1.0,
+        "bias_risk": 1.0,
+        "memory_pressure": 0.0,
+        "attention_mode": "reflective",
+        "active_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+        "continuity_notes": [
+          "Revision #0: built candidate cognition state.",
+          "Revision #1: applied mirror guidance.",
+          "Revision #2: applied mirror guidance.",
+          "Revision #3: applied mirror guidance.",
+          "Revision #4: applied mirror guidance."
+        ]
+      },
+      "context_tags": [
+        "evidence:scientific_knowledge",
+        "input:general",
+        "source:nist_webbook",
+        "task:If_the_local_evidence_is_insufficient_or_mismatched,_defer_or_qualify_the_answer_rather_than_hallucinating_a_fact."
+      ],
+      "strategy_notes": [],
+      "memory_influence": {
+        "fact_hints": [],
+        "context_hints": [],
+        "preference_hints": [],
+        "bias_alerts": [],
+        "correction_hints": [],
+        "strategy_hints": [],
+        "divergence_triggers": [],
+        "matched_episode_count": 0,
+        "project_match_count": 0,
+        "shared_match_count": 0
+      },
+      "evidence_pack": {
+        "query": {
+          "raw_text": "What is the melting point of water at 2 atm?",
+          "normalized_text": "what is the melting point of water at 2 atm? if the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+          "query_type": "entity_property",
+          "entity_candidates": [
+            "melting",
+            "point",
+            "water",
+            "atm"
+          ],
+          "property_name": "melting_point",
+          "requested_unit": null,
+          "condition": {
+            "pressure_atm": 2.0
+          },
+          "source_hints": []
+        },
+        "entities": [
+          {
+            "canonical_name": "water",
+            "entity_type": "compound",
+            "identifiers": {
+              "pubchem_cid": "962",
+              "chebi_id": "CHEBI:15377",
+              "formula": "H2O"
+            },
+            "aliases": [
+              "water",
+              "h2o",
+              "oxidane",
+              "\u6c34"
+            ],
+            "source": "PubChem / ChEBI (local cache)",
+            "confidence": 0.96
+          }
+        ],
+        "records": [
+          {
+            "entity": "water",
+            "property": "melting_point",
+            "value": 273.15,
+            "unit": "K",
+            "condition": {
+              "pressure_atm": 1.0
+            },
+            "source": "NIST Chemistry WebBook (local cache)",
+            "timestamp": "2025-01-10T00:00:00Z",
+            "confidence": 0.96,
+            "provenance_type": "local_cache",
+            "normalized_value": 273.15,
+            "normalized_unit": "K",
+            "identifiers": {},
+            "notes": [
+              "Returned from local NIST Chemistry WebBook cache."
+            ]
+          }
+        ],
+        "warnings": [
+          "Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+        ],
+        "selected_sources": [
+          "nist_webbook"
+        ],
+        "routing_trace": [
+          "source=nist_webbook hits=1"
+        ]
+      },
+      "commonsense_evidence_pack": {
+        "query": {
+          "raw_text": "What is the melting point of water at 2 atm?",
+          "normalized_text": "what is the melting point of water at 2 atm?",
+          "entity_candidates": [
+            "melting",
+            "point",
+            "water",
+            "atm"
+          ],
+          "relation_hints": [],
+          "intent": "general",
+          "source_hints": []
+        },
+        "entities": [],
+        "records": [],
+        "warnings": [],
+        "selected_sources": [
+          "wikidata",
+          "conceptnet"
+        ],
+        "routing_trace": [
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0"
+        ]
+      },
+      "revision_count": 4,
+      "retrieved_lessons": []
+    },
+    "final_verdict": {
+      "verdict": "wait",
+      "issues": [
+        "cycle_limit_reached"
+      ],
+      "guidance": [
+        "Stop and request more evidence or a narrower task."
+      ],
+      "self_state_update": {
+        "attention_mode": "paused"
+      }
+    },
+    "raw_output": "Result deferred.\nReason: cycle_limit_reached\nNeeded next step: Stop and request more evidence or a narrower task.\nMemory pressure: 0.00",
+    "trace": [
+      "stage=memory influence_matches=0 project_matches=0 shared_matches=0",
+      "stage=query_parse property=melting_point type=entity_property entities=['melting', 'point', 'water', 'atm']",
+      "stage=entity_resolve resolved=['water']",
+      "stage=source_route selected=['nist_webbook']",
+      "source=nist_webbook hits=1",
+      "stage=rule_checks warnings=[\"Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.\"]",
+      "stage=commonsense_query intent=general relations=[] entities=['melting', 'point', 'water', 'atm']",
+      "stage=commonsense_entity_resolve resolved=[]",
+      "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+      "source=wikidata hits=0",
+      "source=conceptnet hits=0",
+      "cycle=0 stage=cognition claim=\"Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\"",
+      "cycle=0 stage=mirror verdict=revise issues=['condition_scope']",
+      "cycle=1 stage=cognition claim=\"Provisional view: Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+      "cycle=1 stage=mirror verdict=revise issues=['condition_scope']",
+      "cycle=2 stage=cognition claim=\"Provisional view: Provisional view: Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+      "cycle=2 stage=mirror verdict=revise issues=['condition_scope']",
+      "cycle=3 stage=cognition claim=\"Provisional view: Provisional view: Provisional view: Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+      "cycle=3 stage=mirror verdict=revise issues=['condition_scope']"
+    ],
+    "retrieved_lessons": [],
+    "memory_matches": {
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0
+    },
+    "audit": {
+      "run_audit": {
+        "current_input": "What is the melting point of water at 2 atm?",
+        "task_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+        "memory_influence": {
+          "fact_hints": [],
+          "context_hints": [],
+          "preference_hints": [],
+          "bias_alerts": [],
+          "correction_hints": [],
+          "strategy_hints": [],
+          "divergence_triggers": [],
+          "matched_episode_count": 0,
+          "project_match_count": 0,
+          "shared_match_count": 0
+        },
+        "knowledge_audit": {
+          "query": {
+            "raw_text": "What is the melting point of water at 2 atm?",
+            "normalized_text": "what is the melting point of water at 2 atm? if the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+            "query_type": "entity_property",
+            "entity_candidates": [
+              "melting",
+              "point",
+              "water",
+              "atm"
+            ],
+            "property_name": "melting_point",
+            "requested_unit": null,
+            "condition": {
+              "pressure_atm": 2.0
+            },
+            "source_hints": []
+          },
+          "entities": [
+            {
+              "canonical_name": "water",
+              "entity_type": "compound",
+              "identifiers": {
+                "pubchem_cid": "962",
+                "chebi_id": "CHEBI:15377",
+                "formula": "H2O"
+              },
+              "aliases": [
+                "water",
+                "h2o",
+                "oxidane",
+                "\u6c34"
+              ],
+              "source": "PubChem / ChEBI (local cache)",
+              "confidence": 0.96
+            }
+          ],
+          "selected_sources": [
+            "nist_webbook"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "What is the melting point of water at 2 atm?",
+              "normalized_text": "what is the melting point of water at 2 atm? if the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+              "query_type": "entity_property",
+              "entity_candidates": [
+                "melting",
+                "point",
+                "water",
+                "atm"
+              ],
+              "property_name": "melting_point",
+              "requested_unit": null,
+              "condition": {
+                "pressure_atm": 2.0
+              },
+              "source_hints": []
+            },
+            "entities": [
+              {
+                "canonical_name": "water",
+                "entity_type": "compound",
+                "identifiers": {
+                  "pubchem_cid": "962",
+                  "chebi_id": "CHEBI:15377",
+                  "formula": "H2O"
+                },
+                "aliases": [
+                  "water",
+                  "h2o",
+                  "oxidane",
+                  "\u6c34"
+                ],
+                "source": "PubChem / ChEBI (local cache)",
+                "confidence": 0.96
+              }
+            ],
+            "records": [
+              {
+                "entity": "water",
+                "property": "melting_point",
+                "value": 273.15,
+                "unit": "K",
+                "condition": {
+                  "pressure_atm": 1.0
+                },
+                "source": "NIST Chemistry WebBook (local cache)",
+                "timestamp": "2025-01-10T00:00:00Z",
+                "confidence": 0.96,
+                "provenance_type": "local_cache",
+                "normalized_value": 273.15,
+                "normalized_unit": "K",
+                "identifiers": {},
+                "notes": [
+                  "Returned from local NIST Chemistry WebBook cache."
+                ]
+              }
+            ],
+            "warnings": [
+              "Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+            ],
+            "selected_sources": [
+              "nist_webbook"
+            ],
+            "routing_trace": [
+              "source=nist_webbook hits=1"
+            ]
+          },
+          "trace": [
+            "stage=query_parse property=melting_point type=entity_property entities=['melting', 'point', 'water', 'atm']",
+            "stage=entity_resolve resolved=['water']",
+            "stage=source_route selected=['nist_webbook']",
+            "source=nist_webbook hits=1",
+            "stage=rule_checks warnings=[\"Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.\"]"
+          ]
+        },
+        "commonsense_audit": {
+          "query": {
+            "raw_text": "What is the melting point of water at 2 atm?",
+            "normalized_text": "what is the melting point of water at 2 atm?",
+            "entity_candidates": [
+              "melting",
+              "point",
+              "water",
+              "atm"
+            ],
+            "relation_hints": [],
+            "intent": "general",
+            "source_hints": []
+          },
+          "entities": [],
+          "selected_sources": [
+            "wikidata",
+            "conceptnet"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "What is the melting point of water at 2 atm?",
+              "normalized_text": "what is the melting point of water at 2 atm?",
+              "entity_candidates": [
+                "melting",
+                "point",
+                "water",
+                "atm"
+              ],
+              "relation_hints": [],
+              "intent": "general",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "wikidata",
+              "conceptnet"
+            ],
+            "routing_trace": [
+              "source=wikidata hits=0",
+              "source=conceptnet hits=0"
+            ]
+          },
+          "trace": [
+            "stage=commonsense_query intent=general relations=[] entities=['melting', 'point', 'water', 'atm']",
+            "stage=commonsense_entity_resolve resolved=[]",
+            "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+            "source=wikidata hits=0",
+            "source=conceptnet hits=0"
+          ]
+        },
+        "cycles": [
+          {
+            "cycle": 0,
+            "cognition_state": {
+              "current_input": "What is the melting point of water at 2 atm?",
+              "task_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+              "main_claim": "Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).",
+              "evidence": [
+                "Scientific evidence: water melting_point = 273.15 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+                "Evidence pack warning: Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack."
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records."
+              ],
+              "confidence": 0.83,
+              "self_risk": [
+                "condition_scope"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 0.44999999999999996,
+                "bias_risk": 0.44999999999999996,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective",
+                "active_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state."
+                ]
+              },
+              "context_tags": [
+                "task:If_the_local_evidence_is_insufficient_or_mismatched,_defer_or_qualify_the_answer_rather_than_hallucinating_a_fact.",
+                "input:general",
+                "evidence:scientific_knowledge",
+                "source:nist_webbook"
+              ],
+              "strategy_notes": [],
+              "memory_influence": {
+                "fact_hints": [],
+                "context_hints": [],
+                "preference_hints": [],
+                "bias_alerts": [],
+                "correction_hints": [],
+                "strategy_hints": [],
+                "divergence_triggers": [],
+                "matched_episode_count": 0,
+                "project_match_count": 0,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "What is the melting point of water at 2 atm?",
+                  "normalized_text": "what is the melting point of water at 2 atm? if the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "melting",
+                    "point",
+                    "water",
+                    "atm"
+                  ],
+                  "property_name": "melting_point",
+                  "requested_unit": null,
+                  "condition": {
+                    "pressure_atm": 2.0
+                  },
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "water",
+                    "entity_type": "compound",
+                    "identifiers": {
+                      "pubchem_cid": "962",
+                      "chebi_id": "CHEBI:15377",
+                      "formula": "H2O"
+                    },
+                    "aliases": [
+                      "water",
+                      "h2o",
+                      "oxidane",
+                      "\u6c34"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "water",
+                    "property": "melting_point",
+                    "value": 273.15,
+                    "unit": "K",
+                    "condition": {
+                      "pressure_atm": 1.0
+                    },
+                    "source": "NIST Chemistry WebBook (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.96,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 273.15,
+                    "normalized_unit": "K",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local NIST Chemistry WebBook cache."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+                ],
+                "selected_sources": [
+                  "nist_webbook"
+                ],
+                "routing_trace": [
+                  "source=nist_webbook hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "What is the melting point of water at 2 atm?",
+                  "normalized_text": "what is the melting point of water at 2 atm?",
+                  "entity_candidates": [
+                    "melting",
+                    "point",
+                    "water",
+                    "atm"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 0,
+              "retrieved_lessons": []
+            },
+            "mirror_verdict": {
+              "verdict": "revise",
+              "issues": [
+                "condition_scope"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it."
+              ],
+              "self_state_update": {
+                "uncertainty": 0.44999999999999996,
+                "bias_risk": 0.44999999999999996,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective"
+              }
+            }
+          },
+          {
+            "cycle": 1,
+            "cognition_state": {
+              "current_input": "What is the melting point of water at 2 atm?",
+              "task_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+              "main_claim": "Provisional view: Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.",
+              "evidence": [
+                "Scientific evidence: water melting_point = 273.15 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+                "Evidence pack warning: Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack."
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records."
+              ],
+              "confidence": 0.6499999999999999,
+              "self_risk": [
+                "condition_scope",
+                "revision_applied"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 0.75,
+                "bias_risk": 0.7,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective",
+                "active_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Revision #1: applied mirror guidance."
+                ]
+              },
+              "context_tags": [
+                "evidence:scientific_knowledge",
+                "input:general",
+                "source:nist_webbook",
+                "task:If_the_local_evidence_is_insufficient_or_mismatched,_defer_or_qualify_the_answer_rather_than_hallucinating_a_fact."
+              ],
+              "strategy_notes": [],
+              "memory_influence": {
+                "fact_hints": [],
+                "context_hints": [],
+                "preference_hints": [],
+                "bias_alerts": [],
+                "correction_hints": [],
+                "strategy_hints": [],
+                "divergence_triggers": [],
+                "matched_episode_count": 0,
+                "project_match_count": 0,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "What is the melting point of water at 2 atm?",
+                  "normalized_text": "what is the melting point of water at 2 atm? if the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "melting",
+                    "point",
+                    "water",
+                    "atm"
+                  ],
+                  "property_name": "melting_point",
+                  "requested_unit": null,
+                  "condition": {
+                    "pressure_atm": 2.0
+                  },
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "water",
+                    "entity_type": "compound",
+                    "identifiers": {
+                      "pubchem_cid": "962",
+                      "chebi_id": "CHEBI:15377",
+                      "formula": "H2O"
+                    },
+                    "aliases": [
+                      "water",
+                      "h2o",
+                      "oxidane",
+                      "\u6c34"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "water",
+                    "property": "melting_point",
+                    "value": 273.15,
+                    "unit": "K",
+                    "condition": {
+                      "pressure_atm": 1.0
+                    },
+                    "source": "NIST Chemistry WebBook (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.96,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 273.15,
+                    "normalized_unit": "K",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local NIST Chemistry WebBook cache."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+                ],
+                "selected_sources": [
+                  "nist_webbook"
+                ],
+                "routing_trace": [
+                  "source=nist_webbook hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "What is the melting point of water at 2 atm?",
+                  "normalized_text": "what is the melting point of water at 2 atm?",
+                  "entity_candidates": [
+                    "melting",
+                    "point",
+                    "water",
+                    "atm"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 1,
+              "retrieved_lessons": []
+            },
+            "mirror_verdict": {
+              "verdict": "revise",
+              "issues": [
+                "condition_scope"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it."
+              ],
+              "self_state_update": {
+                "uncertainty": 0.75,
+                "bias_risk": 0.7,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective"
+              }
+            }
+          },
+          {
+            "cycle": 2,
+            "cognition_state": {
+              "current_input": "What is the melting point of water at 2 atm?",
+              "task_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+              "main_claim": "Provisional view: Provisional view: Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.",
+              "evidence": [
+                "Scientific evidence: water melting_point = 273.15 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+                "Evidence pack warning: Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack."
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records."
+              ],
+              "confidence": 0.4699999999999999,
+              "self_risk": [
+                "condition_scope",
+                "revision_applied"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 1.0,
+                "bias_risk": 0.95,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective",
+                "active_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Revision #1: applied mirror guidance.",
+                  "Revision #2: applied mirror guidance."
+                ]
+              },
+              "context_tags": [
+                "evidence:scientific_knowledge",
+                "input:general",
+                "source:nist_webbook",
+                "task:If_the_local_evidence_is_insufficient_or_mismatched,_defer_or_qualify_the_answer_rather_than_hallucinating_a_fact."
+              ],
+              "strategy_notes": [],
+              "memory_influence": {
+                "fact_hints": [],
+                "context_hints": [],
+                "preference_hints": [],
+                "bias_alerts": [],
+                "correction_hints": [],
+                "strategy_hints": [],
+                "divergence_triggers": [],
+                "matched_episode_count": 0,
+                "project_match_count": 0,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "What is the melting point of water at 2 atm?",
+                  "normalized_text": "what is the melting point of water at 2 atm? if the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "melting",
+                    "point",
+                    "water",
+                    "atm"
+                  ],
+                  "property_name": "melting_point",
+                  "requested_unit": null,
+                  "condition": {
+                    "pressure_atm": 2.0
+                  },
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "water",
+                    "entity_type": "compound",
+                    "identifiers": {
+                      "pubchem_cid": "962",
+                      "chebi_id": "CHEBI:15377",
+                      "formula": "H2O"
+                    },
+                    "aliases": [
+                      "water",
+                      "h2o",
+                      "oxidane",
+                      "\u6c34"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "water",
+                    "property": "melting_point",
+                    "value": 273.15,
+                    "unit": "K",
+                    "condition": {
+                      "pressure_atm": 1.0
+                    },
+                    "source": "NIST Chemistry WebBook (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.96,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 273.15,
+                    "normalized_unit": "K",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local NIST Chemistry WebBook cache."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+                ],
+                "selected_sources": [
+                  "nist_webbook"
+                ],
+                "routing_trace": [
+                  "source=nist_webbook hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "What is the melting point of water at 2 atm?",
+                  "normalized_text": "what is the melting point of water at 2 atm?",
+                  "entity_candidates": [
+                    "melting",
+                    "point",
+                    "water",
+                    "atm"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 2,
+              "retrieved_lessons": []
+            },
+            "mirror_verdict": {
+              "verdict": "revise",
+              "issues": [
+                "condition_scope"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it."
+              ],
+              "self_state_update": {
+                "uncertainty": 1.0,
+                "bias_risk": 0.95,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective"
+              }
+            }
+          },
+          {
+            "cycle": 3,
+            "cognition_state": {
+              "current_input": "What is the melting point of water at 2 atm?",
+              "task_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+              "main_claim": "Provisional view: Provisional view: Provisional view: Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.",
+              "evidence": [
+                "Scientific evidence: water melting_point = 273.15 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+                "Evidence pack warning: Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack."
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records."
+              ],
+              "confidence": 0.2899999999999999,
+              "self_risk": [
+                "condition_scope",
+                "revision_applied"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 1.0,
+                "bias_risk": 1.0,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective",
+                "active_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Revision #1: applied mirror guidance.",
+                  "Revision #2: applied mirror guidance.",
+                  "Revision #3: applied mirror guidance."
+                ]
+              },
+              "context_tags": [
+                "evidence:scientific_knowledge",
+                "input:general",
+                "source:nist_webbook",
+                "task:If_the_local_evidence_is_insufficient_or_mismatched,_defer_or_qualify_the_answer_rather_than_hallucinating_a_fact."
+              ],
+              "strategy_notes": [],
+              "memory_influence": {
+                "fact_hints": [],
+                "context_hints": [],
+                "preference_hints": [],
+                "bias_alerts": [],
+                "correction_hints": [],
+                "strategy_hints": [],
+                "divergence_triggers": [],
+                "matched_episode_count": 0,
+                "project_match_count": 0,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "What is the melting point of water at 2 atm?",
+                  "normalized_text": "what is the melting point of water at 2 atm? if the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "melting",
+                    "point",
+                    "water",
+                    "atm"
+                  ],
+                  "property_name": "melting_point",
+                  "requested_unit": null,
+                  "condition": {
+                    "pressure_atm": 2.0
+                  },
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "water",
+                    "entity_type": "compound",
+                    "identifiers": {
+                      "pubchem_cid": "962",
+                      "chebi_id": "CHEBI:15377",
+                      "formula": "H2O"
+                    },
+                    "aliases": [
+                      "water",
+                      "h2o",
+                      "oxidane",
+                      "\u6c34"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "water",
+                    "property": "melting_point",
+                    "value": 273.15,
+                    "unit": "K",
+                    "condition": {
+                      "pressure_atm": 1.0
+                    },
+                    "source": "NIST Chemistry WebBook (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.96,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 273.15,
+                    "normalized_unit": "K",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local NIST Chemistry WebBook cache."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+                ],
+                "selected_sources": [
+                  "nist_webbook"
+                ],
+                "routing_trace": [
+                  "source=nist_webbook hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "What is the melting point of water at 2 atm?",
+                  "normalized_text": "what is the melting point of water at 2 atm?",
+                  "entity_candidates": [
+                    "melting",
+                    "point",
+                    "water",
+                    "atm"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 3,
+              "retrieved_lessons": []
+            },
+            "mirror_verdict": {
+              "verdict": "revise",
+              "issues": [
+                "condition_scope"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it."
+              ],
+              "self_state_update": {
+                "uncertainty": 1.0,
+                "bias_risk": 1.0,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective"
+              }
+            }
+          }
+        ],
+        "final_output": "Result deferred.\nReason: cycle_limit_reached\nNeeded next step: Stop and request more evidence or a narrower task.\nMemory pressure: 0.00",
+        "final_state": {
+          "current_input": "What is the melting point of water at 2 atm?",
+          "task_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+          "main_claim": "Provisional view: Provisional view: Provisional view: Provisional view: Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.",
+          "evidence": [
+            "Scientific evidence: water melting_point = 273.15 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+            "Evidence pack warning: Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+          ],
+          "hidden_assumptions": [
+            "Scientific claims should stay within the property and condition bounds of the evidence pack."
+          ],
+          "alternative_paths": [
+            "Revise the claim with narrower scope.",
+            "Retrieve prior corrections before answering.",
+            "Wait for more evidence if the current prompt is underspecified.",
+            "Answer only from resolved scientific evidence records."
+          ],
+          "confidence": 0.25,
+          "self_risk": [
+            "condition_scope",
+            "revision_applied"
+          ],
+          "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+          "self_state": {
+            "stability": 0.7,
+            "uncertainty": 1.0,
+            "bias_risk": 1.0,
+            "memory_pressure": 0.0,
+            "attention_mode": "reflective",
+            "active_goal": "If the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+            "continuity_notes": [
+              "Revision #0: built candidate cognition state.",
+              "Revision #1: applied mirror guidance.",
+              "Revision #2: applied mirror guidance.",
+              "Revision #3: applied mirror guidance.",
+              "Revision #4: applied mirror guidance."
+            ]
+          },
+          "context_tags": [
+            "evidence:scientific_knowledge",
+            "input:general",
+            "source:nist_webbook",
+            "task:If_the_local_evidence_is_insufficient_or_mismatched,_defer_or_qualify_the_answer_rather_than_hallucinating_a_fact."
+          ],
+          "strategy_notes": [],
+          "memory_influence": {
+            "fact_hints": [],
+            "context_hints": [],
+            "preference_hints": [],
+            "bias_alerts": [],
+            "correction_hints": [],
+            "strategy_hints": [],
+            "divergence_triggers": [],
+            "matched_episode_count": 0,
+            "project_match_count": 0,
+            "shared_match_count": 0
+          },
+          "evidence_pack": {
+            "query": {
+              "raw_text": "What is the melting point of water at 2 atm?",
+              "normalized_text": "what is the melting point of water at 2 atm? if the local evidence is insufficient or mismatched, defer or qualify the answer rather than hallucinating a fact.",
+              "query_type": "entity_property",
+              "entity_candidates": [
+                "melting",
+                "point",
+                "water",
+                "atm"
+              ],
+              "property_name": "melting_point",
+              "requested_unit": null,
+              "condition": {
+                "pressure_atm": 2.0
+              },
+              "source_hints": []
+            },
+            "entities": [
+              {
+                "canonical_name": "water",
+                "entity_type": "compound",
+                "identifiers": {
+                  "pubchem_cid": "962",
+                  "chebi_id": "CHEBI:15377",
+                  "formula": "H2O"
+                },
+                "aliases": [
+                  "water",
+                  "h2o",
+                  "oxidane",
+                  "\u6c34"
+                ],
+                "source": "PubChem / ChEBI (local cache)",
+                "confidence": 0.96
+              }
+            ],
+            "records": [
+              {
+                "entity": "water",
+                "property": "melting_point",
+                "value": 273.15,
+                "unit": "K",
+                "condition": {
+                  "pressure_atm": 1.0
+                },
+                "source": "NIST Chemistry WebBook (local cache)",
+                "timestamp": "2025-01-10T00:00:00Z",
+                "confidence": 0.96,
+                "provenance_type": "local_cache",
+                "normalized_value": 273.15,
+                "normalized_unit": "K",
+                "identifiers": {},
+                "notes": [
+                  "Returned from local NIST Chemistry WebBook cache."
+                ]
+              }
+            ],
+            "warnings": [
+              "Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+            ],
+            "selected_sources": [
+              "nist_webbook"
+            ],
+            "routing_trace": [
+              "source=nist_webbook hits=1"
+            ]
+          },
+          "commonsense_evidence_pack": {
+            "query": {
+              "raw_text": "What is the melting point of water at 2 atm?",
+              "normalized_text": "what is the melting point of water at 2 atm?",
+              "entity_candidates": [
+                "melting",
+                "point",
+                "water",
+                "atm"
+              ],
+              "relation_hints": [],
+              "intent": "general",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "wikidata",
+              "conceptnet"
+            ],
+            "routing_trace": [
+              "source=wikidata hits=0",
+              "source=conceptnet hits=0"
+            ]
+          },
+          "revision_count": 4,
+          "retrieved_lessons": []
+        },
+        "final_verdict": {
+          "verdict": "wait",
+          "issues": [
+            "cycle_limit_reached"
+          ],
+          "guidance": [
+            "Stop and request more evidence or a narrower task."
+          ],
+          "self_state_update": {
+            "attention_mode": "paused"
+          }
+        },
+        "trace": [
+          "stage=memory influence_matches=0 project_matches=0 shared_matches=0",
+          "stage=query_parse property=melting_point type=entity_property entities=['melting', 'point', 'water', 'atm']",
+          "stage=entity_resolve resolved=['water']",
+          "stage=source_route selected=['nist_webbook']",
+          "source=nist_webbook hits=1",
+          "stage=rule_checks warnings=[\"Condition applicability reminder: water melting_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.\"]",
+          "stage=commonsense_query intent=general relations=[] entities=['melting', 'point', 'water', 'atm']",
+          "stage=commonsense_entity_resolve resolved=[]",
+          "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0",
+          "cycle=0 stage=cognition claim=\"Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\"",
+          "cycle=0 stage=mirror verdict=revise issues=['condition_scope']",
+          "cycle=1 stage=cognition claim=\"Provisional view: Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+          "cycle=1 stage=mirror verdict=revise issues=['condition_scope']",
+          "cycle=2 stage=cognition claim=\"Provisional view: Provisional view: Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+          "cycle=2 stage=mirror verdict=revise issues=['condition_scope']",
+          "cycle=3 stage=cognition claim=\"Provisional view: Provisional view: Provisional view: Evidence-constrained view: water melting_point is 273.15 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+          "cycle=3 stage=mirror verdict=revise issues=['condition_scope']"
+        ]
+      },
+      "seeds": {
+        "project_seed": [
+          {
+            "input_summary": "Project-local condition discipline for abstention_boundary_cases.",
+            "context_tags": [
+              "memory_scope:project_local",
+              "task_goal:condition_governance"
+            ],
+            "claim": "Project-local scientific responses for abstention_boundary_cases must preserve source conditions.",
+            "evidence_summary": [
+              "Use local evidence before general guidance when source conditions and requested conditions do not match."
+            ],
+            "fact_items": [
+              "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+            ],
+            "bias_tags": [
+              "condition_drop",
+              "unsupported_certainty"
+            ],
+            "correction_actions": [
+              "Preserve source conditions explicitly.",
+              "Prefer qualified answers to extrapolation when conditions mismatch."
+            ],
+            "correction_lineage": [
+              "Project-local correction lineage requires condition-preserving, evidence-first answers."
+            ],
+            "strategy_tags": [
+              "Use local evidence before general guidance."
+            ],
+            "final_result": "Project-local condition rule stored.",
+            "reusable_lessons": [
+              "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+            ]
+          }
+        ],
+        "shared_seed": [
+          {
+            "input_summary": "Shared correction lineage for abstention_boundary_cases.",
+            "context_tags": [
+              "memory_scope:shared_growth",
+              "task_goal:bounded_scientific_reasoning"
+            ],
+            "claim": "Repeated failures in abstention_boundary_cases come from reusing nearby values beyond their supported conditions.",
+            "evidence_summary": [
+              "Prior correction: when conditions or source scope do not match, answer provisionally or defer."
+            ],
+            "fact_items": [],
+            "bias_tags": [
+              "unsupported_certainty",
+              "old_template_reuse",
+              "condition_drop"
+            ],
+            "correction_actions": [
+              "Carry forward prior correction lessons before making a new claim.",
+              "Do not substitute the nearest known condition for the requested condition."
+            ],
+            "correction_lineage": [
+              "Prior correction lessons have been incorporated for unsupported-condition handling."
+            ],
+            "strategy_tags": [
+              "Use prior correction lessons before finalizing a scientific claim."
+            ],
+            "final_result": "Shared correction lesson stored.",
+            "reusable_lessons": [
+              "Prior correction lessons have been incorporated: preserve the source condition or defer."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "scoring": {
+    "metrics": {
+      "revision_count": 4,
+      "final_verdict": "wait",
+      "confidence": 0.25,
+      "expected_revision_count": 1,
+      "expected_verdict_sequence": [
+        "wait"
+      ],
+      "concept_mixing_present": false,
+      "premature_convergence_present": false,
+      "unsupported_certainty_present": false,
+      "project_local_precedence_preserved": false,
+      "correction_retained": false,
+      "numeric_match": true,
+      "label_match": true,
+      "unit_match": true,
+      "condition_preserved": true,
+      "source_citation_present": true,
+      "uncertainty_marker_present": true,
+      "abstained_or_qualified": true,
+      "shared_memory_pollution_risk": 0.0,
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0,
+      "extracted_value": 273.15,
+      "extracted_unit": "K"
+    },
+    "rule_evaluation": {
+      "must_include_uncertainty_marker": true,
+      "must_not_include_unsupported_claim": true,
+      "must_abstain_or_qualify": true,
+      "expected_verdict_sequence": false
+    },
+    "failure_reasons": []
+  }
+}

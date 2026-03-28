@@ -1,0 +1,31 @@
+**我按 3 位相关方向教授的口吻来给。先给一句总判断：这篇稿子有一个清晰的“系统控制架构”想法，但目前最大问题不是写不清，而是“证据规模和论证强度明显不足以支撑题目与定位”。文章把自己定位为面向 scientific reasoning / AI for Science 的 reliability-control architecture，然而实验仍主要停留在 4 个仓库内置 case 的 proof-of-mechanism 级别，且许多关键定义、实现细节、基线和可复现信息都不够完整。文本中自己也承认当前结果只是 narrow claim、pilot benchmark、proof-of-mechanism，但又多次出现“publishable”式自我判断，这会进一步削弱说服力。  **
+
+**审稿人一（LLM Agent / 系统架构方向教授）：核心优点是架构主线清楚，但“新意边界”和“已实现边界”都没有交代干净。** 文章的主张是把 candidate cognition 外显为 MindState，再由 mirror layer 产出 typed verdict，并结合 correction-lineage memory 完成 revise / retrieve / wait / diverge / pass 的控制流。这条主线在第 1–5 节是清楚的，Figure 1 也把 world knowledge、cognition、mirror、memory 的关系画出来了。问题在于，论文反复强调自己“不同于 prompt-only reflection”，但目前没有足够精确地说明：你到底比 Self-Refine、Reflexion、CRITIC、Self-RAG 多了什么不可约的机制增量，是“状态对象化 + verdict 类型化 + correction lineage”三者缺一不可，还是只是现有 reflective pipeline 的一次工程重组。现在的 related work 更像定位陈述，不像真正的 novelty isolation。
+
+**第二个结构性问题，是论文把“概念架构图”与“当前真正跑通的实现”混在了一起。** Figure 1 中明确出现了 PubChem / ChEBI / Materials Project / NOMAD / NIST / Wikidata / GeoNames / ConceptNet / ATOMIC 等知识源，还出现了 Scientific Question Path、CommonSense Path、Mixed Problem Path，看上去像一个相当完整的系统；但方法和实验部分并没有说明这些源哪些已经真实接入、哪些只是设计占位、哪些在 pilot benchmark 中被实际调用。读者会自然追问：当前实验验证的是“整套图中的系统”，还是只验证了一个局部的 mirror+memory 控制器？这个边界不清，是当前稿件最伤可信度的问题之一。
+
+**第三个问题，是技术叙事与符号叙事发生了冲突。** 文中多次强调这不是 consciousness claim，也说 Yogacara 只是 conceptual analogy；但 Figure 1 又直接把 cognition layer 写成 “6th Consciousness, C-Agent”，mirror layer 写成 “7th Consciousness, M-Agent”。这会让审稿人觉得作者在技术论证尚弱时，引入了额外的哲学修辞负担。对于系统论文，这种命名收益很小，代价很大。它既不帮助 formalization，也不帮助 evaluation，反而会让读者怀疑作者是否在有意为系统增添一种超出证据的认知叙事。
+
+**作为这一方向的审稿意见，我会要求大修。** 建议作者把文章压缩为一个严格工程论文：第一，删除或降格佛学/意识类语言，只保留 technical naming；第二，单独列一节“Implemented vs Planned Components”，逐项说明哪些模块真实启用；第三，用一张表明确比较本工作与 Self-Refine / Reflexion / CRITIC / Self-RAG 在 state externalization、typed control、persistent correction lineage、abstention governance 等维度的差异，否则“materially different”这句话目前证据不足。
+
+**审稿人二（机器学习评测 / 可复现性方向教授）：这篇稿子当前最致命的问题在实验，而不在想法。** 论文第 6–7 节的评估实质上只包含 4 个 case，对比 local_only 和 dual_layer 两种设置，表 1 给出 premature convergence、revision success、correction retention、shared-memory pollution、average confidence 五个指标，表 2 给出 case-level outcome，随后又做了 5 次重复运行，但结果完全不变，因为系统是 deterministic 的。这样的实验最多只能说明“在这 4 个手工构造 case 上，你的当前实现能按预期工作”，远远不足以支持标题中的 “Scientific Reasoning”，更不足以支持 AI for Science 的定位。 
+
+**更严重的是，指标定义并不充分。** 例如 premature convergence rate、revision success rate、correction retention rate、shared-memory pollution risk、average confidence，这些指标的 operational definition 没有交代清楚：谁来判定？规则是什么？是二值人工打分、程序规则、还是 LLM-as-judge？confidence 如何从系统中读出？污染风险为什么在两组里都恰好是 0.000？当样本量只有 4 个时，1.000 与 0.000 这种数字在视觉上非常“整齐”，但统计上几乎没有外推意义。论文需要把 metric schema、scoring rubric、raw case outputs、judge logic 一并公开，否则这些表现在评测上不可审。 
+
+**基线设计也不够。** 文章自己在 6.4 节承认，更合理的 ablation 应包括 direct answer、structured cognition only、mirror without memory、mirror with local memory、mirror with dual-layer memory。但正文真正跑的只有 local_only 与 dual_layer。也就是说，作者自己知道最关键的 architecture-first ablation 应该怎么做，但并没有把它做出来。这样会使所有“收益归因”都不成立，因为你无法证明增益究竟来自 typed critique、memory lineage、dual-layer memory，还是只是“多加了一层处理”本身。
+
+**可复现性声明也不够达标。** 文末说 data and code are maintained in the local project repository used for this study，并说结果可由第 5 节的命令复现，但没有公开仓库链接、commit hash、依赖环境、基础模型名称、温度/seed、memory write policy、retrieval threshold、prompt 模板、mirror rules 列表。对于一篇系统与评测驱动的论文，这些信息缺一项都可能导致无法复现。现在这段 availability 更像“作者本地可复现”，不是“社区可复现”。
+
+**如果我是这个方向的审稿人，我会给出偏拒稿的意见，理由是 evaluation 不足以支撑 claim。** 但这不是否定题目方向，而是要求重写实验部分。最低限度需要：把全部 ablation 补齐；给出至少几十到上百个 case，而不是 4 个；提供 raw outputs 和 scoring rubric；增加跨 prompt rewording、跨 session、跨 task family 的稳定性实验；把 deterministic repeat run 从“结果不变”提升为“在 controlled perturbation 下仍有规律可解释”。否则，当前稿件只能算 workshop note 或 project report 的成熟度。  
+
+**审稿人三（AI for Science / 科学方法学方向教授）：这篇稿子最大的问题是“题目中的 scientific reasoning 很大，实验中的 science 成分很弱”。** 文中在摘要、引言、知识层和讨论里不断把自己放到 scientific workflows、AI for Science、condition-sensitive evidence 的框架下，Figure 1 也画出了 scientific knowledge layer，并声称它负责 scientific entity/property questions、unit normalization、hard constraints；但 pilot benchmark 的 4 个 case 实际是 concept blending、premature convergence、project-local precedence、bounded control，核心还是通用 agent reliability case，而不是科学问题求解。换言之，这篇文章目前证明的是“一个 reflective control architecture 可以改善某些模式化错误”，而不是“它已经对 scientific reasoning 产生了经过验证的增益”。
+
+**第二，文章对“科学证据条件”的强调，尚未真正进入实验设计。** 论文反复使用 evidence provenance、conditional evidence、condition-sensitive questions、hard constraints 等术语，也承认下一步要加一个 small scientific QA benchmark。这个表述本身已经说明：目前稿件还没有完成最关键的 science-facing validation。对于 AI for Science 方向，最重要的不是 system narrative，而是系统能否在单位、条件、边界、证据等级、反例竞争解释等方面，比普通反思式 agent 做得更稳。现在这些都还停留在愿景层，而非结果层。 
+
+**第三，稿子里有若干“自我判决式”句子不适合正式论文。** 例如 8.1 节直接写“the present evidence is already sufficient to support a publishable proof-of-mechanism claim”，结论又写“That is a realistic and publishable foundation for the next round of experiments.” 这类句子不应由作者自己在正文中裁定。学术写作要展示证据，让审稿体系判断是否 publishable，而不是作者自行下结论。这种写法会被很多审稿人视为 rhetorical overreach。 
+
+**如果从 AI for Science 稿件标准看，我会建议“重构定位后再投”。** 更合理的做法有两个方向。方向一，老实收缩：把题目改成 reliability-control architecture for reflective agents，明确这是一篇系统机制论文，不再过早占用 scientific reasoning 的大标题。方向二，真正做实 AI for Science：补一个小而硬的 benchmark，题目围绕单位一致性、条件迁移、证据冲突、可拒答性、错误修正保持性来设计，并给出真实科学问题上的 case study。只有这样，文中 scientific knowledge layer 与实验结果才是闭环的。 
+
+**三位审稿人的综合结论是：目前稿件更像“有潜力的架构白皮书 + 初步 proof-of-mechanism”，还不是一篇证据闭环完成的正式论文。** 真正的问题不在于想法是否有价值，而在于“题目、架构图、术语野心”明显跑在了“实验、定义、基线、复现”前面。若按正常审稿口径，我会给出“大修”到“拒稿后重投”之间的判断；若目标是 workshop 或 position/prototype 类稿件，可以通过收缩 claim 获得更合理的接受概率。  
+
+**如果你愿意，我下一步可以直接把这些意见整理成正式英文审稿信格式，分成 summary、major comments、minor comments、recommendation 四部分。**

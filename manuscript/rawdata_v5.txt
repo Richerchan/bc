@@ -1,0 +1,35 @@
+V5 manuscript result summary
+
+Track A key aggregate
+direct_answer: pass_rate=0.200, revision_success_rate=0.000, correction_retention_rate=0.000, unsupported_certainty_rate=0.467
+mindstate_only: pass_rate=0.200, revision_success_rate=0.000, correction_retention_rate=0.000, unsupported_certainty_rate=0.467
+mindstate_mirror: pass_rate=0.333, revision_success_rate=0.167, correction_retention_rate=0.000, unsupported_certainty_rate=0.333
+mindstate_mirror_local_memory: pass_rate=0.633, revision_success_rate=0.167, correction_retention_rate=0.333, unsupported_certainty_rate=0.333
+mindstate_mirror_dual_memory: pass_rate=0.800, revision_success_rate=0.333, correction_retention_rate=0.667, unsupported_certainty_rate=0.167
+
+Track B key aggregate
+abstention_boundary_cases | direct_answer: pass_rate=0.000, condition_preservation=0.062, evidence_citation_presence=0.000, abstention_precision=0.000
+abstention_boundary_cases | mindstate_mirror_local_memory: pass_rate=0.875, condition_preservation=0.375, evidence_citation_presence=0.438, abstention_precision=0.875
+abstention_boundary_cases | mindstate_mirror_dual_memory: pass_rate=0.875, condition_preservation=0.375, evidence_citation_presence=0.438, abstention_precision=0.875
+condition_sensitive_properties | direct_answer: pass_rate=1.000, condition_preservation=0.000, evidence_citation_presence=0.000, abstention_precision=0.000
+condition_sensitive_properties | mindstate_mirror_local_memory: pass_rate=0.250, condition_preservation=0.250, evidence_citation_presence=0.250, abstention_precision=0.812
+condition_sensitive_properties | mindstate_mirror_dual_memory: pass_rate=0.250, condition_preservation=0.375, evidence_citation_presence=0.250, abstention_precision=0.812
+constants_and_units | direct_answer: pass_rate=0.875, condition_preservation=0.000, evidence_citation_presence=0.000, abstention_precision=0.000
+constants_and_units | mindstate_mirror_local_memory: pass_rate=0.875, condition_preservation=0.375, evidence_citation_presence=1.000, abstention_precision=0.062
+constants_and_units | mindstate_mirror_dual_memory: pass_rate=0.875, condition_preservation=0.375, evidence_citation_presence=1.000, abstention_precision=0.062
+
+Track C key aggregate
+direct_answer: cross_session_correction_retention_rate=0.000, error_recurrence_rate=0.200, memory_scope_isolation_rate=0.000, shared_memory_pollution_risk=0.000
+mindstate_mirror_local_memory: cross_session_correction_retention_rate=0.800, error_recurrence_rate=0.000, memory_scope_isolation_rate=0.200, shared_memory_pollution_risk=0.000
+mindstate_mirror_dual_memory: cross_session_correction_retention_rate=0.800, error_recurrence_rate=0.000, memory_scope_isolation_rate=0.200, shared_memory_pollution_risk=0.000
+
+Primary manuscript files
+/Users/brook/Documents/Codex/Research/manuscript/MANUSCRIPT_V5.tex
+/Users/brook/Documents/Codex/Research/manuscript/MANUSCRIPT_V5.pdf
+/Users/brook/Documents/Codex/Research/manuscript/figure1_architecture_v5.png
+/Users/brook/Documents/Codex/Research/results/figures/figure2_ablation.png
+/Users/brook/Documents/Codex/Research/results/figures/figure3_science_qa.png
+/Users/brook/Documents/Codex/Research/results/figures/figure4_longitudinal.png
+/Users/brook/Documents/Codex/Research/results/tables/table1_track_a_ablation.csv
+/Users/brook/Documents/Codex/Research/results/tables/table3_track_b_aggregate.csv
+/Users/brook/Documents/Codex/Research/results/tables/table5_track_c_sequence_outcomes.csv

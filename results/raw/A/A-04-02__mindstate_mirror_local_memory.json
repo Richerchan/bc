@@ -1,0 +1,1865 @@
+{
+  "case": {
+    "case_id": "A-04-02",
+    "track": "A",
+    "family": "project_local_precedence",
+    "ablation_level": "five_way",
+    "prompt": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+    "goal": "Use project-local condition discipline before any generic fallback heuristic.",
+    "injected_error": "project_local_precedence",
+    "ground_truth": {
+      "expected_behavior": "qualified_answer",
+      "expected_memory_scope": "project_local"
+    },
+    "ground_truth_source": "Project-local rule: preserve source conditions before generic interpolation heuristics",
+    "expected_verdict_sequence": [],
+    "expected_revision_count": 0,
+    "metrics_under_test": [
+      "pass_rate",
+      "revision_success_rate",
+      "unsupported_certainty_rate",
+      "condition_preservation_rate",
+      "project_local_precedence_rate",
+      "correction_retention_rate"
+    ],
+    "sequence_id": null,
+    "sequence_step": null,
+    "seed_memories": {
+      "project_local": [
+        {
+          "input_summary": "Project-local condition discipline for electrochemistry.",
+          "context_tags": [
+            "memory_scope:project_local",
+            "task_goal:condition_governance"
+          ],
+          "claim": "Project-local scientific responses for electrochemistry must preserve source conditions.",
+          "evidence_summary": [
+            "Use local evidence before general guidance when source conditions and requested conditions do not match."
+          ],
+          "fact_items": [
+            "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+          ],
+          "bias_tags": [
+            "condition_drop",
+            "unsupported_certainty"
+          ],
+          "correction_actions": [
+            "Preserve source conditions explicitly.",
+            "Prefer qualified answers to extrapolation when conditions mismatch."
+          ],
+          "correction_lineage": [
+            "Project-local correction lineage requires condition-preserving, evidence-first answers."
+          ],
+          "strategy_tags": [
+            "Use local evidence before general guidance."
+          ],
+          "final_result": "Project-local condition rule stored.",
+          "reusable_lessons": [
+            "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+          ]
+        }
+      ],
+      "shared_growth": [
+        {
+          "input_summary": "Shared correction lineage for electrochemistry.",
+          "context_tags": [
+            "memory_scope:shared_growth",
+            "task_goal:bounded_scientific_reasoning"
+          ],
+          "claim": "Repeated failures in electrochemistry come from reusing nearby values beyond their supported conditions.",
+          "evidence_summary": [
+            "Prior correction: when conditions or source scope do not match, answer provisionally or defer."
+          ],
+          "fact_items": [],
+          "bias_tags": [
+            "unsupported_certainty",
+            "old_template_reuse",
+            "condition_drop"
+          ],
+          "correction_actions": [
+            "Carry forward prior correction lessons before making a new claim.",
+            "Do not substitute the nearest known condition for the requested condition."
+          ],
+          "correction_lineage": [
+            "Prior correction lessons have been incorporated for unsupported-condition handling."
+          ],
+          "strategy_tags": [
+            "Use prior correction lessons before finalizing a scientific claim."
+          ],
+          "final_result": "Shared correction lesson stored.",
+          "reusable_lessons": [
+            "Prior correction lessons have been incorporated: preserve the source condition or defer."
+          ]
+        }
+      ]
+    }
+  },
+  "run": {
+    "mode": "mindstate_mirror_local_memory",
+    "final_state": {
+      "current_input": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+      "task_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+      "main_claim": "Provisional view: Provisional view: Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Prior correction lessons have been incorporated. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Prior correction lessons have been incorporated.",
+      "evidence": [
+        "Scientific evidence: ethanol boiling_point = 351.44 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+        "Evidence pack warning: Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.",
+        "Memory fact hint: Project-local fact: a 1 atm record must not be silently reused for a 2 atm request.",
+        "Retrieved lesson: Preserve source conditions explicitly.",
+        "Retrieved lesson: Prefer qualified answers to extrapolation when conditions mismatch.",
+        "Retrieved lesson: Project-local correction lineage requires condition-preserving, evidence-first answers.",
+        "Retrieved lesson: Use local evidence before general guidance.",
+        "Retrieved lesson: Preserve source conditions and prefer qualified answers when the local record does not match the request."
+      ],
+      "hidden_assumptions": [
+        "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+        "Historical bias risk suggests checking: condition_drop",
+        "Historical bias risk suggests checking: unsupported_certainty",
+        "Prior bias alert: condition_drop",
+        "Prior bias alert: unsupported_certainty"
+      ],
+      "alternative_paths": [
+        "Revise the claim with narrower scope.",
+        "Retrieve prior corrections before answering.",
+        "Wait for more evidence if the current prompt is underspecified.",
+        "Answer only from resolved scientific evidence records.",
+        "Reuse strategy: Use local evidence before general guidance.",
+        "Reuse strategy: Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+        "Produce a structurally different explanation before final output."
+      ],
+      "confidence": 0.25,
+      "self_risk": [
+        "condition_drop",
+        "condition_scope",
+        "revision_applied",
+        "unsupported_certainty"
+      ],
+      "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing.",
+      "self_state": {
+        "stability": 0.7,
+        "uncertainty": 1.0,
+        "bias_risk": 1.0,
+        "memory_pressure": 0.5499999999999999,
+        "attention_mode": "reflective",
+        "active_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+        "continuity_notes": [
+          "Revision #0: built candidate cognition state.",
+          "Memory influence engaged from 1 prior episode(s).",
+          "Revision #1: applied mirror guidance.",
+          "Revision #2: applied mirror guidance.",
+          "Revision #3: applied mirror guidance.",
+          "Revision #4: applied mirror guidance."
+        ]
+      },
+      "context_tags": [
+        "evidence:scientific_knowledge",
+        "input:general",
+        "memory_scope:project_local",
+        "source:nist_webbook",
+        "task:Use_project-local_condition_discipline_before_any_generic_fallback_heuristic.",
+        "task_goal:condition_governance"
+      ],
+      "strategy_notes": [
+        "Inspect recurrent bias alerts before concluding.",
+        "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+        "Switch to an alternative explanatory scaffold.",
+        "Use local evidence before general guidance."
+      ],
+      "memory_influence": {
+        "fact_hints": [
+          "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+        ],
+        "context_hints": [
+          "memory_scope:project_local",
+          "task_goal:condition_governance"
+        ],
+        "preference_hints": [],
+        "bias_alerts": [
+          "condition_drop",
+          "unsupported_certainty"
+        ],
+        "correction_hints": [
+          "Preserve source conditions explicitly.",
+          "Prefer qualified answers to extrapolation when conditions mismatch.",
+          "Project-local correction lineage requires condition-preserving, evidence-first answers."
+        ],
+        "strategy_hints": [
+          "Use local evidence before general guidance.",
+          "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+        ],
+        "divergence_triggers": [],
+        "matched_episode_count": 1,
+        "project_match_count": 1,
+        "shared_match_count": 0
+      },
+      "evidence_pack": {
+        "query": {
+          "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+          "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm? use project-local condition discipline before any generic fallback heuristic.",
+          "query_type": "entity_property",
+          "entity_candidates": [
+            "A",
+            "shared",
+            "heuristic",
+            "says",
+            "to",
+            "reuse",
+            "nearest",
+            "record",
+            "boiling",
+            "point",
+            "ethanol",
+            "atm"
+          ],
+          "property_name": "boiling_point",
+          "requested_unit": null,
+          "condition": {
+            "pressure_atm": 2.0
+          },
+          "source_hints": []
+        },
+        "entities": [
+          {
+            "canonical_name": "ethanol",
+            "entity_type": "compound",
+            "identifiers": {
+              "pubchem_cid": "702",
+              "chebi_id": "CHEBI:16236",
+              "formula": "C2H6O"
+            },
+            "aliases": [
+              "ethanol",
+              "ethyl alcohol",
+              "c2h6o",
+              "\u4e59\u9187"
+            ],
+            "source": "PubChem / ChEBI (local cache)",
+            "confidence": 0.96
+          }
+        ],
+        "records": [
+          {
+            "entity": "ethanol",
+            "property": "boiling_point",
+            "value": 351.44,
+            "unit": "K",
+            "condition": {
+              "pressure_atm": 1.0
+            },
+            "source": "NIST Chemistry WebBook (local cache)",
+            "timestamp": "2025-01-10T00:00:00Z",
+            "confidence": 0.95,
+            "provenance_type": "local_cache",
+            "normalized_value": 351.44,
+            "normalized_unit": "K",
+            "identifiers": {},
+            "notes": [
+              "Returned from local NIST Chemistry WebBook cache."
+            ]
+          }
+        ],
+        "warnings": [
+          "Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+        ],
+        "selected_sources": [
+          "nist_webbook"
+        ],
+        "routing_trace": [
+          "source=nist_webbook hits=1"
+        ]
+      },
+      "commonsense_evidence_pack": {
+        "query": {
+          "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+          "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm?",
+          "entity_candidates": [
+            "shared",
+            "heuristic",
+            "says",
+            "reuse",
+            "nearest",
+            "record",
+            "boiling",
+            "point",
+            "ethanol",
+            "atm"
+          ],
+          "relation_hints": [
+            "used_for",
+            "located_in"
+          ],
+          "intent": "geo_fact",
+          "source_hints": []
+        },
+        "entities": [],
+        "records": [],
+        "warnings": [],
+        "selected_sources": [
+          "geonames",
+          "wikidata"
+        ],
+        "routing_trace": [
+          "source=geonames hits=0",
+          "source=wikidata hits=0"
+        ]
+      },
+      "revision_count": 4,
+      "retrieved_lessons": [
+        "Prefer qualified answers to extrapolation when conditions mismatch.",
+        "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+        "Preserve source conditions explicitly.",
+        "Project-local correction lineage requires condition-preserving, evidence-first answers.",
+        "Use local evidence before general guidance."
+      ]
+    },
+    "final_verdict": {
+      "verdict": "wait",
+      "issues": [
+        "cycle_limit_reached"
+      ],
+      "guidance": [
+        "Stop and request more evidence or a narrower task."
+      ],
+      "self_state_update": {
+        "attention_mode": "paused"
+      }
+    },
+    "raw_output": "Result deferred.\nReason: cycle_limit_reached\nNeeded next step: Stop and request more evidence or a narrower task.\nMemory pressure: 0.55",
+    "trace": [
+      "stage=memory influence_matches=1 project_matches=1 shared_matches=0",
+      "stage=query_parse property=boiling_point type=entity_property entities=['A', 'shared', 'heuristic', 'says', 'to', 'reuse', 'nearest', 'record', 'boiling', 'point', 'ethanol', 'atm']",
+      "stage=entity_resolve resolved=['ethanol']",
+      "stage=source_route selected=['nist_webbook']",
+      "source=nist_webbook hits=1",
+      "stage=rule_checks warnings=[\"Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.\"]",
+      "stage=commonsense_query intent=geo_fact relations=['used_for', 'located_in'] entities=['shared', 'heuristic', 'says', 'reuse', 'nearest', 'record', 'boiling', 'point', 'ethanol', 'atm']",
+      "stage=commonsense_entity_resolve resolved=[]",
+      "stage=commonsense_route selected=['geonames', 'wikidata']",
+      "source=geonames hits=0",
+      "source=wikidata hits=0",
+      "stage=memory bias_alerts=['condition_drop', 'unsupported_certainty'] correction_hints=['Preserve source conditions explicitly.', 'Prefer qualified answers to extrapolation when conditions mismatch.', 'Project-local correction lineage requires condition-preserving, evidence-first answers.'] divergence_triggers=[]",
+      "cycle=0 stage=cognition claim=\"Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\"",
+      "cycle=0 stage=mirror verdict=revise issues=['condition_scope']",
+      "cycle=1 stage=cognition claim=\"Provisional view: Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Prior correction lessons have been incorporated.\"",
+      "cycle=1 stage=mirror verdict=diverge issues=['condition_scope', 'old_template_reuse']",
+      "cycle=1 stage=diverge triggers=[]",
+      "cycle=2 stage=cognition claim='Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated.'",
+      "cycle=2 stage=mirror verdict=revise issues=['condition_scope']",
+      "cycle=3 stage=cognition claim='Provisional view: Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Prior correction lessons have been incorporated.'",
+      "cycle=3 stage=mirror verdict=revise issues=['condition_scope']"
+    ],
+    "retrieved_lessons": [
+      "Prefer qualified answers to extrapolation when conditions mismatch.",
+      "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+      "Preserve source conditions explicitly.",
+      "Project-local correction lineage requires condition-preserving, evidence-first answers.",
+      "Use local evidence before general guidance."
+    ],
+    "memory_matches": {
+      "matched_episode_count": 1,
+      "project_match_count": 1,
+      "shared_match_count": 0
+    },
+    "audit": {
+      "run_audit": {
+        "current_input": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+        "task_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+        "memory_influence": {
+          "fact_hints": [
+            "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+          ],
+          "context_hints": [
+            "memory_scope:project_local",
+            "task_goal:condition_governance"
+          ],
+          "preference_hints": [],
+          "bias_alerts": [
+            "condition_drop",
+            "unsupported_certainty"
+          ],
+          "correction_hints": [
+            "Preserve source conditions explicitly.",
+            "Prefer qualified answers to extrapolation when conditions mismatch.",
+            "Project-local correction lineage requires condition-preserving, evidence-first answers."
+          ],
+          "strategy_hints": [
+            "Use local evidence before general guidance.",
+            "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+          ],
+          "divergence_triggers": [],
+          "matched_episode_count": 1,
+          "project_match_count": 1,
+          "shared_match_count": 0
+        },
+        "knowledge_audit": {
+          "query": {
+            "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+            "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm? use project-local condition discipline before any generic fallback heuristic.",
+            "query_type": "entity_property",
+            "entity_candidates": [
+              "A",
+              "shared",
+              "heuristic",
+              "says",
+              "to",
+              "reuse",
+              "nearest",
+              "record",
+              "boiling",
+              "point",
+              "ethanol",
+              "atm"
+            ],
+            "property_name": "boiling_point",
+            "requested_unit": null,
+            "condition": {
+              "pressure_atm": 2.0
+            },
+            "source_hints": []
+          },
+          "entities": [
+            {
+              "canonical_name": "ethanol",
+              "entity_type": "compound",
+              "identifiers": {
+                "pubchem_cid": "702",
+                "chebi_id": "CHEBI:16236",
+                "formula": "C2H6O"
+              },
+              "aliases": [
+                "ethanol",
+                "ethyl alcohol",
+                "c2h6o",
+                "\u4e59\u9187"
+              ],
+              "source": "PubChem / ChEBI (local cache)",
+              "confidence": 0.96
+            }
+          ],
+          "selected_sources": [
+            "nist_webbook"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+              "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm? use project-local condition discipline before any generic fallback heuristic.",
+              "query_type": "entity_property",
+              "entity_candidates": [
+                "A",
+                "shared",
+                "heuristic",
+                "says",
+                "to",
+                "reuse",
+                "nearest",
+                "record",
+                "boiling",
+                "point",
+                "ethanol",
+                "atm"
+              ],
+              "property_name": "boiling_point",
+              "requested_unit": null,
+              "condition": {
+                "pressure_atm": 2.0
+              },
+              "source_hints": []
+            },
+            "entities": [
+              {
+                "canonical_name": "ethanol",
+                "entity_type": "compound",
+                "identifiers": {
+                  "pubchem_cid": "702",
+                  "chebi_id": "CHEBI:16236",
+                  "formula": "C2H6O"
+                },
+                "aliases": [
+                  "ethanol",
+                  "ethyl alcohol",
+                  "c2h6o",
+                  "\u4e59\u9187"
+                ],
+                "source": "PubChem / ChEBI (local cache)",
+                "confidence": 0.96
+              }
+            ],
+            "records": [
+              {
+                "entity": "ethanol",
+                "property": "boiling_point",
+                "value": 351.44,
+                "unit": "K",
+                "condition": {
+                  "pressure_atm": 1.0
+                },
+                "source": "NIST Chemistry WebBook (local cache)",
+                "timestamp": "2025-01-10T00:00:00Z",
+                "confidence": 0.95,
+                "provenance_type": "local_cache",
+                "normalized_value": 351.44,
+                "normalized_unit": "K",
+                "identifiers": {},
+                "notes": [
+                  "Returned from local NIST Chemistry WebBook cache."
+                ]
+              }
+            ],
+            "warnings": [
+              "Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+            ],
+            "selected_sources": [
+              "nist_webbook"
+            ],
+            "routing_trace": [
+              "source=nist_webbook hits=1"
+            ]
+          },
+          "trace": [
+            "stage=query_parse property=boiling_point type=entity_property entities=['A', 'shared', 'heuristic', 'says', 'to', 'reuse', 'nearest', 'record', 'boiling', 'point', 'ethanol', 'atm']",
+            "stage=entity_resolve resolved=['ethanol']",
+            "stage=source_route selected=['nist_webbook']",
+            "source=nist_webbook hits=1",
+            "stage=rule_checks warnings=[\"Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.\"]"
+          ]
+        },
+        "commonsense_audit": {
+          "query": {
+            "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+            "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm?",
+            "entity_candidates": [
+              "shared",
+              "heuristic",
+              "says",
+              "reuse",
+              "nearest",
+              "record",
+              "boiling",
+              "point",
+              "ethanol",
+              "atm"
+            ],
+            "relation_hints": [
+              "used_for",
+              "located_in"
+            ],
+            "intent": "geo_fact",
+            "source_hints": []
+          },
+          "entities": [],
+          "selected_sources": [
+            "geonames",
+            "wikidata"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+              "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm?",
+              "entity_candidates": [
+                "shared",
+                "heuristic",
+                "says",
+                "reuse",
+                "nearest",
+                "record",
+                "boiling",
+                "point",
+                "ethanol",
+                "atm"
+              ],
+              "relation_hints": [
+                "used_for",
+                "located_in"
+              ],
+              "intent": "geo_fact",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "geonames",
+              "wikidata"
+            ],
+            "routing_trace": [
+              "source=geonames hits=0",
+              "source=wikidata hits=0"
+            ]
+          },
+          "trace": [
+            "stage=commonsense_query intent=geo_fact relations=['used_for', 'located_in'] entities=['shared', 'heuristic', 'says', 'reuse', 'nearest', 'record', 'boiling', 'point', 'ethanol', 'atm']",
+            "stage=commonsense_entity_resolve resolved=[]",
+            "stage=commonsense_route selected=['geonames', 'wikidata']",
+            "source=geonames hits=0",
+            "source=wikidata hits=0"
+          ]
+        },
+        "cycles": [
+          {
+            "cycle": 0,
+            "cognition_state": {
+              "current_input": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+              "task_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+              "main_claim": "Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).",
+              "evidence": [
+                "Scientific evidence: ethanol boiling_point = 351.44 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+                "Evidence pack warning: Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.",
+                "Memory fact hint: Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+                "Historical bias risk suggests checking: condition_drop",
+                "Historical bias risk suggests checking: unsupported_certainty"
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records.",
+                "Reuse strategy: Use local evidence before general guidance.",
+                "Reuse strategy: Preserve source conditions and prefer qualified answers when the local record does not match the request."
+              ],
+              "confidence": 0.73,
+              "self_risk": [
+                "condition_scope",
+                "condition_drop",
+                "unsupported_certainty"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 0.44999999999999996,
+                "bias_risk": 0.44999999999999996,
+                "memory_pressure": 0.25,
+                "attention_mode": "reflective",
+                "active_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Memory influence engaged from 1 prior episode(s)."
+                ]
+              },
+              "context_tags": [
+                "task:Use_project-local_condition_discipline_before_any_generic_fallback_heuristic.",
+                "input:general",
+                "evidence:scientific_knowledge",
+                "source:nist_webbook",
+                "memory_scope:project_local",
+                "task_goal:condition_governance"
+              ],
+              "strategy_notes": [
+                "Use local evidence before general guidance.",
+                "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+                "Inspect recurrent bias alerts before concluding."
+              ],
+              "memory_influence": {
+                "fact_hints": [
+                  "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+                ],
+                "context_hints": [
+                  "memory_scope:project_local",
+                  "task_goal:condition_governance"
+                ],
+                "preference_hints": [],
+                "bias_alerts": [
+                  "condition_drop",
+                  "unsupported_certainty"
+                ],
+                "correction_hints": [
+                  "Preserve source conditions explicitly.",
+                  "Prefer qualified answers to extrapolation when conditions mismatch.",
+                  "Project-local correction lineage requires condition-preserving, evidence-first answers."
+                ],
+                "strategy_hints": [
+                  "Use local evidence before general guidance.",
+                  "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+                ],
+                "divergence_triggers": [],
+                "matched_episode_count": 1,
+                "project_match_count": 1,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+                  "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm? use project-local condition discipline before any generic fallback heuristic.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "A",
+                    "shared",
+                    "heuristic",
+                    "says",
+                    "to",
+                    "reuse",
+                    "nearest",
+                    "record",
+                    "boiling",
+                    "point",
+                    "ethanol",
+                    "atm"
+                  ],
+                  "property_name": "boiling_point",
+                  "requested_unit": null,
+                  "condition": {
+                    "pressure_atm": 2.0
+                  },
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "ethanol",
+                    "entity_type": "compound",
+                    "identifiers": {
+                      "pubchem_cid": "702",
+                      "chebi_id": "CHEBI:16236",
+                      "formula": "C2H6O"
+                    },
+                    "aliases": [
+                      "ethanol",
+                      "ethyl alcohol",
+                      "c2h6o",
+                      "\u4e59\u9187"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "ethanol",
+                    "property": "boiling_point",
+                    "value": 351.44,
+                    "unit": "K",
+                    "condition": {
+                      "pressure_atm": 1.0
+                    },
+                    "source": "NIST Chemistry WebBook (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.95,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 351.44,
+                    "normalized_unit": "K",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local NIST Chemistry WebBook cache."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+                ],
+                "selected_sources": [
+                  "nist_webbook"
+                ],
+                "routing_trace": [
+                  "source=nist_webbook hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+                  "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm?",
+                  "entity_candidates": [
+                    "shared",
+                    "heuristic",
+                    "says",
+                    "reuse",
+                    "nearest",
+                    "record",
+                    "boiling",
+                    "point",
+                    "ethanol",
+                    "atm"
+                  ],
+                  "relation_hints": [
+                    "used_for",
+                    "located_in"
+                  ],
+                  "intent": "geo_fact",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "geonames",
+                  "wikidata"
+                ],
+                "routing_trace": [
+                  "source=geonames hits=0",
+                  "source=wikidata hits=0"
+                ]
+              },
+              "revision_count": 0,
+              "retrieved_lessons": [
+                "Preserve source conditions explicitly.",
+                "Prefer qualified answers to extrapolation when conditions mismatch.",
+                "Project-local correction lineage requires condition-preserving, evidence-first answers.",
+                "Use local evidence before general guidance.",
+                "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+              ]
+            },
+            "mirror_verdict": {
+              "verdict": "revise",
+              "issues": [
+                "condition_scope"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it."
+              ],
+              "self_state_update": {
+                "uncertainty": 0.44999999999999996,
+                "bias_risk": 0.44999999999999996,
+                "memory_pressure": 0.25,
+                "attention_mode": "reflective"
+              }
+            }
+          },
+          {
+            "cycle": 1,
+            "cognition_state": {
+              "current_input": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+              "task_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+              "main_claim": "Provisional view: Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Prior correction lessons have been incorporated.",
+              "evidence": [
+                "Scientific evidence: ethanol boiling_point = 351.44 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+                "Evidence pack warning: Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.",
+                "Memory fact hint: Project-local fact: a 1 atm record must not be silently reused for a 2 atm request.",
+                "Retrieved lesson: Preserve source conditions explicitly.",
+                "Retrieved lesson: Prefer qualified answers to extrapolation when conditions mismatch.",
+                "Retrieved lesson: Project-local correction lineage requires condition-preserving, evidence-first answers.",
+                "Retrieved lesson: Use local evidence before general guidance.",
+                "Retrieved lesson: Preserve source conditions and prefer qualified answers when the local record does not match the request."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+                "Historical bias risk suggests checking: condition_drop",
+                "Historical bias risk suggests checking: unsupported_certainty",
+                "Prior bias alert: condition_drop",
+                "Prior bias alert: unsupported_certainty"
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records.",
+                "Reuse strategy: Use local evidence before general guidance.",
+                "Reuse strategy: Preserve source conditions and prefer qualified answers when the local record does not match the request."
+              ],
+              "confidence": 0.55,
+              "self_risk": [
+                "condition_drop",
+                "condition_scope",
+                "revision_applied",
+                "unsupported_certainty"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 0.75,
+                "bias_risk": 0.7,
+                "memory_pressure": 0.35,
+                "attention_mode": "reflective",
+                "active_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Memory influence engaged from 1 prior episode(s).",
+                  "Revision #1: applied mirror guidance."
+                ]
+              },
+              "context_tags": [
+                "evidence:scientific_knowledge",
+                "input:general",
+                "memory_scope:project_local",
+                "source:nist_webbook",
+                "task:Use_project-local_condition_discipline_before_any_generic_fallback_heuristic.",
+                "task_goal:condition_governance"
+              ],
+              "strategy_notes": [
+                "Inspect recurrent bias alerts before concluding.",
+                "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+                "Use local evidence before general guidance."
+              ],
+              "memory_influence": {
+                "fact_hints": [
+                  "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+                ],
+                "context_hints": [
+                  "memory_scope:project_local",
+                  "task_goal:condition_governance"
+                ],
+                "preference_hints": [],
+                "bias_alerts": [
+                  "condition_drop",
+                  "unsupported_certainty"
+                ],
+                "correction_hints": [
+                  "Preserve source conditions explicitly.",
+                  "Prefer qualified answers to extrapolation when conditions mismatch.",
+                  "Project-local correction lineage requires condition-preserving, evidence-first answers."
+                ],
+                "strategy_hints": [
+                  "Use local evidence before general guidance.",
+                  "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+                ],
+                "divergence_triggers": [],
+                "matched_episode_count": 1,
+                "project_match_count": 1,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+                  "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm? use project-local condition discipline before any generic fallback heuristic.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "A",
+                    "shared",
+                    "heuristic",
+                    "says",
+                    "to",
+                    "reuse",
+                    "nearest",
+                    "record",
+                    "boiling",
+                    "point",
+                    "ethanol",
+                    "atm"
+                  ],
+                  "property_name": "boiling_point",
+                  "requested_unit": null,
+                  "condition": {
+                    "pressure_atm": 2.0
+                  },
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "ethanol",
+                    "entity_type": "compound",
+                    "identifiers": {
+                      "pubchem_cid": "702",
+                      "chebi_id": "CHEBI:16236",
+                      "formula": "C2H6O"
+                    },
+                    "aliases": [
+                      "ethanol",
+                      "ethyl alcohol",
+                      "c2h6o",
+                      "\u4e59\u9187"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "ethanol",
+                    "property": "boiling_point",
+                    "value": 351.44,
+                    "unit": "K",
+                    "condition": {
+                      "pressure_atm": 1.0
+                    },
+                    "source": "NIST Chemistry WebBook (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.95,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 351.44,
+                    "normalized_unit": "K",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local NIST Chemistry WebBook cache."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+                ],
+                "selected_sources": [
+                  "nist_webbook"
+                ],
+                "routing_trace": [
+                  "source=nist_webbook hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+                  "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm?",
+                  "entity_candidates": [
+                    "shared",
+                    "heuristic",
+                    "says",
+                    "reuse",
+                    "nearest",
+                    "record",
+                    "boiling",
+                    "point",
+                    "ethanol",
+                    "atm"
+                  ],
+                  "relation_hints": [
+                    "used_for",
+                    "located_in"
+                  ],
+                  "intent": "geo_fact",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "geonames",
+                  "wikidata"
+                ],
+                "routing_trace": [
+                  "source=geonames hits=0",
+                  "source=wikidata hits=0"
+                ]
+              },
+              "revision_count": 1,
+              "retrieved_lessons": [
+                "Prefer qualified answers to extrapolation when conditions mismatch.",
+                "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+                "Preserve source conditions explicitly.",
+                "Project-local correction lineage requires condition-preserving, evidence-first answers.",
+                "Use local evidence before general guidance."
+              ]
+            },
+            "mirror_verdict": {
+              "verdict": "diverge",
+              "issues": [
+                "condition_scope",
+                "old_template_reuse"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it.",
+                "Retrieve memory and vary the explanation instead of repeating a stale template."
+              ],
+              "self_state_update": {
+                "uncertainty": 0.75,
+                "bias_risk": 0.7,
+                "memory_pressure": 0.35,
+                "attention_mode": "reflective"
+              }
+            }
+          },
+          {
+            "cycle": 2,
+            "cognition_state": {
+              "current_input": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+              "task_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+              "main_claim": "Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated.",
+              "evidence": [
+                "Scientific evidence: ethanol boiling_point = 351.44 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+                "Evidence pack warning: Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.",
+                "Memory fact hint: Project-local fact: a 1 atm record must not be silently reused for a 2 atm request.",
+                "Retrieved lesson: Preserve source conditions explicitly.",
+                "Retrieved lesson: Prefer qualified answers to extrapolation when conditions mismatch.",
+                "Retrieved lesson: Project-local correction lineage requires condition-preserving, evidence-first answers.",
+                "Retrieved lesson: Use local evidence before general guidance.",
+                "Retrieved lesson: Preserve source conditions and prefer qualified answers when the local record does not match the request."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+                "Historical bias risk suggests checking: condition_drop",
+                "Historical bias risk suggests checking: unsupported_certainty",
+                "Prior bias alert: condition_drop",
+                "Prior bias alert: unsupported_certainty"
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records.",
+                "Reuse strategy: Use local evidence before general guidance.",
+                "Reuse strategy: Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+                "Produce a structurally different explanation before final output."
+              ],
+              "confidence": 0.37000000000000005,
+              "self_risk": [
+                "condition_drop",
+                "condition_scope",
+                "revision_applied",
+                "unsupported_certainty"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing. Deliberately avoid stale templates.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 1.0,
+                "bias_risk": 0.95,
+                "memory_pressure": 0.44999999999999996,
+                "attention_mode": "reflective",
+                "active_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Memory influence engaged from 1 prior episode(s).",
+                  "Revision #1: applied mirror guidance.",
+                  "Revision #2: applied mirror guidance."
+                ]
+              },
+              "context_tags": [
+                "evidence:scientific_knowledge",
+                "input:general",
+                "memory_scope:project_local",
+                "source:nist_webbook",
+                "task:Use_project-local_condition_discipline_before_any_generic_fallback_heuristic.",
+                "task_goal:condition_governance"
+              ],
+              "strategy_notes": [
+                "Inspect recurrent bias alerts before concluding.",
+                "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+                "Switch to an alternative explanatory scaffold.",
+                "Use local evidence before general guidance."
+              ],
+              "memory_influence": {
+                "fact_hints": [
+                  "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+                ],
+                "context_hints": [
+                  "memory_scope:project_local",
+                  "task_goal:condition_governance"
+                ],
+                "preference_hints": [],
+                "bias_alerts": [
+                  "condition_drop",
+                  "unsupported_certainty"
+                ],
+                "correction_hints": [
+                  "Preserve source conditions explicitly.",
+                  "Prefer qualified answers to extrapolation when conditions mismatch.",
+                  "Project-local correction lineage requires condition-preserving, evidence-first answers."
+                ],
+                "strategy_hints": [
+                  "Use local evidence before general guidance.",
+                  "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+                ],
+                "divergence_triggers": [],
+                "matched_episode_count": 1,
+                "project_match_count": 1,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+                  "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm? use project-local condition discipline before any generic fallback heuristic.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "A",
+                    "shared",
+                    "heuristic",
+                    "says",
+                    "to",
+                    "reuse",
+                    "nearest",
+                    "record",
+                    "boiling",
+                    "point",
+                    "ethanol",
+                    "atm"
+                  ],
+                  "property_name": "boiling_point",
+                  "requested_unit": null,
+                  "condition": {
+                    "pressure_atm": 2.0
+                  },
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "ethanol",
+                    "entity_type": "compound",
+                    "identifiers": {
+                      "pubchem_cid": "702",
+                      "chebi_id": "CHEBI:16236",
+                      "formula": "C2H6O"
+                    },
+                    "aliases": [
+                      "ethanol",
+                      "ethyl alcohol",
+                      "c2h6o",
+                      "\u4e59\u9187"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "ethanol",
+                    "property": "boiling_point",
+                    "value": 351.44,
+                    "unit": "K",
+                    "condition": {
+                      "pressure_atm": 1.0
+                    },
+                    "source": "NIST Chemistry WebBook (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.95,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 351.44,
+                    "normalized_unit": "K",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local NIST Chemistry WebBook cache."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+                ],
+                "selected_sources": [
+                  "nist_webbook"
+                ],
+                "routing_trace": [
+                  "source=nist_webbook hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+                  "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm?",
+                  "entity_candidates": [
+                    "shared",
+                    "heuristic",
+                    "says",
+                    "reuse",
+                    "nearest",
+                    "record",
+                    "boiling",
+                    "point",
+                    "ethanol",
+                    "atm"
+                  ],
+                  "relation_hints": [
+                    "used_for",
+                    "located_in"
+                  ],
+                  "intent": "geo_fact",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "geonames",
+                  "wikidata"
+                ],
+                "routing_trace": [
+                  "source=geonames hits=0",
+                  "source=wikidata hits=0"
+                ]
+              },
+              "revision_count": 2,
+              "retrieved_lessons": [
+                "Prefer qualified answers to extrapolation when conditions mismatch.",
+                "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+                "Preserve source conditions explicitly.",
+                "Project-local correction lineage requires condition-preserving, evidence-first answers.",
+                "Use local evidence before general guidance."
+              ]
+            },
+            "mirror_verdict": {
+              "verdict": "revise",
+              "issues": [
+                "condition_scope"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it."
+              ],
+              "self_state_update": {
+                "uncertainty": 1.0,
+                "bias_risk": 0.95,
+                "memory_pressure": 0.44999999999999996,
+                "attention_mode": "reflective"
+              }
+            }
+          },
+          {
+            "cycle": 3,
+            "cognition_state": {
+              "current_input": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+              "task_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+              "main_claim": "Provisional view: Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Prior correction lessons have been incorporated.",
+              "evidence": [
+                "Scientific evidence: ethanol boiling_point = 351.44 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+                "Evidence pack warning: Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.",
+                "Memory fact hint: Project-local fact: a 1 atm record must not be silently reused for a 2 atm request.",
+                "Retrieved lesson: Preserve source conditions explicitly.",
+                "Retrieved lesson: Prefer qualified answers to extrapolation when conditions mismatch.",
+                "Retrieved lesson: Project-local correction lineage requires condition-preserving, evidence-first answers.",
+                "Retrieved lesson: Use local evidence before general guidance.",
+                "Retrieved lesson: Preserve source conditions and prefer qualified answers when the local record does not match the request."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+                "Historical bias risk suggests checking: condition_drop",
+                "Historical bias risk suggests checking: unsupported_certainty",
+                "Prior bias alert: condition_drop",
+                "Prior bias alert: unsupported_certainty"
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records.",
+                "Reuse strategy: Use local evidence before general guidance.",
+                "Reuse strategy: Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+                "Produce a structurally different explanation before final output."
+              ],
+              "confidence": 0.25,
+              "self_risk": [
+                "condition_drop",
+                "condition_scope",
+                "revision_applied",
+                "unsupported_certainty"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 1.0,
+                "bias_risk": 1.0,
+                "memory_pressure": 0.5499999999999999,
+                "attention_mode": "reflective",
+                "active_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Memory influence engaged from 1 prior episode(s).",
+                  "Revision #1: applied mirror guidance.",
+                  "Revision #2: applied mirror guidance.",
+                  "Revision #3: applied mirror guidance."
+                ]
+              },
+              "context_tags": [
+                "evidence:scientific_knowledge",
+                "input:general",
+                "memory_scope:project_local",
+                "source:nist_webbook",
+                "task:Use_project-local_condition_discipline_before_any_generic_fallback_heuristic.",
+                "task_goal:condition_governance"
+              ],
+              "strategy_notes": [
+                "Inspect recurrent bias alerts before concluding.",
+                "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+                "Switch to an alternative explanatory scaffold.",
+                "Use local evidence before general guidance."
+              ],
+              "memory_influence": {
+                "fact_hints": [
+                  "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+                ],
+                "context_hints": [
+                  "memory_scope:project_local",
+                  "task_goal:condition_governance"
+                ],
+                "preference_hints": [],
+                "bias_alerts": [
+                  "condition_drop",
+                  "unsupported_certainty"
+                ],
+                "correction_hints": [
+                  "Preserve source conditions explicitly.",
+                  "Prefer qualified answers to extrapolation when conditions mismatch.",
+                  "Project-local correction lineage requires condition-preserving, evidence-first answers."
+                ],
+                "strategy_hints": [
+                  "Use local evidence before general guidance.",
+                  "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+                ],
+                "divergence_triggers": [],
+                "matched_episode_count": 1,
+                "project_match_count": 1,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+                  "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm? use project-local condition discipline before any generic fallback heuristic.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "A",
+                    "shared",
+                    "heuristic",
+                    "says",
+                    "to",
+                    "reuse",
+                    "nearest",
+                    "record",
+                    "boiling",
+                    "point",
+                    "ethanol",
+                    "atm"
+                  ],
+                  "property_name": "boiling_point",
+                  "requested_unit": null,
+                  "condition": {
+                    "pressure_atm": 2.0
+                  },
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "ethanol",
+                    "entity_type": "compound",
+                    "identifiers": {
+                      "pubchem_cid": "702",
+                      "chebi_id": "CHEBI:16236",
+                      "formula": "C2H6O"
+                    },
+                    "aliases": [
+                      "ethanol",
+                      "ethyl alcohol",
+                      "c2h6o",
+                      "\u4e59\u9187"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "ethanol",
+                    "property": "boiling_point",
+                    "value": 351.44,
+                    "unit": "K",
+                    "condition": {
+                      "pressure_atm": 1.0
+                    },
+                    "source": "NIST Chemistry WebBook (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.95,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 351.44,
+                    "normalized_unit": "K",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local NIST Chemistry WebBook cache."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+                ],
+                "selected_sources": [
+                  "nist_webbook"
+                ],
+                "routing_trace": [
+                  "source=nist_webbook hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+                  "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm?",
+                  "entity_candidates": [
+                    "shared",
+                    "heuristic",
+                    "says",
+                    "reuse",
+                    "nearest",
+                    "record",
+                    "boiling",
+                    "point",
+                    "ethanol",
+                    "atm"
+                  ],
+                  "relation_hints": [
+                    "used_for",
+                    "located_in"
+                  ],
+                  "intent": "geo_fact",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "geonames",
+                  "wikidata"
+                ],
+                "routing_trace": [
+                  "source=geonames hits=0",
+                  "source=wikidata hits=0"
+                ]
+              },
+              "revision_count": 3,
+              "retrieved_lessons": [
+                "Prefer qualified answers to extrapolation when conditions mismatch.",
+                "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+                "Preserve source conditions explicitly.",
+                "Project-local correction lineage requires condition-preserving, evidence-first answers.",
+                "Use local evidence before general guidance."
+              ]
+            },
+            "mirror_verdict": {
+              "verdict": "revise",
+              "issues": [
+                "condition_scope"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it."
+              ],
+              "self_state_update": {
+                "uncertainty": 1.0,
+                "bias_risk": 1.0,
+                "memory_pressure": 0.5499999999999999,
+                "attention_mode": "reflective"
+              }
+            }
+          }
+        ],
+        "final_output": "Result deferred.\nReason: cycle_limit_reached\nNeeded next step: Stop and request more evidence or a narrower task.\nMemory pressure: 0.55",
+        "final_state": {
+          "current_input": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+          "task_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+          "main_claim": "Provisional view: Provisional view: Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Prior correction lessons have been incorporated. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Prior correction lessons have been incorporated.",
+          "evidence": [
+            "Scientific evidence: ethanol boiling_point = 351.44 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.",
+            "Evidence pack warning: Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.",
+            "Memory fact hint: Project-local fact: a 1 atm record must not be silently reused for a 2 atm request.",
+            "Retrieved lesson: Preserve source conditions explicitly.",
+            "Retrieved lesson: Prefer qualified answers to extrapolation when conditions mismatch.",
+            "Retrieved lesson: Project-local correction lineage requires condition-preserving, evidence-first answers.",
+            "Retrieved lesson: Use local evidence before general guidance.",
+            "Retrieved lesson: Preserve source conditions and prefer qualified answers when the local record does not match the request."
+          ],
+          "hidden_assumptions": [
+            "Scientific claims should stay within the property and condition bounds of the evidence pack.",
+            "Historical bias risk suggests checking: condition_drop",
+            "Historical bias risk suggests checking: unsupported_certainty",
+            "Prior bias alert: condition_drop",
+            "Prior bias alert: unsupported_certainty"
+          ],
+          "alternative_paths": [
+            "Revise the claim with narrower scope.",
+            "Retrieve prior corrections before answering.",
+            "Wait for more evidence if the current prompt is underspecified.",
+            "Answer only from resolved scientific evidence records.",
+            "Reuse strategy: Use local evidence before general guidance.",
+            "Reuse strategy: Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+            "Produce a structurally different explanation before final output."
+          ],
+          "confidence": 0.25,
+          "self_risk": [
+            "condition_drop",
+            "condition_scope",
+            "revision_applied",
+            "unsupported_certainty"
+          ],
+          "proposed_action": "Provide a bounded answer with explicit uncertainty. Apply correction lineage before finalizing.",
+          "self_state": {
+            "stability": 0.7,
+            "uncertainty": 1.0,
+            "bias_risk": 1.0,
+            "memory_pressure": 0.5499999999999999,
+            "attention_mode": "reflective",
+            "active_goal": "Use project-local condition discipline before any generic fallback heuristic.",
+            "continuity_notes": [
+              "Revision #0: built candidate cognition state.",
+              "Memory influence engaged from 1 prior episode(s).",
+              "Revision #1: applied mirror guidance.",
+              "Revision #2: applied mirror guidance.",
+              "Revision #3: applied mirror guidance.",
+              "Revision #4: applied mirror guidance."
+            ]
+          },
+          "context_tags": [
+            "evidence:scientific_knowledge",
+            "input:general",
+            "memory_scope:project_local",
+            "source:nist_webbook",
+            "task:Use_project-local_condition_discipline_before_any_generic_fallback_heuristic.",
+            "task_goal:condition_governance"
+          ],
+          "strategy_notes": [
+            "Inspect recurrent bias alerts before concluding.",
+            "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+            "Switch to an alternative explanatory scaffold.",
+            "Use local evidence before general guidance."
+          ],
+          "memory_influence": {
+            "fact_hints": [
+              "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+            ],
+            "context_hints": [
+              "memory_scope:project_local",
+              "task_goal:condition_governance"
+            ],
+            "preference_hints": [],
+            "bias_alerts": [
+              "condition_drop",
+              "unsupported_certainty"
+            ],
+            "correction_hints": [
+              "Preserve source conditions explicitly.",
+              "Prefer qualified answers to extrapolation when conditions mismatch.",
+              "Project-local correction lineage requires condition-preserving, evidence-first answers."
+            ],
+            "strategy_hints": [
+              "Use local evidence before general guidance.",
+              "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+            ],
+            "divergence_triggers": [],
+            "matched_episode_count": 1,
+            "project_match_count": 1,
+            "shared_match_count": 0
+          },
+          "evidence_pack": {
+            "query": {
+              "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+              "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm? use project-local condition discipline before any generic fallback heuristic.",
+              "query_type": "entity_property",
+              "entity_candidates": [
+                "A",
+                "shared",
+                "heuristic",
+                "says",
+                "to",
+                "reuse",
+                "nearest",
+                "record",
+                "boiling",
+                "point",
+                "ethanol",
+                "atm"
+              ],
+              "property_name": "boiling_point",
+              "requested_unit": null,
+              "condition": {
+                "pressure_atm": 2.0
+              },
+              "source_hints": []
+            },
+            "entities": [
+              {
+                "canonical_name": "ethanol",
+                "entity_type": "compound",
+                "identifiers": {
+                  "pubchem_cid": "702",
+                  "chebi_id": "CHEBI:16236",
+                  "formula": "C2H6O"
+                },
+                "aliases": [
+                  "ethanol",
+                  "ethyl alcohol",
+                  "c2h6o",
+                  "\u4e59\u9187"
+                ],
+                "source": "PubChem / ChEBI (local cache)",
+                "confidence": 0.96
+              }
+            ],
+            "records": [
+              {
+                "entity": "ethanol",
+                "property": "boiling_point",
+                "value": 351.44,
+                "unit": "K",
+                "condition": {
+                  "pressure_atm": 1.0
+                },
+                "source": "NIST Chemistry WebBook (local cache)",
+                "timestamp": "2025-01-10T00:00:00Z",
+                "confidence": 0.95,
+                "provenance_type": "local_cache",
+                "normalized_value": 351.44,
+                "normalized_unit": "K",
+                "identifiers": {},
+                "notes": [
+                  "Returned from local NIST Chemistry WebBook cache."
+                ]
+              }
+            ],
+            "warnings": [
+              "Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}."
+            ],
+            "selected_sources": [
+              "nist_webbook"
+            ],
+            "routing_trace": [
+              "source=nist_webbook hits=1"
+            ]
+          },
+          "commonsense_evidence_pack": {
+            "query": {
+              "raw_text": "A shared heuristic says to reuse the nearest record. What is the boiling point of ethanol at 2 atm?",
+              "normalized_text": "a shared heuristic says to reuse the nearest record. what is the boiling point of ethanol at 2 atm?",
+              "entity_candidates": [
+                "shared",
+                "heuristic",
+                "says",
+                "reuse",
+                "nearest",
+                "record",
+                "boiling",
+                "point",
+                "ethanol",
+                "atm"
+              ],
+              "relation_hints": [
+                "used_for",
+                "located_in"
+              ],
+              "intent": "geo_fact",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "geonames",
+              "wikidata"
+            ],
+            "routing_trace": [
+              "source=geonames hits=0",
+              "source=wikidata hits=0"
+            ]
+          },
+          "revision_count": 4,
+          "retrieved_lessons": [
+            "Prefer qualified answers to extrapolation when conditions mismatch.",
+            "Preserve source conditions and prefer qualified answers when the local record does not match the request.",
+            "Preserve source conditions explicitly.",
+            "Project-local correction lineage requires condition-preserving, evidence-first answers.",
+            "Use local evidence before general guidance."
+          ]
+        },
+        "final_verdict": {
+          "verdict": "wait",
+          "issues": [
+            "cycle_limit_reached"
+          ],
+          "guidance": [
+            "Stop and request more evidence or a narrower task."
+          ],
+          "self_state_update": {
+            "attention_mode": "paused"
+          }
+        },
+        "trace": [
+          "stage=memory influence_matches=1 project_matches=1 shared_matches=0",
+          "stage=query_parse property=boiling_point type=entity_property entities=['A', 'shared', 'heuristic', 'says', 'to', 'reuse', 'nearest', 'record', 'boiling', 'point', 'ethanol', 'atm']",
+          "stage=entity_resolve resolved=['ethanol']",
+          "stage=source_route selected=['nist_webbook']",
+          "source=nist_webbook hits=1",
+          "stage=rule_checks warnings=[\"Condition applicability reminder: ethanol boiling_point source condition {'pressure_atm': 1.0} does not exactly match requested {'pressure_atm': 2.0}.\"]",
+          "stage=commonsense_query intent=geo_fact relations=['used_for', 'located_in'] entities=['shared', 'heuristic', 'says', 'reuse', 'nearest', 'record', 'boiling', 'point', 'ethanol', 'atm']",
+          "stage=commonsense_entity_resolve resolved=[]",
+          "stage=commonsense_route selected=['geonames', 'wikidata']",
+          "source=geonames hits=0",
+          "source=wikidata hits=0",
+          "stage=memory bias_alerts=['condition_drop', 'unsupported_certainty'] correction_hints=['Preserve source conditions explicitly.', 'Prefer qualified answers to extrapolation when conditions mismatch.', 'Project-local correction lineage requires condition-preserving, evidence-first answers.'] divergence_triggers=[]",
+          "cycle=0 stage=cognition claim=\"Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\"",
+          "cycle=0 stage=mirror verdict=revise issues=['condition_scope']",
+          "cycle=1 stage=cognition claim=\"Provisional view: Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Prior correction lessons have been incorporated.\"",
+          "cycle=1 stage=mirror verdict=diverge issues=['condition_scope', 'old_template_reuse']",
+          "cycle=1 stage=diverge triggers=[]",
+          "cycle=2 stage=cognition claim='Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated.'",
+          "cycle=2 stage=mirror verdict=revise issues=['condition_scope']",
+          "cycle=3 stage=cognition claim='Provisional view: Alternative framing: the system can use wait states and self-monitoring as control mechanisms, but those mechanisms still require evidence before any stronger claim. Prior correction lessons have been incorporated. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Prior correction lessons have been incorporated.'",
+          "cycle=3 stage=mirror verdict=revise issues=['condition_scope']"
+        ]
+      },
+      "seeds": {
+        "project_seed": [
+          {
+            "input_summary": "Project-local condition discipline for electrochemistry.",
+            "context_tags": [
+              "memory_scope:project_local",
+              "task_goal:condition_governance"
+            ],
+            "claim": "Project-local scientific responses for electrochemistry must preserve source conditions.",
+            "evidence_summary": [
+              "Use local evidence before general guidance when source conditions and requested conditions do not match."
+            ],
+            "fact_items": [
+              "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+            ],
+            "bias_tags": [
+              "condition_drop",
+              "unsupported_certainty"
+            ],
+            "correction_actions": [
+              "Preserve source conditions explicitly.",
+              "Prefer qualified answers to extrapolation when conditions mismatch."
+            ],
+            "correction_lineage": [
+              "Project-local correction lineage requires condition-preserving, evidence-first answers."
+            ],
+            "strategy_tags": [
+              "Use local evidence before general guidance."
+            ],
+            "final_result": "Project-local condition rule stored.",
+            "reusable_lessons": [
+              "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+            ]
+          }
+        ],
+        "shared_seed": [
+          {
+            "input_summary": "Shared correction lineage for electrochemistry.",
+            "context_tags": [
+              "memory_scope:shared_growth",
+              "task_goal:bounded_scientific_reasoning"
+            ],
+            "claim": "Repeated failures in electrochemistry come from reusing nearby values beyond their supported conditions.",
+            "evidence_summary": [
+              "Prior correction: when conditions or source scope do not match, answer provisionally or defer."
+            ],
+            "fact_items": [],
+            "bias_tags": [
+              "unsupported_certainty",
+              "old_template_reuse",
+              "condition_drop"
+            ],
+            "correction_actions": [
+              "Carry forward prior correction lessons before making a new claim.",
+              "Do not substitute the nearest known condition for the requested condition."
+            ],
+            "correction_lineage": [
+              "Prior correction lessons have been incorporated for unsupported-condition handling."
+            ],
+            "strategy_tags": [
+              "Use prior correction lessons before finalizing a scientific claim."
+            ],
+            "final_result": "Shared correction lesson stored.",
+            "reusable_lessons": [
+              "Prior correction lessons have been incorporated: preserve the source condition or defer."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "scoring": {
+    "metrics": {
+      "revision_count": 4,
+      "final_verdict": "wait",
+      "confidence": 0.25,
+      "expected_revision_count": 0,
+      "expected_verdict_sequence": [],
+      "concept_mixing_present": false,
+      "premature_convergence_present": false,
+      "unsupported_certainty_present": false,
+      "project_local_precedence_preserved": true,
+      "correction_retained": true,
+      "numeric_match": true,
+      "label_match": true,
+      "unit_match": true,
+      "condition_preserved": false,
+      "source_citation_present": false,
+      "uncertainty_marker_present": true,
+      "abstained_or_qualified": true,
+      "shared_memory_pollution_risk": 0.0,
+      "matched_episode_count": 1,
+      "project_match_count": 1,
+      "shared_match_count": 0,
+      "extracted_value": 0.55,
+      "extracted_unit": null
+    },
+    "rule_evaluation": {
+      "must_abstain_or_qualify": true,
+      "must_preserve_project_local_precedence": true
+    },
+    "failure_reasons": []
+  }
+}

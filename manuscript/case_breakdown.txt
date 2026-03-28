@@ -1,0 +1,22 @@
+Case Breakdown
+==============
+
+concept_blending_shared_recovery
+  note: Measures whether shared corrections reduce repeated concept blending.
+  local_only: verdict=pass, revisions=1, correction_retained=False, shared_matches=0, confidence=0.72
+  dual_layer: verdict=pass, revisions=2, correction_retained=True, shared_matches=2, confidence=0.54
+
+premature_convergence_shared_bias_alert
+  note: Measures whether shared bias lineage lowers assertive convergence.
+  local_only: verdict=wait, revisions=4, correction_retained=False, shared_matches=0, confidence=0.25
+  dual_layer: verdict=wait, revisions=4, correction_retained=True, shared_matches=3, confidence=0.25
+
+project_local_precedence
+  note: Ensures dual-layer retrieval does not override project-local facts and strategies.
+  local_only: verdict=pass, revisions=0, correction_retained=True, shared_matches=0, confidence=0.68
+  dual_layer: verdict=pass, revisions=0, correction_retained=True, shared_matches=1, confidence=0.68
+
+bounded_control_case
+  note: A bounded case used to ensure dual-layer memory does not degrade already-good behavior.
+  local_only: verdict=pass, revisions=0, correction_retained=True, shared_matches=0, confidence=0.78
+  dual_layer: verdict=pass, revisions=0, correction_retained=True, shared_matches=0, confidence=0.78

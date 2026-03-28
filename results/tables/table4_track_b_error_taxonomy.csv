@@ -1,0 +1,4 @@
+mode,numeric_mismatch,unit_mismatch,condition_drop,missing_source,hallucinated_boundary
+direct_answer,1,1,12,24,12
+mindstate_mirror_local_memory,9,3,8,8,0
+mindstate_mirror_dual_memory,9,3,7,8,0

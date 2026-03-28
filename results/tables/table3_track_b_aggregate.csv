@@ -1,0 +1,10 @@
+category,mode,case_count,pass_rate,numeric_accuracy,unit_consistency,condition_preservation,evidence_citation_presence,abstention_precision
+abstention_boundary_cases,direct_answer,12,0.0,1.0,1.0,0.08333333333333333,0.0,0.0
+abstention_boundary_cases,mindstate_mirror_local_memory,12,1.0,1.0,1.0,0.5,0.4166666666666667,1.0
+abstention_boundary_cases,mindstate_mirror_dual_memory,12,1.0,1.0,1.0,0.5,0.4166666666666667,1.0
+condition_sensitive_properties,direct_answer,12,0.0,1.0,1.0,0.0,0.0,0.0
+condition_sensitive_properties,mindstate_mirror_local_memory,12,0.3333333333333333,0.3333333333333333,0.8333333333333334,0.3333333333333333,0.3333333333333333,1.0
+condition_sensitive_properties,mindstate_mirror_dual_memory,12,0.3333333333333333,0.3333333333333333,0.8333333333333334,0.4166666666666667,0.3333333333333333,1.0
+constants_and_units,direct_answer,12,0.0,0.9166666666666666,0.9166666666666666,0.0,0.0,0.0
+constants_and_units,mindstate_mirror_local_memory,12,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.3333333333333333,1.0,0.08333333333333333
+constants_and_units,mindstate_mirror_dual_memory,12,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.3333333333333333,1.0,0.08333333333333333

@@ -1,0 +1,59 @@
+{
+  "paris": {
+    "canonical_name": "Paris",
+    "entity_type": "city",
+    "aliases": [],
+    "timestamp": "2026-03-27T00:00:00Z",
+    "facts": [
+      {
+        "relation": "country",
+        "value": "France",
+        "confidence": 0.38
+      },
+      {
+        "relation": "used_for",
+        "value": "tourism",
+        "confidence": 0.42
+      }
+    ]
+  },
+  "france": {
+    "canonical_name": "France",
+    "entity_type": "country",
+    "aliases": [],
+    "timestamp": "2026-03-27T00:00:00Z",
+    "facts": [
+      {
+        "relation": "has_property",
+        "value": "European country",
+        "confidence": 0.46
+      }
+    ]
+  },
+  "albert einstein": {
+    "canonical_name": "Albert Einstein",
+    "entity_type": "person",
+    "aliases": ["Einstein"],
+    "timestamp": "2026-03-27T00:00:00Z",
+    "facts": [
+      {
+        "relation": "occupation",
+        "value": "scientist",
+        "confidence": 0.41
+      }
+    ]
+  },
+  "knife": {
+    "canonical_name": "knife",
+    "entity_type": "artifact",
+    "aliases": [],
+    "timestamp": "2026-03-27T00:00:00Z",
+    "facts": [
+      {
+        "relation": "used_for",
+        "value": "cutting",
+        "confidence": 0.54
+      }
+    ]
+  }
+}

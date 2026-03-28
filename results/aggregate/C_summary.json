@@ -1,0 +1,112 @@
+{
+  "aggregate": {
+    "direct_answer": {
+      "case_count": 20,
+      "cross_session_correction_retention_rate": 0.0,
+      "error_recurrence_rate": 0.2,
+      "memory_scope_isolation_rate": 0.0,
+      "shared_memory_pollution_risk": 0.0
+    },
+    "mindstate_mirror_local_memory": {
+      "case_count": 20,
+      "cross_session_correction_retention_rate": 0.4,
+      "error_recurrence_rate": 0.2,
+      "memory_scope_isolation_rate": 0.2,
+      "shared_memory_pollution_risk": 0.0
+    },
+    "mindstate_mirror_dual_memory": {
+      "case_count": 20,
+      "cross_session_correction_retention_rate": 0.6,
+      "error_recurrence_rate": 0.2,
+      "memory_scope_isolation_rate": 0.2,
+      "shared_memory_pollution_risk": 0.0
+    }
+  },
+  "family_breakdown": {
+    "abstention_correction": {
+      "direct_answer": {
+        "correction_retention_rate": 0.0,
+        "error_recurrence_rate": 1.0,
+        "memory_scope_isolation_rate": 0.0
+      },
+      "mindstate_mirror_local_memory": {
+        "correction_retention_rate": 0.0,
+        "error_recurrence_rate": 1.0,
+        "memory_scope_isolation_rate": 0.0
+      },
+      "mindstate_mirror_dual_memory": {
+        "correction_retention_rate": 0.0,
+        "error_recurrence_rate": 1.0,
+        "memory_scope_isolation_rate": 0.0
+      }
+    },
+    "concept_correction_carryover": {
+      "direct_answer": {
+        "correction_retention_rate": 0.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 0.0
+      },
+      "mindstate_mirror_local_memory": {
+        "correction_retention_rate": 0.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 0.0
+      },
+      "mindstate_mirror_dual_memory": {
+        "correction_retention_rate": 1.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 0.0
+      }
+    },
+    "condition_boundary_correction": {
+      "direct_answer": {
+        "correction_retention_rate": 0.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 0.0
+      },
+      "mindstate_mirror_local_memory": {
+        "correction_retention_rate": 1.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 0.0
+      },
+      "mindstate_mirror_dual_memory": {
+        "correction_retention_rate": 1.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 0.0
+      }
+    },
+    "project_vs_shared_conflict": {
+      "direct_answer": {
+        "correction_retention_rate": 0.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 0.0
+      },
+      "mindstate_mirror_local_memory": {
+        "correction_retention_rate": 1.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 1.0
+      },
+      "mindstate_mirror_dual_memory": {
+        "correction_retention_rate": 1.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 1.0
+      }
+    },
+    "unit_correction": {
+      "direct_answer": {
+        "correction_retention_rate": 0.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 0.0
+      },
+      "mindstate_mirror_local_memory": {
+        "correction_retention_rate": 0.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 0.0
+      },
+      "mindstate_mirror_dual_memory": {
+        "correction_retention_rate": 0.0,
+        "error_recurrence_rate": 0.0,
+        "memory_scope_isolation_rate": 0.0
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "generated_utc": "2026-03-28T05:16:46.328837+00:00",
+  "artifact_policy": "An anonymized review package should include manuscript sources, raw benchmark outputs, aggregate summaries, table CSVs, figure scripts, and the environment snapshot.",
+  "included_local_artifacts": [
+    "results/raw/",
+    "results/aggregate/",
+    "results/tables/",
+    "results/figures/",
+    "results/release/environment_snapshot.txt"
+  ],
+  "non_public_limitations": [
+    "The current local scientific caches are repository-bundled snapshots rather than externally hosted review data services.",
+    "No external cloud judge or proprietary evaluation service is required for the reported metrics."
+  ]
+}

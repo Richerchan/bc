@@ -1,0 +1,10 @@
+category,mode,case_count,pass_rate,pass_rate_ci_low,pass_rate_ci_high,condition_preservation,condition_preservation_ci_low,condition_preservation_ci_high,abstention_precision,abstention_precision_ci_low,abstention_precision_ci_high
+abstention_boundary_cases,direct_answer,12,0.0,0.0,0.0,0.0833,0.0,0.25,0.0,0.0,0.0
+abstention_boundary_cases,mindstate_mirror_local_memory,12,1.0,1.0,1.0,0.5,0.25,0.75,1.0,1.0,1.0
+abstention_boundary_cases,mindstate_mirror_dual_memory,12,1.0,1.0,1.0,0.5,0.25,0.75,1.0,1.0,1.0
+condition_sensitive_properties,direct_answer,12,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+condition_sensitive_properties,mindstate_mirror_local_memory,12,0.3333,0.0833,0.5833,0.3333,0.0833,0.5833,1.0,1.0,1.0
+condition_sensitive_properties,mindstate_mirror_dual_memory,12,0.3333,0.0833,0.5833,0.4167,0.1667,0.6667,1.0,1.0,1.0
+constants_and_units,direct_answer,12,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+constants_and_units,mindstate_mirror_local_memory,12,0.9167,0.75,1.0,0.3333,0.0833,0.5833,0.0833,0.0,0.25
+constants_and_units,mindstate_mirror_dual_memory,12,0.9167,0.75,1.0,0.3333,0.0833,0.5833,0.0833,0.0,0.25

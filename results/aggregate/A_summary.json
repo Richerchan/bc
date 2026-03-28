@@ -1,0 +1,248 @@
+{
+  "aggregate": {
+    "direct_answer": {
+      "case_count": 30,
+      "pass_rate": 0.16666666666666666,
+      "revision_success_rate": 0.0,
+      "condition_preservation_rate": 0.0,
+      "correction_retention_rate": 0.0,
+      "unsupported_certainty_rate": 0.03333333333333333,
+      "project_local_precedence_rate": 0.0,
+      "average_confidence": 0.88
+    },
+    "mindstate_only": {
+      "case_count": 30,
+      "pass_rate": 0.3333333333333333,
+      "revision_success_rate": 0.0,
+      "condition_preservation_rate": 0.6666666666666666,
+      "correction_retention_rate": 0.0,
+      "unsupported_certainty_rate": 0.03333333333333333,
+      "project_local_precedence_rate": 0.0,
+      "average_confidence": 0.8216666666666667
+    },
+    "mindstate_mirror": {
+      "case_count": 30,
+      "pass_rate": 0.5666666666666667,
+      "revision_success_rate": 0.3333333333333333,
+      "condition_preservation_rate": 0.6666666666666666,
+      "correction_retention_rate": 0.0,
+      "unsupported_certainty_rate": 0.03333333333333333,
+      "project_local_precedence_rate": 0.0,
+      "average_confidence": 0.578
+    },
+    "mindstate_mirror_local_memory": {
+      "case_count": 30,
+      "pass_rate": 0.7,
+      "revision_success_rate": 0.43333333333333335,
+      "condition_preservation_rate": 0.6,
+      "correction_retention_rate": 0.13333333333333333,
+      "unsupported_certainty_rate": 0.03333333333333333,
+      "project_local_precedence_rate": 0.13333333333333333,
+      "average_confidence": 0.5746666666666667
+    },
+    "mindstate_mirror_dual_memory": {
+      "case_count": 30,
+      "pass_rate": 0.7,
+      "revision_success_rate": 0.4666666666666667,
+      "condition_preservation_rate": 0.6,
+      "correction_retention_rate": 0.13333333333333333,
+      "unsupported_certainty_rate": 0.03333333333333333,
+      "project_local_precedence_rate": 0.13333333333333333,
+      "average_confidence": 0.5626666666666666
+    }
+  },
+  "family_breakdown": {
+    "bounded_non_degradation": {
+      "direct_answer": {
+        "pass_rate": 1.0,
+        "condition_preservation_rate": 0.0,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_only": {
+        "pass_rate": 1.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_mirror": {
+        "pass_rate": 1.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.8
+      },
+      "mindstate_mirror_local_memory": {
+        "pass_rate": 1.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.8
+      },
+      "mindstate_mirror_dual_memory": {
+        "pass_rate": 1.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.8
+      }
+    },
+    "condition_drop": {
+      "direct_answer": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.0,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_only": {
+        "pass_rate": 1.0,
+        "condition_preservation_rate": 1.0,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_mirror": {
+        "pass_rate": 1.0,
+        "condition_preservation_rate": 1.0,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 1.6
+      },
+      "mindstate_mirror_local_memory": {
+        "pass_rate": 1.0,
+        "condition_preservation_rate": 1.0,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 1.6
+      },
+      "mindstate_mirror_dual_memory": {
+        "pass_rate": 1.0,
+        "condition_preservation_rate": 1.0,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 1.6
+      }
+    },
+    "correction_reuse": {
+      "direct_answer": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.0,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_only": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_mirror": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.8
+      },
+      "mindstate_mirror_local_memory": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.8
+      },
+      "mindstate_mirror_dual_memory": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.8
+      }
+    },
+    "evidence_mismatch": {
+      "direct_answer": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.0,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_only": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_mirror": {
+        "pass_rate": 0.8,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 2.6
+      },
+      "mindstate_mirror_local_memory": {
+        "pass_rate": 0.8,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 2.6
+      },
+      "mindstate_mirror_dual_memory": {
+        "pass_rate": 0.8,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 2.6
+      }
+    },
+    "project_local_precedence": {
+      "direct_answer": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.0,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_only": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_mirror": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 2.6
+      },
+      "mindstate_mirror_local_memory": {
+        "pass_rate": 0.8,
+        "condition_preservation_rate": 0.2,
+        "correction_retention_rate": 0.8,
+        "mean_revisions": 2.6
+      },
+      "mindstate_mirror_dual_memory": {
+        "pass_rate": 0.8,
+        "condition_preservation_rate": 0.2,
+        "correction_retention_rate": 0.8,
+        "mean_revisions": 3.0
+      }
+    },
+    "unsupported_certainty": {
+      "direct_answer": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.0,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_only": {
+        "pass_rate": 0.0,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 0.0
+      },
+      "mindstate_mirror": {
+        "pass_rate": 0.6,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 2.6
+      },
+      "mindstate_mirror_local_memory": {
+        "pass_rate": 0.6,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 2.6
+      },
+      "mindstate_mirror_dual_memory": {
+        "pass_rate": 0.6,
+        "condition_preservation_rate": 0.6,
+        "correction_retention_rate": 0.0,
+        "mean_revisions": 2.6
+      }
+    }
+  }
+}

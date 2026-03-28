@@ -1,0 +1,40 @@
+{
+  "records": [
+    {
+      "entity": "water",
+      "property": "boiling_point",
+      "value": 373.124,
+      "unit": "K",
+      "condition": {
+        "pressure_atm": 1.0
+      },
+      "source": "NIST Chemistry WebBook (local cache)",
+      "timestamp": "2025-01-10T00:00:00Z",
+      "confidence": 0.96
+    },
+    {
+      "entity": "water",
+      "property": "melting_point",
+      "value": 273.15,
+      "unit": "K",
+      "condition": {
+        "pressure_atm": 1.0
+      },
+      "source": "NIST Chemistry WebBook (local cache)",
+      "timestamp": "2025-01-10T00:00:00Z",
+      "confidence": 0.96
+    },
+    {
+      "entity": "ethanol",
+      "property": "boiling_point",
+      "value": 351.44,
+      "unit": "K",
+      "condition": {
+        "pressure_atm": 1.0
+      },
+      "source": "NIST Chemistry WebBook (local cache)",
+      "timestamp": "2025-01-10T00:00:00Z",
+      "confidence": 0.95
+    }
+  ]
+}

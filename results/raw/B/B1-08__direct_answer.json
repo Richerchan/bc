@@ -1,0 +1,238 @@
+{
+  "case": {
+    "case_id": "B1-08",
+    "track": "B",
+    "family": "constants_and_units",
+    "ablation_level": "science_eval",
+    "prompt": "What is the melting point of water in C at 1 atm?",
+    "goal": "Return the local scientific answer with the requested unit and cite the local source.",
+    "injected_error": "none",
+    "ground_truth": {
+      "value": 0.0,
+      "unit": "C",
+      "tolerance": 0.001
+    },
+    "ground_truth_source": "NIST Chemistry WebBook (local cache): water melting point at 1 atm",
+    "expected_verdict_sequence": [],
+    "expected_revision_count": 0,
+    "metrics_under_test": [
+      "numeric_accuracy",
+      "unit_consistency",
+      "evidence_citation_presence"
+    ],
+    "sequence_id": null,
+    "sequence_step": null,
+    "seed_memories": {
+      "project_local": [],
+      "shared_growth": []
+    }
+  },
+  "run": {
+    "mode": "direct_answer",
+    "final_state": {
+      "current_input": "What is the melting point of water in C at 1 atm?",
+      "task_goal": "Return the local scientific answer with the requested unit and cite the local source.",
+      "main_claim": "water melting_point is 0.0 C.",
+      "evidence": [],
+      "hidden_assumptions": [
+        "Direct-answer baseline ignores explicit critique control."
+      ],
+      "alternative_paths": [],
+      "confidence": 0.88,
+      "self_risk": [
+        "direct_answer_baseline"
+      ],
+      "proposed_action": "answer_directly",
+      "self_state": {
+        "stability": 0.7,
+        "uncertainty": 0.12,
+        "bias_risk": 0.3,
+        "memory_pressure": 0.0,
+        "attention_mode": "focused",
+        "active_goal": "Return the local scientific answer with the requested unit and cite the local source.",
+        "continuity_notes": []
+      },
+      "context_tags": [],
+      "strategy_notes": [],
+      "memory_influence": {
+        "fact_hints": [],
+        "context_hints": [],
+        "preference_hints": [],
+        "bias_alerts": [],
+        "correction_hints": [],
+        "strategy_hints": [],
+        "divergence_triggers": [],
+        "matched_episode_count": 0,
+        "project_match_count": 0,
+        "shared_match_count": 0
+      },
+      "evidence_pack": {
+        "query": {
+          "raw_text": "What is the melting point of water in C at 1 atm?",
+          "normalized_text": "what is the melting point of water in c at 1 atm? return the local scientific answer with the requested unit and cite the local source.",
+          "query_type": "entity_property",
+          "entity_candidates": [
+            "melting",
+            "point",
+            "water",
+            "in",
+            "C",
+            "atm"
+          ],
+          "property_name": "melting_point",
+          "requested_unit": "C",
+          "condition": {
+            "pressure_atm": 1.0
+          },
+          "source_hints": []
+        },
+        "entities": [
+          {
+            "canonical_name": "water",
+            "entity_type": "compound",
+            "identifiers": {
+              "pubchem_cid": "962",
+              "chebi_id": "CHEBI:15377",
+              "formula": "H2O"
+            },
+            "aliases": [
+              "water",
+              "h2o",
+              "oxidane",
+              "\u6c34"
+            ],
+            "source": "PubChem / ChEBI (local cache)",
+            "confidence": 0.96
+          }
+        ],
+        "records": [
+          {
+            "entity": "water",
+            "property": "melting_point",
+            "value": 273.15,
+            "unit": "K",
+            "condition": {
+              "pressure_atm": 1.0
+            },
+            "source": "NIST Chemistry WebBook (local cache)",
+            "timestamp": "2025-01-10T00:00:00Z",
+            "confidence": 0.96,
+            "provenance_type": "local_cache",
+            "normalized_value": 0.0,
+            "normalized_unit": "C",
+            "identifiers": {},
+            "notes": [
+              "Returned from local NIST Chemistry WebBook cache."
+            ]
+          }
+        ],
+        "warnings": [
+          "Basic magnitude check: water melting_point <= 0 K is suspicious."
+        ],
+        "selected_sources": [
+          "nist_webbook"
+        ],
+        "routing_trace": [
+          "source=nist_webbook hits=1"
+        ]
+      },
+      "commonsense_evidence_pack": {
+        "query": {
+          "raw_text": "What is the melting point of water in C at 1 atm?",
+          "normalized_text": "what is the melting point of water in c at 1 atm?",
+          "entity_candidates": [
+            "C"
+          ],
+          "relation_hints": [],
+          "intent": "general",
+          "source_hints": []
+        },
+        "entities": [],
+        "records": [],
+        "warnings": [],
+        "selected_sources": [
+          "wikidata",
+          "conceptnet"
+        ],
+        "routing_trace": [
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0"
+        ]
+      },
+      "revision_count": 0,
+      "retrieved_lessons": []
+    },
+    "final_verdict": {
+      "verdict": "pass",
+      "issues": [],
+      "guidance": [
+        "Direct answer baseline."
+      ],
+      "self_state_update": {}
+    },
+    "raw_output": "water melting_point is 0.0 C.",
+    "trace": [
+      "baseline=direct_answer"
+    ],
+    "retrieved_lessons": [],
+    "memory_matches": {
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0
+    },
+    "audit": {
+      "knowledge_trace": [
+        "stage=query_parse property=melting_point type=entity_property entities=['melting', 'point', 'water', 'in', 'C', 'atm']",
+        "stage=entity_resolve resolved=['water']",
+        "stage=source_route selected=['nist_webbook']",
+        "source=nist_webbook hits=1",
+        "stage=rule_checks warnings=['Basic magnitude check: water melting_point <= 0 K is suspicious.']"
+      ],
+      "commonsense_trace": [
+        "stage=commonsense_query intent=general relations=[] entities=['C']",
+        "stage=commonsense_entity_resolve resolved=[]",
+        "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+        "source=wikidata hits=0",
+        "source=conceptnet hits=0"
+      ],
+      "seeds": {
+        "project_seed": [],
+        "shared_seed": []
+      }
+    }
+  },
+  "scoring": {
+    "metrics": {
+      "revision_count": 0,
+      "final_verdict": "pass",
+      "confidence": 0.88,
+      "expected_revision_count": 0,
+      "expected_verdict_sequence": [],
+      "concept_mixing_present": false,
+      "premature_convergence_present": false,
+      "unsupported_certainty_present": false,
+      "project_local_precedence_preserved": false,
+      "correction_retained": false,
+      "numeric_match": true,
+      "label_match": true,
+      "unit_match": true,
+      "condition_preserved": false,
+      "source_citation_present": false,
+      "uncertainty_marker_present": false,
+      "abstained_or_qualified": false,
+      "shared_memory_pollution_risk": 0.0,
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0,
+      "extracted_value": 0.0,
+      "extracted_unit": "C"
+    },
+    "rule_evaluation": {
+      "must_match_numeric_within_tolerance": true,
+      "must_include_source_citation": false
+    },
+    "failure_reasons": [
+      "must_include_source_citation"
+    ]
+  }
+}

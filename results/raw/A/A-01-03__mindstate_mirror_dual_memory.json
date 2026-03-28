@@ -1,0 +1,1304 @@
+{
+  "case": {
+    "case_id": "A-01-03",
+    "track": "A",
+    "family": "condition_drop",
+    "ablation_level": "five_way",
+    "prompt": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+    "goal": "Return the value and preserve the calculation condition in the final answer.",
+    "injected_error": "condition_drop",
+    "ground_truth": {
+      "value": 0.61,
+      "unit": "eV",
+      "tolerance": 0.001,
+      "condition_fragment": "GGA/PBE"
+    },
+    "ground_truth_source": "Materials Project API (local cache): silicon band gap under GGA/PBE",
+    "expected_verdict_sequence": [],
+    "expected_revision_count": 0,
+    "metrics_under_test": [
+      "pass_rate",
+      "revision_success_rate",
+      "unsupported_certainty_rate",
+      "condition_preservation_rate",
+      "project_local_precedence_rate",
+      "correction_retention_rate"
+    ],
+    "sequence_id": null,
+    "sequence_step": null,
+    "seed_memories": {
+      "project_local": [],
+      "shared_growth": []
+    }
+  },
+  "run": {
+    "mode": "mindstate_mirror_dual_memory",
+    "final_state": {
+      "current_input": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+      "task_goal": "Return the value and preserve the calculation condition in the final answer.",
+      "main_claim": "Provisional view: Provisional view: Provisional view: Provisional view: Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.",
+      "evidence": [
+        "Scientific evidence: silicon band_gap = 0.61 eV from Materials Project API (local cache) under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}.",
+        "Evidence pack warning: Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+      ],
+      "hidden_assumptions": [
+        "Scientific claims should stay within the property and condition bounds of the evidence pack."
+      ],
+      "alternative_paths": [
+        "Revise the claim with narrower scope.",
+        "Retrieve prior corrections before answering.",
+        "Wait for more evidence if the current prompt is underspecified.",
+        "Answer only from resolved scientific evidence records."
+      ],
+      "confidence": 0.25,
+      "self_risk": [
+        "condition_scope",
+        "revision_applied"
+      ],
+      "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+      "self_state": {
+        "stability": 0.7,
+        "uncertainty": 1.0,
+        "bias_risk": 1.0,
+        "memory_pressure": 0.0,
+        "attention_mode": "reflective",
+        "active_goal": "Return the value and preserve the calculation condition in the final answer.",
+        "continuity_notes": [
+          "Revision #0: built candidate cognition state.",
+          "Revision #1: applied mirror guidance.",
+          "Revision #2: applied mirror guidance.",
+          "Revision #3: applied mirror guidance.",
+          "Revision #4: applied mirror guidance."
+        ]
+      },
+      "context_tags": [
+        "evidence:scientific_knowledge",
+        "input:general",
+        "source:materials_project",
+        "task:Return_the_value_and_preserve_the_calculation_condition_in_the_final_answer."
+      ],
+      "strategy_notes": [],
+      "memory_influence": {
+        "fact_hints": [],
+        "context_hints": [],
+        "preference_hints": [],
+        "bias_alerts": [],
+        "correction_hints": [],
+        "strategy_hints": [],
+        "divergence_triggers": [],
+        "matched_episode_count": 0,
+        "project_match_count": 0,
+        "shared_match_count": 0
+      },
+      "evidence_pack": {
+        "query": {
+          "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+          "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly. return the value and preserve the calculation condition in the final answer.",
+          "query_type": "entity_property",
+          "entity_candidates": [
+            "band",
+            "gap",
+            "silicon",
+            "Preserve",
+            "calculation",
+            "condition",
+            "explicitly"
+          ],
+          "property_name": "band_gap",
+          "requested_unit": null,
+          "condition": {},
+          "source_hints": []
+        },
+        "entities": [
+          {
+            "canonical_name": "silicon",
+            "entity_type": "material",
+            "identifiers": {
+              "formula": "Si",
+              "materials_project": "mp-149"
+            },
+            "aliases": [
+              "silicon",
+              "si",
+              "\u7845"
+            ],
+            "source": "PubChem / ChEBI (local cache)",
+            "confidence": 0.96
+          }
+        ],
+        "records": [
+          {
+            "entity": "silicon",
+            "property": "band_gap",
+            "value": 0.61,
+            "unit": "eV",
+            "condition": {
+              "calculation": "GGA/PBE",
+              "material_id": "mp-149"
+            },
+            "source": "Materials Project API (local cache)",
+            "timestamp": "2025-01-10T00:00:00Z",
+            "confidence": 0.84,
+            "provenance_type": "local_cache",
+            "normalized_value": 0.61,
+            "normalized_unit": "eV",
+            "identifiers": {},
+            "notes": [
+              "Returned from local Materials Project cache.",
+              "Calculated property; condition should be checked before using as experimental fact."
+            ]
+          }
+        ],
+        "warnings": [
+          "Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+        ],
+        "selected_sources": [
+          "materials_project"
+        ],
+        "routing_trace": [
+          "source=materials_project hits=1"
+        ]
+      },
+      "commonsense_evidence_pack": {
+        "query": {
+          "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+          "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly.",
+          "entity_candidates": [
+            "Preserve"
+          ],
+          "relation_hints": [],
+          "intent": "general",
+          "source_hints": []
+        },
+        "entities": [],
+        "records": [],
+        "warnings": [],
+        "selected_sources": [
+          "wikidata",
+          "conceptnet"
+        ],
+        "routing_trace": [
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0"
+        ]
+      },
+      "revision_count": 4,
+      "retrieved_lessons": []
+    },
+    "final_verdict": {
+      "verdict": "wait",
+      "issues": [
+        "cycle_limit_reached"
+      ],
+      "guidance": [
+        "Stop and request more evidence or a narrower task."
+      ],
+      "self_state_update": {
+        "attention_mode": "paused"
+      }
+    },
+    "raw_output": "Result deferred.\nReason: cycle_limit_reached\nNeeded next step: Stop and request more evidence or a narrower task.\nMemory pressure: 0.00",
+    "trace": [
+      "stage=memory influence_matches=0 project_matches=0 shared_matches=0",
+      "stage=query_parse property=band_gap type=entity_property entities=['band', 'gap', 'silicon', 'Preserve', 'calculation', 'condition', 'explicitly']",
+      "stage=entity_resolve resolved=['silicon']",
+      "stage=source_route selected=['materials_project']",
+      "source=materials_project hits=1",
+      "stage=rule_checks warnings=[\"Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}.\"]",
+      "stage=commonsense_query intent=general relations=[] entities=['Preserve']",
+      "stage=commonsense_entity_resolve resolved=[]",
+      "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+      "source=wikidata hits=0",
+      "source=conceptnet hits=0",
+      "cycle=0 stage=cognition claim=\"Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache).\"",
+      "cycle=0 stage=mirror verdict=revise issues=['condition_scope']",
+      "cycle=1 stage=cognition claim=\"Provisional view: Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+      "cycle=1 stage=mirror verdict=revise issues=['condition_scope']",
+      "cycle=2 stage=cognition claim=\"Provisional view: Provisional view: Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+      "cycle=2 stage=mirror verdict=revise issues=['condition_scope']",
+      "cycle=3 stage=cognition claim=\"Provisional view: Provisional view: Provisional view: Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+      "cycle=3 stage=mirror verdict=revise issues=['condition_scope']"
+    ],
+    "retrieved_lessons": [],
+    "memory_matches": {
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0
+    },
+    "audit": {
+      "run_audit": {
+        "current_input": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+        "task_goal": "Return the value and preserve the calculation condition in the final answer.",
+        "memory_influence": {
+          "fact_hints": [],
+          "context_hints": [],
+          "preference_hints": [],
+          "bias_alerts": [],
+          "correction_hints": [],
+          "strategy_hints": [],
+          "divergence_triggers": [],
+          "matched_episode_count": 0,
+          "project_match_count": 0,
+          "shared_match_count": 0
+        },
+        "knowledge_audit": {
+          "query": {
+            "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+            "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly. return the value and preserve the calculation condition in the final answer.",
+            "query_type": "entity_property",
+            "entity_candidates": [
+              "band",
+              "gap",
+              "silicon",
+              "Preserve",
+              "calculation",
+              "condition",
+              "explicitly"
+            ],
+            "property_name": "band_gap",
+            "requested_unit": null,
+            "condition": {},
+            "source_hints": []
+          },
+          "entities": [
+            {
+              "canonical_name": "silicon",
+              "entity_type": "material",
+              "identifiers": {
+                "formula": "Si",
+                "materials_project": "mp-149"
+              },
+              "aliases": [
+                "silicon",
+                "si",
+                "\u7845"
+              ],
+              "source": "PubChem / ChEBI (local cache)",
+              "confidence": 0.96
+            }
+          ],
+          "selected_sources": [
+            "materials_project"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+              "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly. return the value and preserve the calculation condition in the final answer.",
+              "query_type": "entity_property",
+              "entity_candidates": [
+                "band",
+                "gap",
+                "silicon",
+                "Preserve",
+                "calculation",
+                "condition",
+                "explicitly"
+              ],
+              "property_name": "band_gap",
+              "requested_unit": null,
+              "condition": {},
+              "source_hints": []
+            },
+            "entities": [
+              {
+                "canonical_name": "silicon",
+                "entity_type": "material",
+                "identifiers": {
+                  "formula": "Si",
+                  "materials_project": "mp-149"
+                },
+                "aliases": [
+                  "silicon",
+                  "si",
+                  "\u7845"
+                ],
+                "source": "PubChem / ChEBI (local cache)",
+                "confidence": 0.96
+              }
+            ],
+            "records": [
+              {
+                "entity": "silicon",
+                "property": "band_gap",
+                "value": 0.61,
+                "unit": "eV",
+                "condition": {
+                  "calculation": "GGA/PBE",
+                  "material_id": "mp-149"
+                },
+                "source": "Materials Project API (local cache)",
+                "timestamp": "2025-01-10T00:00:00Z",
+                "confidence": 0.84,
+                "provenance_type": "local_cache",
+                "normalized_value": 0.61,
+                "normalized_unit": "eV",
+                "identifiers": {},
+                "notes": [
+                  "Returned from local Materials Project cache.",
+                  "Calculated property; condition should be checked before using as experimental fact."
+                ]
+              }
+            ],
+            "warnings": [
+              "Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+            ],
+            "selected_sources": [
+              "materials_project"
+            ],
+            "routing_trace": [
+              "source=materials_project hits=1"
+            ]
+          },
+          "trace": [
+            "stage=query_parse property=band_gap type=entity_property entities=['band', 'gap', 'silicon', 'Preserve', 'calculation', 'condition', 'explicitly']",
+            "stage=entity_resolve resolved=['silicon']",
+            "stage=source_route selected=['materials_project']",
+            "source=materials_project hits=1",
+            "stage=rule_checks warnings=[\"Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}.\"]"
+          ]
+        },
+        "commonsense_audit": {
+          "query": {
+            "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+            "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly.",
+            "entity_candidates": [
+              "Preserve"
+            ],
+            "relation_hints": [],
+            "intent": "general",
+            "source_hints": []
+          },
+          "entities": [],
+          "selected_sources": [
+            "wikidata",
+            "conceptnet"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+              "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly.",
+              "entity_candidates": [
+                "Preserve"
+              ],
+              "relation_hints": [],
+              "intent": "general",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "wikidata",
+              "conceptnet"
+            ],
+            "routing_trace": [
+              "source=wikidata hits=0",
+              "source=conceptnet hits=0"
+            ]
+          },
+          "trace": [
+            "stage=commonsense_query intent=general relations=[] entities=['Preserve']",
+            "stage=commonsense_entity_resolve resolved=[]",
+            "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+            "source=wikidata hits=0",
+            "source=conceptnet hits=0"
+          ]
+        },
+        "cycles": [
+          {
+            "cycle": 0,
+            "cognition_state": {
+              "current_input": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+              "task_goal": "Return the value and preserve the calculation condition in the final answer.",
+              "main_claim": "Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache).",
+              "evidence": [
+                "Scientific evidence: silicon band_gap = 0.61 eV from Materials Project API (local cache) under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}.",
+                "Evidence pack warning: Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack."
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records."
+              ],
+              "confidence": 0.72,
+              "self_risk": [
+                "condition_scope"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 0.44999999999999996,
+                "bias_risk": 0.44999999999999996,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective",
+                "active_goal": "Return the value and preserve the calculation condition in the final answer.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state."
+                ]
+              },
+              "context_tags": [
+                "task:Return_the_value_and_preserve_the_calculation_condition_in_the_final_answer.",
+                "input:general",
+                "evidence:scientific_knowledge",
+                "source:materials_project"
+              ],
+              "strategy_notes": [],
+              "memory_influence": {
+                "fact_hints": [],
+                "context_hints": [],
+                "preference_hints": [],
+                "bias_alerts": [],
+                "correction_hints": [],
+                "strategy_hints": [],
+                "divergence_triggers": [],
+                "matched_episode_count": 0,
+                "project_match_count": 0,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+                  "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly. return the value and preserve the calculation condition in the final answer.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "band",
+                    "gap",
+                    "silicon",
+                    "Preserve",
+                    "calculation",
+                    "condition",
+                    "explicitly"
+                  ],
+                  "property_name": "band_gap",
+                  "requested_unit": null,
+                  "condition": {},
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "silicon",
+                    "entity_type": "material",
+                    "identifiers": {
+                      "formula": "Si",
+                      "materials_project": "mp-149"
+                    },
+                    "aliases": [
+                      "silicon",
+                      "si",
+                      "\u7845"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "silicon",
+                    "property": "band_gap",
+                    "value": 0.61,
+                    "unit": "eV",
+                    "condition": {
+                      "calculation": "GGA/PBE",
+                      "material_id": "mp-149"
+                    },
+                    "source": "Materials Project API (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.84,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 0.61,
+                    "normalized_unit": "eV",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local Materials Project cache.",
+                      "Calculated property; condition should be checked before using as experimental fact."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+                ],
+                "selected_sources": [
+                  "materials_project"
+                ],
+                "routing_trace": [
+                  "source=materials_project hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+                  "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly.",
+                  "entity_candidates": [
+                    "Preserve"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 0,
+              "retrieved_lessons": []
+            },
+            "mirror_verdict": {
+              "verdict": "revise",
+              "issues": [
+                "condition_scope"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it."
+              ],
+              "self_state_update": {
+                "uncertainty": 0.44999999999999996,
+                "bias_risk": 0.44999999999999996,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective"
+              }
+            }
+          },
+          {
+            "cycle": 1,
+            "cognition_state": {
+              "current_input": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+              "task_goal": "Return the value and preserve the calculation condition in the final answer.",
+              "main_claim": "Provisional view: Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.",
+              "evidence": [
+                "Scientific evidence: silicon band_gap = 0.61 eV from Materials Project API (local cache) under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}.",
+                "Evidence pack warning: Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack."
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records."
+              ],
+              "confidence": 0.54,
+              "self_risk": [
+                "condition_scope",
+                "revision_applied"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 0.75,
+                "bias_risk": 0.7,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective",
+                "active_goal": "Return the value and preserve the calculation condition in the final answer.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Revision #1: applied mirror guidance."
+                ]
+              },
+              "context_tags": [
+                "evidence:scientific_knowledge",
+                "input:general",
+                "source:materials_project",
+                "task:Return_the_value_and_preserve_the_calculation_condition_in_the_final_answer."
+              ],
+              "strategy_notes": [],
+              "memory_influence": {
+                "fact_hints": [],
+                "context_hints": [],
+                "preference_hints": [],
+                "bias_alerts": [],
+                "correction_hints": [],
+                "strategy_hints": [],
+                "divergence_triggers": [],
+                "matched_episode_count": 0,
+                "project_match_count": 0,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+                  "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly. return the value and preserve the calculation condition in the final answer.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "band",
+                    "gap",
+                    "silicon",
+                    "Preserve",
+                    "calculation",
+                    "condition",
+                    "explicitly"
+                  ],
+                  "property_name": "band_gap",
+                  "requested_unit": null,
+                  "condition": {},
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "silicon",
+                    "entity_type": "material",
+                    "identifiers": {
+                      "formula": "Si",
+                      "materials_project": "mp-149"
+                    },
+                    "aliases": [
+                      "silicon",
+                      "si",
+                      "\u7845"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "silicon",
+                    "property": "band_gap",
+                    "value": 0.61,
+                    "unit": "eV",
+                    "condition": {
+                      "calculation": "GGA/PBE",
+                      "material_id": "mp-149"
+                    },
+                    "source": "Materials Project API (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.84,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 0.61,
+                    "normalized_unit": "eV",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local Materials Project cache.",
+                      "Calculated property; condition should be checked before using as experimental fact."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+                ],
+                "selected_sources": [
+                  "materials_project"
+                ],
+                "routing_trace": [
+                  "source=materials_project hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+                  "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly.",
+                  "entity_candidates": [
+                    "Preserve"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 1,
+              "retrieved_lessons": []
+            },
+            "mirror_verdict": {
+              "verdict": "revise",
+              "issues": [
+                "condition_scope"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it."
+              ],
+              "self_state_update": {
+                "uncertainty": 0.75,
+                "bias_risk": 0.7,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective"
+              }
+            }
+          },
+          {
+            "cycle": 2,
+            "cognition_state": {
+              "current_input": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+              "task_goal": "Return the value and preserve the calculation condition in the final answer.",
+              "main_claim": "Provisional view: Provisional view: Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.",
+              "evidence": [
+                "Scientific evidence: silicon band_gap = 0.61 eV from Materials Project API (local cache) under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}.",
+                "Evidence pack warning: Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack."
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records."
+              ],
+              "confidence": 0.36000000000000004,
+              "self_risk": [
+                "condition_scope",
+                "revision_applied"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 1.0,
+                "bias_risk": 0.95,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective",
+                "active_goal": "Return the value and preserve the calculation condition in the final answer.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Revision #1: applied mirror guidance.",
+                  "Revision #2: applied mirror guidance."
+                ]
+              },
+              "context_tags": [
+                "evidence:scientific_knowledge",
+                "input:general",
+                "source:materials_project",
+                "task:Return_the_value_and_preserve_the_calculation_condition_in_the_final_answer."
+              ],
+              "strategy_notes": [],
+              "memory_influence": {
+                "fact_hints": [],
+                "context_hints": [],
+                "preference_hints": [],
+                "bias_alerts": [],
+                "correction_hints": [],
+                "strategy_hints": [],
+                "divergence_triggers": [],
+                "matched_episode_count": 0,
+                "project_match_count": 0,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+                  "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly. return the value and preserve the calculation condition in the final answer.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "band",
+                    "gap",
+                    "silicon",
+                    "Preserve",
+                    "calculation",
+                    "condition",
+                    "explicitly"
+                  ],
+                  "property_name": "band_gap",
+                  "requested_unit": null,
+                  "condition": {},
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "silicon",
+                    "entity_type": "material",
+                    "identifiers": {
+                      "formula": "Si",
+                      "materials_project": "mp-149"
+                    },
+                    "aliases": [
+                      "silicon",
+                      "si",
+                      "\u7845"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "silicon",
+                    "property": "band_gap",
+                    "value": 0.61,
+                    "unit": "eV",
+                    "condition": {
+                      "calculation": "GGA/PBE",
+                      "material_id": "mp-149"
+                    },
+                    "source": "Materials Project API (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.84,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 0.61,
+                    "normalized_unit": "eV",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local Materials Project cache.",
+                      "Calculated property; condition should be checked before using as experimental fact."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+                ],
+                "selected_sources": [
+                  "materials_project"
+                ],
+                "routing_trace": [
+                  "source=materials_project hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+                  "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly.",
+                  "entity_candidates": [
+                    "Preserve"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 2,
+              "retrieved_lessons": []
+            },
+            "mirror_verdict": {
+              "verdict": "revise",
+              "issues": [
+                "condition_scope"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it."
+              ],
+              "self_state_update": {
+                "uncertainty": 1.0,
+                "bias_risk": 0.95,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective"
+              }
+            }
+          },
+          {
+            "cycle": 3,
+            "cognition_state": {
+              "current_input": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+              "task_goal": "Return the value and preserve the calculation condition in the final answer.",
+              "main_claim": "Provisional view: Provisional view: Provisional view: Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.",
+              "evidence": [
+                "Scientific evidence: silicon band_gap = 0.61 eV from Materials Project API (local cache) under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}.",
+                "Evidence pack warning: Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack."
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records."
+              ],
+              "confidence": 0.25,
+              "self_risk": [
+                "condition_scope",
+                "revision_applied"
+              ],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+              "self_state": {
+                "stability": 0.7,
+                "uncertainty": 1.0,
+                "bias_risk": 1.0,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective",
+                "active_goal": "Return the value and preserve the calculation condition in the final answer.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state.",
+                  "Revision #1: applied mirror guidance.",
+                  "Revision #2: applied mirror guidance.",
+                  "Revision #3: applied mirror guidance."
+                ]
+              },
+              "context_tags": [
+                "evidence:scientific_knowledge",
+                "input:general",
+                "source:materials_project",
+                "task:Return_the_value_and_preserve_the_calculation_condition_in_the_final_answer."
+              ],
+              "strategy_notes": [],
+              "memory_influence": {
+                "fact_hints": [],
+                "context_hints": [],
+                "preference_hints": [],
+                "bias_alerts": [],
+                "correction_hints": [],
+                "strategy_hints": [],
+                "divergence_triggers": [],
+                "matched_episode_count": 0,
+                "project_match_count": 0,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+                  "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly. return the value and preserve the calculation condition in the final answer.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "band",
+                    "gap",
+                    "silicon",
+                    "Preserve",
+                    "calculation",
+                    "condition",
+                    "explicitly"
+                  ],
+                  "property_name": "band_gap",
+                  "requested_unit": null,
+                  "condition": {},
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "silicon",
+                    "entity_type": "material",
+                    "identifiers": {
+                      "formula": "Si",
+                      "materials_project": "mp-149"
+                    },
+                    "aliases": [
+                      "silicon",
+                      "si",
+                      "\u7845"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "silicon",
+                    "property": "band_gap",
+                    "value": 0.61,
+                    "unit": "eV",
+                    "condition": {
+                      "calculation": "GGA/PBE",
+                      "material_id": "mp-149"
+                    },
+                    "source": "Materials Project API (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.84,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 0.61,
+                    "normalized_unit": "eV",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local Materials Project cache.",
+                      "Calculated property; condition should be checked before using as experimental fact."
+                    ]
+                  }
+                ],
+                "warnings": [
+                  "Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+                ],
+                "selected_sources": [
+                  "materials_project"
+                ],
+                "routing_trace": [
+                  "source=materials_project hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+                  "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly.",
+                  "entity_candidates": [
+                    "Preserve"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 3,
+              "retrieved_lessons": []
+            },
+            "mirror_verdict": {
+              "verdict": "revise",
+              "issues": [
+                "condition_scope"
+              ],
+              "guidance": [
+                "State the source condition explicitly and avoid overgeneralizing beyond it."
+              ],
+              "self_state_update": {
+                "uncertainty": 1.0,
+                "bias_risk": 1.0,
+                "memory_pressure": 0.0,
+                "attention_mode": "reflective"
+              }
+            }
+          }
+        ],
+        "final_output": "Result deferred.\nReason: cycle_limit_reached\nNeeded next step: Stop and request more evidence or a narrower task.\nMemory pressure: 0.00",
+        "final_state": {
+          "current_input": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+          "task_goal": "Return the value and preserve the calculation condition in the final answer.",
+          "main_claim": "Provisional view: Provisional view: Provisional view: Provisional view: Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.",
+          "evidence": [
+            "Scientific evidence: silicon band_gap = 0.61 eV from Materials Project API (local cache) under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}.",
+            "Evidence pack warning: Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+          ],
+          "hidden_assumptions": [
+            "Scientific claims should stay within the property and condition bounds of the evidence pack."
+          ],
+          "alternative_paths": [
+            "Revise the claim with narrower scope.",
+            "Retrieve prior corrections before answering.",
+            "Wait for more evidence if the current prompt is underspecified.",
+            "Answer only from resolved scientific evidence records."
+          ],
+          "confidence": 0.25,
+          "self_risk": [
+            "condition_scope",
+            "revision_applied"
+          ],
+          "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+          "self_state": {
+            "stability": 0.7,
+            "uncertainty": 1.0,
+            "bias_risk": 1.0,
+            "memory_pressure": 0.0,
+            "attention_mode": "reflective",
+            "active_goal": "Return the value and preserve the calculation condition in the final answer.",
+            "continuity_notes": [
+              "Revision #0: built candidate cognition state.",
+              "Revision #1: applied mirror guidance.",
+              "Revision #2: applied mirror guidance.",
+              "Revision #3: applied mirror guidance.",
+              "Revision #4: applied mirror guidance."
+            ]
+          },
+          "context_tags": [
+            "evidence:scientific_knowledge",
+            "input:general",
+            "source:materials_project",
+            "task:Return_the_value_and_preserve_the_calculation_condition_in_the_final_answer."
+          ],
+          "strategy_notes": [],
+          "memory_influence": {
+            "fact_hints": [],
+            "context_hints": [],
+            "preference_hints": [],
+            "bias_alerts": [],
+            "correction_hints": [],
+            "strategy_hints": [],
+            "divergence_triggers": [],
+            "matched_episode_count": 0,
+            "project_match_count": 0,
+            "shared_match_count": 0
+          },
+          "evidence_pack": {
+            "query": {
+              "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+              "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly. return the value and preserve the calculation condition in the final answer.",
+              "query_type": "entity_property",
+              "entity_candidates": [
+                "band",
+                "gap",
+                "silicon",
+                "Preserve",
+                "calculation",
+                "condition",
+                "explicitly"
+              ],
+              "property_name": "band_gap",
+              "requested_unit": null,
+              "condition": {},
+              "source_hints": []
+            },
+            "entities": [
+              {
+                "canonical_name": "silicon",
+                "entity_type": "material",
+                "identifiers": {
+                  "formula": "Si",
+                  "materials_project": "mp-149"
+                },
+                "aliases": [
+                  "silicon",
+                  "si",
+                  "\u7845"
+                ],
+                "source": "PubChem / ChEBI (local cache)",
+                "confidence": 0.96
+              }
+            ],
+            "records": [
+              {
+                "entity": "silicon",
+                "property": "band_gap",
+                "value": 0.61,
+                "unit": "eV",
+                "condition": {
+                  "calculation": "GGA/PBE",
+                  "material_id": "mp-149"
+                },
+                "source": "Materials Project API (local cache)",
+                "timestamp": "2025-01-10T00:00:00Z",
+                "confidence": 0.84,
+                "provenance_type": "local_cache",
+                "normalized_value": 0.61,
+                "normalized_unit": "eV",
+                "identifiers": {},
+                "notes": [
+                  "Returned from local Materials Project cache.",
+                  "Calculated property; condition should be checked before using as experimental fact."
+                ]
+              }
+            ],
+            "warnings": [
+              "Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}."
+            ],
+            "selected_sources": [
+              "materials_project"
+            ],
+            "routing_trace": [
+              "source=materials_project hits=1"
+            ]
+          },
+          "commonsense_evidence_pack": {
+            "query": {
+              "raw_text": "What is the band gap of silicon? Preserve the calculation condition explicitly.",
+              "normalized_text": "what is the band gap of silicon? preserve the calculation condition explicitly.",
+              "entity_candidates": [
+                "Preserve"
+              ],
+              "relation_hints": [],
+              "intent": "general",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "wikidata",
+              "conceptnet"
+            ],
+            "routing_trace": [
+              "source=wikidata hits=0",
+              "source=conceptnet hits=0"
+            ]
+          },
+          "revision_count": 4,
+          "retrieved_lessons": []
+        },
+        "final_verdict": {
+          "verdict": "wait",
+          "issues": [
+            "cycle_limit_reached"
+          ],
+          "guidance": [
+            "Stop and request more evidence or a narrower task."
+          ],
+          "self_state_update": {
+            "attention_mode": "paused"
+          }
+        },
+        "trace": [
+          "stage=memory influence_matches=0 project_matches=0 shared_matches=0",
+          "stage=query_parse property=band_gap type=entity_property entities=['band', 'gap', 'silicon', 'Preserve', 'calculation', 'condition', 'explicitly']",
+          "stage=entity_resolve resolved=['silicon']",
+          "stage=source_route selected=['materials_project']",
+          "source=materials_project hits=1",
+          "stage=rule_checks warnings=[\"Condition applicability reminder: silicon band_gap is reported under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}.\"]",
+          "stage=commonsense_query intent=general relations=[] entities=['Preserve']",
+          "stage=commonsense_entity_resolve resolved=[]",
+          "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0",
+          "cycle=0 stage=cognition claim=\"Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache).\"",
+          "cycle=0 stage=mirror verdict=revise issues=['condition_scope']",
+          "cycle=1 stage=cognition claim=\"Provisional view: Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+          "cycle=1 stage=mirror verdict=revise issues=['condition_scope']",
+          "cycle=2 stage=cognition claim=\"Provisional view: Provisional view: Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+          "cycle=2 stage=mirror verdict=revise issues=['condition_scope']",
+          "cycle=3 stage=cognition claim=\"Provisional view: Provisional view: Provisional view: Evidence-constrained view: silicon band_gap is 0.61 eV under {'calculation': 'GGA/PBE', 'material_id': 'mp-149'}, based on Materials Project API (local cache). Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it. Constraints: State the source condition explicitly and avoid overgeneralizing beyond it.\"",
+          "cycle=3 stage=mirror verdict=revise issues=['condition_scope']"
+        ]
+      },
+      "seeds": {
+        "project_seed": [],
+        "shared_seed": []
+      }
+    }
+  },
+  "scoring": {
+    "metrics": {
+      "revision_count": 4,
+      "final_verdict": "wait",
+      "confidence": 0.25,
+      "expected_revision_count": 0,
+      "expected_verdict_sequence": [],
+      "concept_mixing_present": false,
+      "premature_convergence_present": false,
+      "unsupported_certainty_present": false,
+      "project_local_precedence_preserved": false,
+      "correction_retained": false,
+      "numeric_match": true,
+      "label_match": true,
+      "unit_match": true,
+      "condition_preserved": true,
+      "source_citation_present": true,
+      "uncertainty_marker_present": true,
+      "abstained_or_qualified": true,
+      "shared_memory_pollution_risk": 0.0,
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0,
+      "extracted_value": 0.61,
+      "extracted_unit": "eV"
+    },
+    "rule_evaluation": {
+      "must_match_numeric_within_tolerance": true,
+      "must_preserve_condition": true,
+      "must_include_source_citation": true
+    },
+    "failure_reasons": []
+  }
+}

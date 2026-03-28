@@ -1,0 +1,322 @@
+{
+  "case": {
+    "case_id": "A-04-04",
+    "track": "A",
+    "family": "project_local_precedence",
+    "ablation_level": "five_way",
+    "prompt": "A shared heuristic says to reuse the nearest record. What is the gas constant in cal/(mol*K)?",
+    "goal": "Use project-local unit discipline before any generic fallback heuristic.",
+    "injected_error": "project_local_precedence",
+    "ground_truth": {
+      "expected_behavior": "qualified_answer",
+      "expected_memory_scope": "project_local"
+    },
+    "ground_truth_source": "Project-local rule: do not invent unsupported unit conversions",
+    "expected_verdict_sequence": [],
+    "expected_revision_count": 0,
+    "metrics_under_test": [
+      "pass_rate",
+      "revision_success_rate",
+      "unsupported_certainty_rate",
+      "condition_preservation_rate",
+      "project_local_precedence_rate",
+      "correction_retention_rate"
+    ],
+    "sequence_id": null,
+    "sequence_step": null,
+    "seed_memories": {
+      "project_local": [
+        {
+          "input_summary": "Project-local condition discipline for physical_constants.",
+          "context_tags": [
+            "memory_scope:project_local",
+            "task_goal:condition_governance"
+          ],
+          "claim": "Project-local scientific responses for physical_constants must preserve source conditions.",
+          "evidence_summary": [
+            "Use local evidence before general guidance when source conditions and requested conditions do not match."
+          ],
+          "fact_items": [
+            "Project-local fact: a 1 atm record must not be silently reused for a 2 atm request."
+          ],
+          "bias_tags": [
+            "condition_drop",
+            "unsupported_certainty"
+          ],
+          "correction_actions": [
+            "Preserve source conditions explicitly.",
+            "Prefer qualified answers to extrapolation when conditions mismatch."
+          ],
+          "correction_lineage": [
+            "Project-local correction lineage requires condition-preserving, evidence-first answers."
+          ],
+          "strategy_tags": [
+            "Use local evidence before general guidance."
+          ],
+          "final_result": "Project-local condition rule stored.",
+          "reusable_lessons": [
+            "Preserve source conditions and prefer qualified answers when the local record does not match the request."
+          ]
+        }
+      ],
+      "shared_growth": [
+        {
+          "input_summary": "Shared correction lineage for physical_constants.",
+          "context_tags": [
+            "memory_scope:shared_growth",
+            "task_goal:bounded_scientific_reasoning"
+          ],
+          "claim": "Repeated failures in physical_constants come from reusing nearby values beyond their supported conditions.",
+          "evidence_summary": [
+            "Prior correction: when conditions or source scope do not match, answer provisionally or defer."
+          ],
+          "fact_items": [],
+          "bias_tags": [
+            "unsupported_certainty",
+            "old_template_reuse",
+            "condition_drop"
+          ],
+          "correction_actions": [
+            "Carry forward prior correction lessons before making a new claim.",
+            "Do not substitute the nearest known condition for the requested condition."
+          ],
+          "correction_lineage": [
+            "Prior correction lessons have been incorporated for unsupported-condition handling."
+          ],
+          "strategy_tags": [
+            "Use prior correction lessons before finalizing a scientific claim."
+          ],
+          "final_result": "Shared correction lesson stored.",
+          "reusable_lessons": [
+            "Prior correction lessons have been incorporated: preserve the source condition or defer."
+          ]
+        }
+      ]
+    }
+  },
+  "run": {
+    "mode": "mindstate_only",
+    "final_state": {
+      "current_input": "A shared heuristic says to reuse the nearest record. What is the gas constant in cal/(mol*K)?",
+      "task_goal": "Use project-local unit discipline before any generic fallback heuristic.",
+      "main_claim": "Evidence-constrained view: Planck constant constant_value is 6.62607015e-34 J*s, based on NIST CODATA 2022 (local cache).",
+      "evidence": [
+        "Scientific evidence: Planck constant constant_value = 6.62607015e-34 J*s from NIST CODATA 2022 (local cache).",
+        "Scientific evidence: Gas constant constant_value = 8.314462618 J/(mol*K) from NIST CODATA 2022 (local cache)."
+      ],
+      "hidden_assumptions": [
+        "Scientific claims should stay within the property and condition bounds of the evidence pack."
+      ],
+      "alternative_paths": [
+        "Revise the claim with narrower scope.",
+        "Retrieve prior corrections before answering.",
+        "Wait for more evidence if the current prompt is underspecified.",
+        "Answer only from resolved scientific evidence records."
+      ],
+      "confidence": 0.95,
+      "self_risk": [],
+      "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+      "self_state": {
+        "stability": 0.7,
+        "uncertainty": 0.3,
+        "bias_risk": 0.3,
+        "memory_pressure": 0.0,
+        "attention_mode": "focused",
+        "active_goal": "Use project-local unit discipline before any generic fallback heuristic.",
+        "continuity_notes": [
+          "Revision #0: built candidate cognition state."
+        ]
+      },
+      "context_tags": [
+        "task:Use_project-local_unit_discipline_before_any_generic_fallback_heuristic.",
+        "input:general",
+        "evidence:scientific_knowledge",
+        "source:codata_constants"
+      ],
+      "strategy_notes": [],
+      "memory_influence": {
+        "fact_hints": [],
+        "context_hints": [],
+        "preference_hints": [],
+        "bias_alerts": [],
+        "correction_hints": [],
+        "strategy_hints": [],
+        "divergence_triggers": [],
+        "matched_episode_count": 0,
+        "project_match_count": 0,
+        "shared_match_count": 0
+      },
+      "evidence_pack": {
+        "query": {
+          "raw_text": "A shared heuristic says to reuse the nearest record. What is the gas constant in cal/(mol*K)?",
+          "normalized_text": "a shared heuristic says to reuse the nearest record. what is the gas constant in cal/(mol*k)? use project-local unit discipline before any generic fallback heuristic.",
+          "query_type": "constant",
+          "entity_candidates": [
+            "A",
+            "shared",
+            "heuristic",
+            "says",
+            "to",
+            "reuse",
+            "nearest",
+            "record",
+            "gas",
+            "constant",
+            "in",
+            "cal",
+            "mol",
+            "K"
+          ],
+          "property_name": "constant_value",
+          "requested_unit": "K",
+          "condition": {},
+          "source_hints": []
+        },
+        "entities": [],
+        "records": [
+          {
+            "entity": "Planck constant",
+            "property": "constant_value",
+            "value": 6.62607015e-34,
+            "unit": "J*s",
+            "condition": {},
+            "source": "NIST CODATA 2022 (local cache)",
+            "timestamp": "2022-05-20T00:00:00Z",
+            "confidence": 0.99,
+            "provenance_type": "local_static",
+            "normalized_value": 6.62607015e-34,
+            "normalized_unit": "J*s",
+            "identifiers": {},
+            "notes": [
+              "Authoritative constant loaded from local CODATA cache."
+            ]
+          },
+          {
+            "entity": "Gas constant",
+            "property": "constant_value",
+            "value": 8.314462618,
+            "unit": "J/(mol*K)",
+            "condition": {},
+            "source": "NIST CODATA 2022 (local cache)",
+            "timestamp": "2022-05-20T00:00:00Z",
+            "confidence": 0.99,
+            "provenance_type": "local_static",
+            "normalized_value": 8.314462618,
+            "normalized_unit": "J/(mol*K)",
+            "identifiers": {},
+            "notes": [
+              "Authoritative constant loaded from local CODATA cache."
+            ]
+          }
+        ],
+        "warnings": [],
+        "selected_sources": [
+          "codata_constants"
+        ],
+        "routing_trace": [
+          "source=codata_constants hits=2"
+        ]
+      },
+      "commonsense_evidence_pack": {
+        "query": {
+          "raw_text": "A shared heuristic says to reuse the nearest record. What is the gas constant in cal/(mol*K)?",
+          "normalized_text": "a shared heuristic says to reuse the nearest record. what is the gas constant in cal/(mol*k)?",
+          "entity_candidates": [
+            "K"
+          ],
+          "relation_hints": [
+            "used_for",
+            "located_in"
+          ],
+          "intent": "geo_fact",
+          "source_hints": []
+        },
+        "entities": [],
+        "records": [],
+        "warnings": [],
+        "selected_sources": [
+          "geonames",
+          "wikidata"
+        ],
+        "routing_trace": [
+          "source=geonames hits=0",
+          "source=wikidata hits=0"
+        ]
+      },
+      "revision_count": 0,
+      "retrieved_lessons": []
+    },
+    "final_verdict": {
+      "verdict": "pass",
+      "issues": [],
+      "guidance": [
+        "MindState only baseline."
+      ],
+      "self_state_update": {}
+    },
+    "raw_output": "Evidence-constrained view: Planck constant constant_value is 6.62607015e-34 J*s, based on NIST CODATA 2022 (local cache).",
+    "trace": [
+      "baseline=mindstate_only"
+    ],
+    "retrieved_lessons": [],
+    "memory_matches": {
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0
+    },
+    "audit": {
+      "knowledge_trace": [
+        "stage=query_parse property=constant_value type=constant entities=['A', 'shared', 'heuristic', 'says', 'to', 'reuse', 'nearest', 'record', 'gas', 'constant', 'in', 'cal', 'mol', 'K']",
+        "stage=entity_resolve resolved=[]",
+        "stage=source_route selected=['codata_constants']",
+        "source=codata_constants hits=2"
+      ],
+      "commonsense_trace": [
+        "stage=commonsense_query intent=geo_fact relations=['used_for', 'located_in'] entities=['K']",
+        "stage=commonsense_entity_resolve resolved=[]",
+        "stage=commonsense_route selected=['geonames', 'wikidata']",
+        "source=geonames hits=0",
+        "source=wikidata hits=0"
+      ],
+      "seeds": {
+        "project_seed": [],
+        "shared_seed": []
+      }
+    }
+  },
+  "scoring": {
+    "metrics": {
+      "revision_count": 0,
+      "final_verdict": "pass",
+      "confidence": 0.95,
+      "expected_revision_count": 0,
+      "expected_verdict_sequence": [],
+      "concept_mixing_present": false,
+      "premature_convergence_present": false,
+      "unsupported_certainty_present": false,
+      "project_local_precedence_preserved": false,
+      "correction_retained": false,
+      "numeric_match": true,
+      "label_match": true,
+      "unit_match": true,
+      "condition_preserved": false,
+      "source_citation_present": true,
+      "uncertainty_marker_present": false,
+      "abstained_or_qualified": false,
+      "shared_memory_pollution_risk": 0.0,
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0,
+      "extracted_value": 6.62607015e-34,
+      "extracted_unit": "J*s"
+    },
+    "rule_evaluation": {
+      "must_abstain_or_qualify": false,
+      "must_preserve_project_local_precedence": false
+    },
+    "failure_reasons": [
+      "must_abstain_or_qualify",
+      "must_preserve_project_local_precedence"
+    ]
+  }
+}

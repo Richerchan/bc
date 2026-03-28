@@ -1,0 +1,6 @@
+mode,case_count,pass_rate,pass_rate_ci_low,pass_rate_ci_high,correction_retention_rate,correction_retention_rate_ci_low,correction_retention_rate_ci_high,unsupported_certainty_rate,unsupported_certainty_rate_ci_low,unsupported_certainty_rate_ci_high
+direct_answer,30,0.1667,0.0667,0.3,0.0,0.0,0.0,0.0333,0.0,0.1
+mindstate_only,30,0.3333,0.1667,0.5,0.0,0.0,0.0,0.0333,0.0,0.1
+mindstate_mirror,30,0.5667,0.4,0.7333,0.0,0.0,0.0,0.0333,0.0,0.1
+mindstate_mirror_local_memory,30,0.7,0.5333,0.8667,0.1333,0.0333,0.2667,0.0333,0.0,0.1
+mindstate_mirror_dual_memory,30,0.7,0.5333,0.8667,0.1333,0.0333,0.2667,0.0333,0.0,0.1

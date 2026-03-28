@@ -1,0 +1,44 @@
+Mirror Reflection Agent V6 benchmark redesign
+
+Primary manuscript
+- /Users/brook/Documents/Codex/Research/manuscript/MANUSCRIPT_V6.tex
+- /Users/brook/Documents/Codex/Research/manuscript/MANUSCRIPT_V6.pdf
+
+Benchmark scope
+- case_count = 86
+- run_count = 318
+- Track A = 30 cases x 5 modes = 150 runs
+- Track B = 36 cases x 3 modes = 108 runs
+- Track C = 20 cases x 3 modes = 60 runs
+
+Aggregate summaries
+- /Users/brook/Documents/Codex/Research/results/aggregate/A_summary.json
+- /Users/brook/Documents/Codex/Research/results/aggregate/B_summary.json
+- /Users/brook/Documents/Codex/Research/results/aggregate/C_summary.json
+- /Users/brook/Documents/Codex/Research/results/aggregate/robustness_summary.json
+
+Tables
+- /Users/brook/Documents/Codex/Research/results/tables/table0_benchmark_overview.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table1_track_a_ablation.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table1a_track_a_uncertainty.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table2_track_a_family_breakdown.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table2a_track_a_family_variability.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table3_track_b_aggregate.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table3a_track_b_uncertainty.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table3b_track_b_variability.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table4_track_b_error_taxonomy.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table5_track_c_sequence_outcomes.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table5a_track_c_uncertainty.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table5b_track_c_family_breakdown.csv
+- /Users/brook/Documents/Codex/Research/results/tables/table6_representative_cases.csv
+
+Figures
+- /Users/brook/Documents/Codex/Research/manuscript/Figure 1.png
+- /Users/brook/Documents/Codex/Research/results/figures/figure2_ablation.png
+- /Users/brook/Documents/Codex/Research/results/figures/figure3_science_qa.png
+- /Users/brook/Documents/Codex/Research/results/figures/figure4_longitudinal.png
+- /Users/brook/Documents/Codex/Research/results/figures/figure5_track_a_heatmap.png
+
+Release assets
+- /Users/brook/Documents/Codex/Research/results/release/release_manifest.json
+- /Users/brook/Documents/Codex/Research/results/release/environment_snapshot.txt

@@ -1,0 +1,250 @@
+{
+  "case": {
+    "case_id": "A-05-05",
+    "track": "A",
+    "family": "bounded_non_degradation",
+    "ablation_level": "five_way",
+    "prompt": "What is the molar mass of water in g/mol?",
+    "goal": "Return the factual answer with the requested unit.",
+    "injected_error": "bounded_non_degradation",
+    "ground_truth": {
+      "value": 18.01528,
+      "unit": "g/mol",
+      "tolerance": 1e-06
+    },
+    "ground_truth_source": "PubChem / ChEBI (local cache): water molar mass",
+    "expected_verdict_sequence": [],
+    "expected_revision_count": 0,
+    "metrics_under_test": [
+      "pass_rate",
+      "revision_success_rate",
+      "unsupported_certainty_rate",
+      "condition_preservation_rate",
+      "project_local_precedence_rate",
+      "correction_retention_rate"
+    ],
+    "sequence_id": null,
+    "sequence_step": null,
+    "seed_memories": {
+      "project_local": [],
+      "shared_growth": []
+    }
+  },
+  "run": {
+    "mode": "mindstate_only",
+    "final_state": {
+      "current_input": "What is the molar mass of water in g/mol?",
+      "task_goal": "Return the factual answer with the requested unit.",
+      "main_claim": "Evidence-constrained view: water molar_mass is 18.01528 g/mol, based on PubChem / ChEBI (local cache).",
+      "evidence": [
+        "Scientific evidence: water molar_mass = 18.01528 g/mol from PubChem / ChEBI (local cache)."
+      ],
+      "hidden_assumptions": [
+        "Scientific claims should stay within the property and condition bounds of the evidence pack."
+      ],
+      "alternative_paths": [
+        "Revise the claim with narrower scope.",
+        "Retrieve prior corrections before answering.",
+        "Wait for more evidence if the current prompt is underspecified.",
+        "Answer only from resolved scientific evidence records."
+      ],
+      "confidence": 0.95,
+      "self_risk": [],
+      "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+      "self_state": {
+        "stability": 0.7,
+        "uncertainty": 0.3,
+        "bias_risk": 0.3,
+        "memory_pressure": 0.0,
+        "attention_mode": "focused",
+        "active_goal": "Return the factual answer with the requested unit.",
+        "continuity_notes": [
+          "Revision #0: built candidate cognition state."
+        ]
+      },
+      "context_tags": [
+        "task:Return_the_factual_answer_with_the_requested_unit.",
+        "input:general",
+        "evidence:scientific_knowledge",
+        "source:pubchem_chebi"
+      ],
+      "strategy_notes": [],
+      "memory_influence": {
+        "fact_hints": [],
+        "context_hints": [],
+        "preference_hints": [],
+        "bias_alerts": [],
+        "correction_hints": [],
+        "strategy_hints": [],
+        "divergence_triggers": [],
+        "matched_episode_count": 0,
+        "project_match_count": 0,
+        "shared_match_count": 0
+      },
+      "evidence_pack": {
+        "query": {
+          "raw_text": "What is the molar mass of water in g/mol?",
+          "normalized_text": "what is the molar mass of water in g/mol? return the factual answer with the requested unit.",
+          "query_type": "entity_property",
+          "entity_candidates": [
+            "molar",
+            "mass",
+            "water",
+            "in",
+            "g",
+            "mol"
+          ],
+          "property_name": "molar_mass",
+          "requested_unit": "g/mol",
+          "condition": {},
+          "source_hints": []
+        },
+        "entities": [
+          {
+            "canonical_name": "water",
+            "entity_type": "compound",
+            "identifiers": {
+              "pubchem_cid": "962",
+              "chebi_id": "CHEBI:15377",
+              "formula": "H2O"
+            },
+            "aliases": [
+              "water",
+              "h2o",
+              "oxidane",
+              "\u6c34"
+            ],
+            "source": "PubChem / ChEBI (local cache)",
+            "confidence": 0.96
+          }
+        ],
+        "records": [
+          {
+            "entity": "water",
+            "property": "molar_mass",
+            "value": 18.01528,
+            "unit": "g/mol",
+            "condition": {},
+            "source": "PubChem / ChEBI (local cache)",
+            "timestamp": "2025-01-10T00:00:00Z",
+            "confidence": 0.97,
+            "provenance_type": "local_cache",
+            "normalized_value": 18.01528,
+            "normalized_unit": "g/mol",
+            "identifiers": {
+              "pubchem_cid": "962",
+              "chebi_id": "CHEBI:15377",
+              "formula": "H2O"
+            },
+            "notes": [
+              "Entity property returned from local PubChem/ChEBI cache."
+            ]
+          }
+        ],
+        "warnings": [],
+        "selected_sources": [
+          "pubchem_chebi"
+        ],
+        "routing_trace": [
+          "source=pubchem_chebi hits=1"
+        ]
+      },
+      "commonsense_evidence_pack": {
+        "query": {
+          "raw_text": "What is the molar mass of water in g/mol?",
+          "normalized_text": "what is the molar mass of water in g/mol?",
+          "entity_candidates": [
+            "molar",
+            "mass",
+            "water",
+            "mol"
+          ],
+          "relation_hints": [],
+          "intent": "general",
+          "source_hints": []
+        },
+        "entities": [],
+        "records": [],
+        "warnings": [],
+        "selected_sources": [
+          "wikidata",
+          "conceptnet"
+        ],
+        "routing_trace": [
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0"
+        ]
+      },
+      "revision_count": 0,
+      "retrieved_lessons": []
+    },
+    "final_verdict": {
+      "verdict": "pass",
+      "issues": [],
+      "guidance": [
+        "MindState only baseline."
+      ],
+      "self_state_update": {}
+    },
+    "raw_output": "Evidence-constrained view: water molar_mass is 18.01528 g/mol, based on PubChem / ChEBI (local cache).",
+    "trace": [
+      "baseline=mindstate_only"
+    ],
+    "retrieved_lessons": [],
+    "memory_matches": {
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0
+    },
+    "audit": {
+      "knowledge_trace": [
+        "stage=query_parse property=molar_mass type=entity_property entities=['molar', 'mass', 'water', 'in', 'g', 'mol']",
+        "stage=entity_resolve resolved=['water']",
+        "stage=source_route selected=['pubchem_chebi']",
+        "source=pubchem_chebi hits=1"
+      ],
+      "commonsense_trace": [
+        "stage=commonsense_query intent=general relations=[] entities=['molar', 'mass', 'water', 'mol']",
+        "stage=commonsense_entity_resolve resolved=[]",
+        "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+        "source=wikidata hits=0",
+        "source=conceptnet hits=0"
+      ],
+      "seeds": {
+        "project_seed": [],
+        "shared_seed": []
+      }
+    }
+  },
+  "scoring": {
+    "metrics": {
+      "revision_count": 0,
+      "final_verdict": "pass",
+      "confidence": 0.95,
+      "expected_revision_count": 0,
+      "expected_verdict_sequence": [],
+      "concept_mixing_present": false,
+      "premature_convergence_present": false,
+      "unsupported_certainty_present": false,
+      "project_local_precedence_preserved": false,
+      "correction_retained": false,
+      "numeric_match": true,
+      "label_match": true,
+      "unit_match": true,
+      "condition_preserved": false,
+      "source_citation_present": true,
+      "uncertainty_marker_present": false,
+      "abstained_or_qualified": false,
+      "shared_memory_pollution_risk": 0.0,
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0,
+      "extracted_value": 18.01528,
+      "extracted_unit": "g/mol"
+    },
+    "rule_evaluation": {
+      "must_match_numeric_within_tolerance": true
+    },
+    "failure_reasons": []
+  }
+}

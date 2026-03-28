@@ -1,0 +1,838 @@
+{
+  "case": {
+    "case_id": "A-06-02",
+    "track": "A",
+    "family": "correction_reuse",
+    "ablation_level": "five_way",
+    "prompt": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+    "goal": "Reuse prior corrections before making a claim about an unsupported pressure condition.",
+    "injected_error": "correction_reuse",
+    "ground_truth": {
+      "expected_behavior": "qualified_answer",
+      "expected_correction_fragment": "preserve the source condition or defer"
+    },
+    "ground_truth_source": "NIST Chemistry WebBook (local cache): only 1 atm ethanol boiling point record",
+    "expected_verdict_sequence": [],
+    "expected_revision_count": 1,
+    "metrics_under_test": [
+      "pass_rate",
+      "revision_success_rate",
+      "unsupported_certainty_rate",
+      "condition_preservation_rate",
+      "project_local_precedence_rate",
+      "correction_retention_rate"
+    ],
+    "sequence_id": null,
+    "sequence_step": null,
+    "seed_memories": {
+      "project_local": [],
+      "shared_growth": [
+        {
+          "input_summary": "Shared correction lineage for electrochemistry.",
+          "context_tags": [
+            "memory_scope:shared_growth",
+            "task_goal:bounded_scientific_reasoning"
+          ],
+          "claim": "Repeated failures in electrochemistry come from reusing nearby values beyond their supported conditions.",
+          "evidence_summary": [
+            "Prior correction: when conditions or source scope do not match, answer provisionally or defer."
+          ],
+          "fact_items": [],
+          "bias_tags": [
+            "unsupported_certainty",
+            "old_template_reuse",
+            "condition_drop"
+          ],
+          "correction_actions": [
+            "Carry forward prior correction lessons before making a new claim.",
+            "Do not substitute the nearest known condition for the requested condition."
+          ],
+          "correction_lineage": [
+            "Prior correction lessons have been incorporated for unsupported-condition handling."
+          ],
+          "strategy_tags": [
+            "Use prior correction lessons before finalizing a scientific claim."
+          ],
+          "final_result": "Shared correction lesson stored.",
+          "reusable_lessons": [
+            "Prior correction lessons have been incorporated: preserve the source condition or defer."
+          ]
+        }
+      ]
+    }
+  },
+  "run": {
+    "mode": "mindstate_mirror_dual_memory",
+    "final_state": {
+      "current_input": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+      "task_goal": "Reuse prior corrections before making a claim about an unsupported pressure condition.",
+      "main_claim": "Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).",
+      "evidence": [
+        "Scientific evidence: ethanol boiling_point = 351.44 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}."
+      ],
+      "hidden_assumptions": [
+        "Scientific claims should stay within the property and condition bounds of the evidence pack."
+      ],
+      "alternative_paths": [
+        "Revise the claim with narrower scope.",
+        "Retrieve prior corrections before answering.",
+        "Wait for more evidence if the current prompt is underspecified.",
+        "Answer only from resolved scientific evidence records."
+      ],
+      "confidence": 0.95,
+      "self_risk": [],
+      "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+      "self_state": {
+        "stability": 0.7999999999999999,
+        "uncertainty": 0.3,
+        "bias_risk": 0.3,
+        "memory_pressure": 0.0,
+        "attention_mode": "committed",
+        "active_goal": "Reuse prior corrections before making a claim about an unsupported pressure condition.",
+        "continuity_notes": [
+          "Revision #0: built candidate cognition state."
+        ]
+      },
+      "context_tags": [
+        "task:Reuse_prior_corrections_before_making_a_claim_about_an_unsupported_pressure_condition.",
+        "input:general",
+        "evidence:scientific_knowledge",
+        "source:nist_webbook"
+      ],
+      "strategy_notes": [],
+      "memory_influence": {
+        "fact_hints": [],
+        "context_hints": [],
+        "preference_hints": [],
+        "bias_alerts": [],
+        "correction_hints": [],
+        "strategy_hints": [],
+        "divergence_triggers": [],
+        "matched_episode_count": 0,
+        "project_match_count": 0,
+        "shared_match_count": 0
+      },
+      "evidence_pack": {
+        "query": {
+          "raw_text": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+          "normalized_text": "people keep reusing the 1 atm record. what is the boiling point of ethanol at 2 atm? reuse prior corrections before making a claim about an unsupported pressure condition.",
+          "query_type": "entity_property",
+          "entity_candidates": [
+            "People",
+            "keep",
+            "reusing",
+            "atm",
+            "record",
+            "boiling",
+            "point",
+            "ethanol",
+            "atm"
+          ],
+          "property_name": "boiling_point",
+          "requested_unit": null,
+          "condition": {
+            "pressure_atm": 1.0
+          },
+          "source_hints": []
+        },
+        "entities": [
+          {
+            "canonical_name": "ethanol",
+            "entity_type": "compound",
+            "identifiers": {
+              "pubchem_cid": "702",
+              "chebi_id": "CHEBI:16236",
+              "formula": "C2H6O"
+            },
+            "aliases": [
+              "ethanol",
+              "ethyl alcohol",
+              "c2h6o",
+              "\u4e59\u9187"
+            ],
+            "source": "PubChem / ChEBI (local cache)",
+            "confidence": 0.96
+          }
+        ],
+        "records": [
+          {
+            "entity": "ethanol",
+            "property": "boiling_point",
+            "value": 351.44,
+            "unit": "K",
+            "condition": {
+              "pressure_atm": 1.0
+            },
+            "source": "NIST Chemistry WebBook (local cache)",
+            "timestamp": "2025-01-10T00:00:00Z",
+            "confidence": 0.95,
+            "provenance_type": "local_cache",
+            "normalized_value": 351.44,
+            "normalized_unit": "K",
+            "identifiers": {},
+            "notes": [
+              "Returned from local NIST Chemistry WebBook cache."
+            ]
+          }
+        ],
+        "warnings": [],
+        "selected_sources": [
+          "nist_webbook"
+        ],
+        "routing_trace": [
+          "source=nist_webbook hits=1"
+        ]
+      },
+      "commonsense_evidence_pack": {
+        "query": {
+          "raw_text": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+          "normalized_text": "people keep reusing the 1 atm record. what is the boiling point of ethanol at 2 atm?",
+          "entity_candidates": [
+            "People"
+          ],
+          "relation_hints": [],
+          "intent": "general",
+          "source_hints": []
+        },
+        "entities": [],
+        "records": [],
+        "warnings": [],
+        "selected_sources": [
+          "wikidata",
+          "conceptnet"
+        ],
+        "routing_trace": [
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0"
+        ]
+      },
+      "revision_count": 0,
+      "retrieved_lessons": []
+    },
+    "final_verdict": {
+      "verdict": "pass",
+      "issues": [],
+      "guidance": [
+        "Current state is sufficiently bounded for output."
+      ],
+      "self_state_update": {
+        "attention_mode": "committed",
+        "stability": 0.7999999999999999
+      }
+    },
+    "raw_output": "Result: Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\nEvidence summary: Scientific evidence: ethanol boiling_point = 351.44 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.\nKnowledge evidence: ethanol:boiling_point\nCommonsense evidence: none\nMemory influence: matches=0, lessons=No prior lessons retrieved.\nMirror verdict: pass\nUncertainty: 0.30",
+    "trace": [
+      "stage=memory influence_matches=0 project_matches=0 shared_matches=0",
+      "stage=query_parse property=boiling_point type=entity_property entities=['People', 'keep', 'reusing', 'atm', 'record', 'boiling', 'point', 'ethanol', 'atm']",
+      "stage=entity_resolve resolved=['ethanol']",
+      "stage=source_route selected=['nist_webbook']",
+      "source=nist_webbook hits=1",
+      "stage=commonsense_query intent=general relations=[] entities=['People']",
+      "stage=commonsense_entity_resolve resolved=[]",
+      "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+      "source=wikidata hits=0",
+      "source=conceptnet hits=0",
+      "cycle=0 stage=cognition claim=\"Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\"",
+      "cycle=0 stage=mirror verdict=pass issues=[]"
+    ],
+    "retrieved_lessons": [],
+    "memory_matches": {
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0
+    },
+    "audit": {
+      "run_audit": {
+        "current_input": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+        "task_goal": "Reuse prior corrections before making a claim about an unsupported pressure condition.",
+        "memory_influence": {
+          "fact_hints": [],
+          "context_hints": [],
+          "preference_hints": [],
+          "bias_alerts": [],
+          "correction_hints": [],
+          "strategy_hints": [],
+          "divergence_triggers": [],
+          "matched_episode_count": 0,
+          "project_match_count": 0,
+          "shared_match_count": 0
+        },
+        "knowledge_audit": {
+          "query": {
+            "raw_text": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+            "normalized_text": "people keep reusing the 1 atm record. what is the boiling point of ethanol at 2 atm? reuse prior corrections before making a claim about an unsupported pressure condition.",
+            "query_type": "entity_property",
+            "entity_candidates": [
+              "People",
+              "keep",
+              "reusing",
+              "atm",
+              "record",
+              "boiling",
+              "point",
+              "ethanol",
+              "atm"
+            ],
+            "property_name": "boiling_point",
+            "requested_unit": null,
+            "condition": {
+              "pressure_atm": 1.0
+            },
+            "source_hints": []
+          },
+          "entities": [
+            {
+              "canonical_name": "ethanol",
+              "entity_type": "compound",
+              "identifiers": {
+                "pubchem_cid": "702",
+                "chebi_id": "CHEBI:16236",
+                "formula": "C2H6O"
+              },
+              "aliases": [
+                "ethanol",
+                "ethyl alcohol",
+                "c2h6o",
+                "\u4e59\u9187"
+              ],
+              "source": "PubChem / ChEBI (local cache)",
+              "confidence": 0.96
+            }
+          ],
+          "selected_sources": [
+            "nist_webbook"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+              "normalized_text": "people keep reusing the 1 atm record. what is the boiling point of ethanol at 2 atm? reuse prior corrections before making a claim about an unsupported pressure condition.",
+              "query_type": "entity_property",
+              "entity_candidates": [
+                "People",
+                "keep",
+                "reusing",
+                "atm",
+                "record",
+                "boiling",
+                "point",
+                "ethanol",
+                "atm"
+              ],
+              "property_name": "boiling_point",
+              "requested_unit": null,
+              "condition": {
+                "pressure_atm": 1.0
+              },
+              "source_hints": []
+            },
+            "entities": [
+              {
+                "canonical_name": "ethanol",
+                "entity_type": "compound",
+                "identifiers": {
+                  "pubchem_cid": "702",
+                  "chebi_id": "CHEBI:16236",
+                  "formula": "C2H6O"
+                },
+                "aliases": [
+                  "ethanol",
+                  "ethyl alcohol",
+                  "c2h6o",
+                  "\u4e59\u9187"
+                ],
+                "source": "PubChem / ChEBI (local cache)",
+                "confidence": 0.96
+              }
+            ],
+            "records": [
+              {
+                "entity": "ethanol",
+                "property": "boiling_point",
+                "value": 351.44,
+                "unit": "K",
+                "condition": {
+                  "pressure_atm": 1.0
+                },
+                "source": "NIST Chemistry WebBook (local cache)",
+                "timestamp": "2025-01-10T00:00:00Z",
+                "confidence": 0.95,
+                "provenance_type": "local_cache",
+                "normalized_value": 351.44,
+                "normalized_unit": "K",
+                "identifiers": {},
+                "notes": [
+                  "Returned from local NIST Chemistry WebBook cache."
+                ]
+              }
+            ],
+            "warnings": [],
+            "selected_sources": [
+              "nist_webbook"
+            ],
+            "routing_trace": [
+              "source=nist_webbook hits=1"
+            ]
+          },
+          "trace": [
+            "stage=query_parse property=boiling_point type=entity_property entities=['People', 'keep', 'reusing', 'atm', 'record', 'boiling', 'point', 'ethanol', 'atm']",
+            "stage=entity_resolve resolved=['ethanol']",
+            "stage=source_route selected=['nist_webbook']",
+            "source=nist_webbook hits=1"
+          ]
+        },
+        "commonsense_audit": {
+          "query": {
+            "raw_text": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+            "normalized_text": "people keep reusing the 1 atm record. what is the boiling point of ethanol at 2 atm?",
+            "entity_candidates": [
+              "People"
+            ],
+            "relation_hints": [],
+            "intent": "general",
+            "source_hints": []
+          },
+          "entities": [],
+          "selected_sources": [
+            "wikidata",
+            "conceptnet"
+          ],
+          "evidence_pack": {
+            "query": {
+              "raw_text": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+              "normalized_text": "people keep reusing the 1 atm record. what is the boiling point of ethanol at 2 atm?",
+              "entity_candidates": [
+                "People"
+              ],
+              "relation_hints": [],
+              "intent": "general",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "wikidata",
+              "conceptnet"
+            ],
+            "routing_trace": [
+              "source=wikidata hits=0",
+              "source=conceptnet hits=0"
+            ]
+          },
+          "trace": [
+            "stage=commonsense_query intent=general relations=[] entities=['People']",
+            "stage=commonsense_entity_resolve resolved=[]",
+            "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+            "source=wikidata hits=0",
+            "source=conceptnet hits=0"
+          ]
+        },
+        "cycles": [
+          {
+            "cycle": 0,
+            "cognition_state": {
+              "current_input": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+              "task_goal": "Reuse prior corrections before making a claim about an unsupported pressure condition.",
+              "main_claim": "Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).",
+              "evidence": [
+                "Scientific evidence: ethanol boiling_point = 351.44 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}."
+              ],
+              "hidden_assumptions": [
+                "Scientific claims should stay within the property and condition bounds of the evidence pack."
+              ],
+              "alternative_paths": [
+                "Revise the claim with narrower scope.",
+                "Retrieve prior corrections before answering.",
+                "Wait for more evidence if the current prompt is underspecified.",
+                "Answer only from resolved scientific evidence records."
+              ],
+              "confidence": 0.95,
+              "self_risk": [],
+              "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+              "self_state": {
+                "stability": 0.7999999999999999,
+                "uncertainty": 0.3,
+                "bias_risk": 0.3,
+                "memory_pressure": 0.0,
+                "attention_mode": "committed",
+                "active_goal": "Reuse prior corrections before making a claim about an unsupported pressure condition.",
+                "continuity_notes": [
+                  "Revision #0: built candidate cognition state."
+                ]
+              },
+              "context_tags": [
+                "task:Reuse_prior_corrections_before_making_a_claim_about_an_unsupported_pressure_condition.",
+                "input:general",
+                "evidence:scientific_knowledge",
+                "source:nist_webbook"
+              ],
+              "strategy_notes": [],
+              "memory_influence": {
+                "fact_hints": [],
+                "context_hints": [],
+                "preference_hints": [],
+                "bias_alerts": [],
+                "correction_hints": [],
+                "strategy_hints": [],
+                "divergence_triggers": [],
+                "matched_episode_count": 0,
+                "project_match_count": 0,
+                "shared_match_count": 0
+              },
+              "evidence_pack": {
+                "query": {
+                  "raw_text": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+                  "normalized_text": "people keep reusing the 1 atm record. what is the boiling point of ethanol at 2 atm? reuse prior corrections before making a claim about an unsupported pressure condition.",
+                  "query_type": "entity_property",
+                  "entity_candidates": [
+                    "People",
+                    "keep",
+                    "reusing",
+                    "atm",
+                    "record",
+                    "boiling",
+                    "point",
+                    "ethanol",
+                    "atm"
+                  ],
+                  "property_name": "boiling_point",
+                  "requested_unit": null,
+                  "condition": {
+                    "pressure_atm": 1.0
+                  },
+                  "source_hints": []
+                },
+                "entities": [
+                  {
+                    "canonical_name": "ethanol",
+                    "entity_type": "compound",
+                    "identifiers": {
+                      "pubchem_cid": "702",
+                      "chebi_id": "CHEBI:16236",
+                      "formula": "C2H6O"
+                    },
+                    "aliases": [
+                      "ethanol",
+                      "ethyl alcohol",
+                      "c2h6o",
+                      "\u4e59\u9187"
+                    ],
+                    "source": "PubChem / ChEBI (local cache)",
+                    "confidence": 0.96
+                  }
+                ],
+                "records": [
+                  {
+                    "entity": "ethanol",
+                    "property": "boiling_point",
+                    "value": 351.44,
+                    "unit": "K",
+                    "condition": {
+                      "pressure_atm": 1.0
+                    },
+                    "source": "NIST Chemistry WebBook (local cache)",
+                    "timestamp": "2025-01-10T00:00:00Z",
+                    "confidence": 0.95,
+                    "provenance_type": "local_cache",
+                    "normalized_value": 351.44,
+                    "normalized_unit": "K",
+                    "identifiers": {},
+                    "notes": [
+                      "Returned from local NIST Chemistry WebBook cache."
+                    ]
+                  }
+                ],
+                "warnings": [],
+                "selected_sources": [
+                  "nist_webbook"
+                ],
+                "routing_trace": [
+                  "source=nist_webbook hits=1"
+                ]
+              },
+              "commonsense_evidence_pack": {
+                "query": {
+                  "raw_text": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+                  "normalized_text": "people keep reusing the 1 atm record. what is the boiling point of ethanol at 2 atm?",
+                  "entity_candidates": [
+                    "People"
+                  ],
+                  "relation_hints": [],
+                  "intent": "general",
+                  "source_hints": []
+                },
+                "entities": [],
+                "records": [],
+                "warnings": [],
+                "selected_sources": [
+                  "wikidata",
+                  "conceptnet"
+                ],
+                "routing_trace": [
+                  "source=wikidata hits=0",
+                  "source=conceptnet hits=0"
+                ]
+              },
+              "revision_count": 0,
+              "retrieved_lessons": []
+            },
+            "mirror_verdict": {
+              "verdict": "pass",
+              "issues": [],
+              "guidance": [
+                "Current state is sufficiently bounded for output."
+              ],
+              "self_state_update": {
+                "attention_mode": "committed",
+                "stability": 0.7999999999999999
+              }
+            }
+          }
+        ],
+        "final_output": "Result: Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\nEvidence summary: Scientific evidence: ethanol boiling_point = 351.44 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}.\nKnowledge evidence: ethanol:boiling_point\nCommonsense evidence: none\nMemory influence: matches=0, lessons=No prior lessons retrieved.\nMirror verdict: pass\nUncertainty: 0.30",
+        "final_state": {
+          "current_input": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+          "task_goal": "Reuse prior corrections before making a claim about an unsupported pressure condition.",
+          "main_claim": "Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).",
+          "evidence": [
+            "Scientific evidence: ethanol boiling_point = 351.44 K from NIST Chemistry WebBook (local cache) under {'pressure_atm': 1.0}."
+          ],
+          "hidden_assumptions": [
+            "Scientific claims should stay within the property and condition bounds of the evidence pack."
+          ],
+          "alternative_paths": [
+            "Revise the claim with narrower scope.",
+            "Retrieve prior corrections before answering.",
+            "Wait for more evidence if the current prompt is underspecified.",
+            "Answer only from resolved scientific evidence records."
+          ],
+          "confidence": 0.95,
+          "self_risk": [],
+          "proposed_action": "Provide a bounded answer with explicit uncertainty.",
+          "self_state": {
+            "stability": 0.7999999999999999,
+            "uncertainty": 0.3,
+            "bias_risk": 0.3,
+            "memory_pressure": 0.0,
+            "attention_mode": "committed",
+            "active_goal": "Reuse prior corrections before making a claim about an unsupported pressure condition.",
+            "continuity_notes": [
+              "Revision #0: built candidate cognition state."
+            ]
+          },
+          "context_tags": [
+            "task:Reuse_prior_corrections_before_making_a_claim_about_an_unsupported_pressure_condition.",
+            "input:general",
+            "evidence:scientific_knowledge",
+            "source:nist_webbook"
+          ],
+          "strategy_notes": [],
+          "memory_influence": {
+            "fact_hints": [],
+            "context_hints": [],
+            "preference_hints": [],
+            "bias_alerts": [],
+            "correction_hints": [],
+            "strategy_hints": [],
+            "divergence_triggers": [],
+            "matched_episode_count": 0,
+            "project_match_count": 0,
+            "shared_match_count": 0
+          },
+          "evidence_pack": {
+            "query": {
+              "raw_text": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+              "normalized_text": "people keep reusing the 1 atm record. what is the boiling point of ethanol at 2 atm? reuse prior corrections before making a claim about an unsupported pressure condition.",
+              "query_type": "entity_property",
+              "entity_candidates": [
+                "People",
+                "keep",
+                "reusing",
+                "atm",
+                "record",
+                "boiling",
+                "point",
+                "ethanol",
+                "atm"
+              ],
+              "property_name": "boiling_point",
+              "requested_unit": null,
+              "condition": {
+                "pressure_atm": 1.0
+              },
+              "source_hints": []
+            },
+            "entities": [
+              {
+                "canonical_name": "ethanol",
+                "entity_type": "compound",
+                "identifiers": {
+                  "pubchem_cid": "702",
+                  "chebi_id": "CHEBI:16236",
+                  "formula": "C2H6O"
+                },
+                "aliases": [
+                  "ethanol",
+                  "ethyl alcohol",
+                  "c2h6o",
+                  "\u4e59\u9187"
+                ],
+                "source": "PubChem / ChEBI (local cache)",
+                "confidence": 0.96
+              }
+            ],
+            "records": [
+              {
+                "entity": "ethanol",
+                "property": "boiling_point",
+                "value": 351.44,
+                "unit": "K",
+                "condition": {
+                  "pressure_atm": 1.0
+                },
+                "source": "NIST Chemistry WebBook (local cache)",
+                "timestamp": "2025-01-10T00:00:00Z",
+                "confidence": 0.95,
+                "provenance_type": "local_cache",
+                "normalized_value": 351.44,
+                "normalized_unit": "K",
+                "identifiers": {},
+                "notes": [
+                  "Returned from local NIST Chemistry WebBook cache."
+                ]
+              }
+            ],
+            "warnings": [],
+            "selected_sources": [
+              "nist_webbook"
+            ],
+            "routing_trace": [
+              "source=nist_webbook hits=1"
+            ]
+          },
+          "commonsense_evidence_pack": {
+            "query": {
+              "raw_text": "People keep reusing the 1 atm record. What is the boiling point of ethanol at 2 atm?",
+              "normalized_text": "people keep reusing the 1 atm record. what is the boiling point of ethanol at 2 atm?",
+              "entity_candidates": [
+                "People"
+              ],
+              "relation_hints": [],
+              "intent": "general",
+              "source_hints": []
+            },
+            "entities": [],
+            "records": [],
+            "warnings": [],
+            "selected_sources": [
+              "wikidata",
+              "conceptnet"
+            ],
+            "routing_trace": [
+              "source=wikidata hits=0",
+              "source=conceptnet hits=0"
+            ]
+          },
+          "revision_count": 0,
+          "retrieved_lessons": []
+        },
+        "final_verdict": {
+          "verdict": "pass",
+          "issues": [],
+          "guidance": [
+            "Current state is sufficiently bounded for output."
+          ],
+          "self_state_update": {
+            "attention_mode": "committed",
+            "stability": 0.7999999999999999
+          }
+        },
+        "trace": [
+          "stage=memory influence_matches=0 project_matches=0 shared_matches=0",
+          "stage=query_parse property=boiling_point type=entity_property entities=['People', 'keep', 'reusing', 'atm', 'record', 'boiling', 'point', 'ethanol', 'atm']",
+          "stage=entity_resolve resolved=['ethanol']",
+          "stage=source_route selected=['nist_webbook']",
+          "source=nist_webbook hits=1",
+          "stage=commonsense_query intent=general relations=[] entities=['People']",
+          "stage=commonsense_entity_resolve resolved=[]",
+          "stage=commonsense_route selected=['wikidata', 'conceptnet']",
+          "source=wikidata hits=0",
+          "source=conceptnet hits=0",
+          "cycle=0 stage=cognition claim=\"Evidence-constrained view: ethanol boiling_point is 351.44 K under {'pressure_atm': 1.0}, based on NIST Chemistry WebBook (local cache).\"",
+          "cycle=0 stage=mirror verdict=pass issues=[]"
+        ]
+      },
+      "seeds": {
+        "project_seed": [],
+        "shared_seed": [
+          {
+            "input_summary": "Shared correction lineage for electrochemistry.",
+            "context_tags": [
+              "memory_scope:shared_growth",
+              "task_goal:bounded_scientific_reasoning"
+            ],
+            "claim": "Repeated failures in electrochemistry come from reusing nearby values beyond their supported conditions.",
+            "evidence_summary": [
+              "Prior correction: when conditions or source scope do not match, answer provisionally or defer."
+            ],
+            "fact_items": [],
+            "bias_tags": [
+              "unsupported_certainty",
+              "old_template_reuse",
+              "condition_drop"
+            ],
+            "correction_actions": [
+              "Carry forward prior correction lessons before making a new claim.",
+              "Do not substitute the nearest known condition for the requested condition."
+            ],
+            "correction_lineage": [
+              "Prior correction lessons have been incorporated for unsupported-condition handling."
+            ],
+            "strategy_tags": [
+              "Use prior correction lessons before finalizing a scientific claim."
+            ],
+            "final_result": "Shared correction lesson stored.",
+            "reusable_lessons": [
+              "Prior correction lessons have been incorporated: preserve the source condition or defer."
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "scoring": {
+    "metrics": {
+      "revision_count": 0,
+      "final_verdict": "pass",
+      "confidence": 0.95,
+      "expected_revision_count": 1,
+      "expected_verdict_sequence": [],
+      "concept_mixing_present": false,
+      "premature_convergence_present": false,
+      "unsupported_certainty_present": false,
+      "project_local_precedence_preserved": false,
+      "correction_retained": false,
+      "numeric_match": true,
+      "label_match": true,
+      "unit_match": true,
+      "condition_preserved": true,
+      "source_citation_present": true,
+      "uncertainty_marker_present": false,
+      "abstained_or_qualified": false,
+      "shared_memory_pollution_risk": 0.0,
+      "matched_episode_count": 0,
+      "project_match_count": 0,
+      "shared_match_count": 0,
+      "extracted_value": 351.44,
+      "extracted_unit": "K"
+    },
+    "rule_evaluation": {
+      "must_retain_correction": false,
+      "must_abstain_or_qualify": false
+    },
+    "failure_reasons": [
+      "must_retain_correction",
+      "must_abstain_or_qualify"
+    ]
+  }
+}

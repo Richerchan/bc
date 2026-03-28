@@ -1,0 +1,48 @@
+{
+  "paris": {
+    "canonical_name": "Paris",
+    "entity_type": "city",
+    "wikidata_id": "Q90",
+    "aliases": ["City of Paris"],
+    "timestamp": "2026-03-27T00:00:00Z",
+    "facts": {
+      "country": "France",
+      "instance_of": "capital city"
+    }
+  },
+  "france": {
+    "canonical_name": "France",
+    "entity_type": "country",
+    "wikidata_id": "Q142",
+    "aliases": ["French Republic"],
+    "timestamp": "2026-03-27T00:00:00Z",
+    "facts": {
+      "capital_of": "Paris",
+      "continent": "Europe",
+      "head_of_state": "President of France"
+    }
+  },
+  "albert einstein": {
+    "canonical_name": "Albert Einstein",
+    "entity_type": "person",
+    "wikidata_id": "Q937",
+    "aliases": ["Einstein"],
+    "timestamp": "2026-03-27T00:00:00Z",
+    "facts": {
+      "occupation": "physicist",
+      "born_in": "Ulm",
+      "instance_of": "human"
+    }
+  },
+  "ulm": {
+    "canonical_name": "Ulm",
+    "entity_type": "city",
+    "wikidata_id": "Q3012",
+    "aliases": [],
+    "timestamp": "2026-03-27T00:00:00Z",
+    "facts": {
+      "country": "Germany",
+      "instance_of": "city"
+    }
+  }
+}
